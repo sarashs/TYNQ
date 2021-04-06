@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Mar 28 04:57:01 2021
+# Process ID: 17516
+# Current directory: C:/Users/User/ring_oscillator_zynq/simple_ro
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5760 C:\Users\User\ring_oscillator_zynq\simple_ro\simple_ro.xpr
+# Log file: C:/Users/User/ring_oscillator_zynq/simple_ro/vivado.log
+# Journal file: C:/Users/User/ring_oscillator_zynq/simple_ro\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd}
+ipx::edit_ip_in_project -upgrade true -name Frequency_counter_AXI4_v1_0_project -directory C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.tmp/Frequency_counter_AXI4_v1_0_project c:/Users/User/ring_oscillator_zynq/ip_repo/Frequency_counter_AXI4_1.0/component.xml
+update_compile_order -fileset sources_1
+ipx::add_address_block slv_reg0 [ipx::get_memory_maps S00_AXI -of_objects [ipx::current_core]]
+ipx::add_address_block slv_reg1 [ipx::get_memory_maps S00_AXI -of_objects [ipx::current_core]]
+ipx::add_address_block slv_reg2 [ipx::get_memory_maps S00_AXI -of_objects [ipx::current_core]]
+ipx::add_address_block slv_reg3 [ipx::get_memory_maps S00_AXI -of_objects [ipx::current_core]]
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/User/ring_oscillator_zynq/ip_repo
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:Frequency_counter_AXI4:1.0 [get_ips  design_1_Frequency_counter_AX_0_3] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_Frequency_counter_AX_0_3] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_Frequency_counter_AX_0_3] }
+catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] }
+export_ip_user_files -of_objects [get_files C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs design_1_Frequency_counter_AX_0_3_synth_1 -jobs 6
+wait_on_run design_1_Frequency_counter_AX_0_3_synth_1
+export_simulation -of_objects [get_files C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.ip_user_files -ipstatic_source_dir C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/compile_simlib/modelsim} {questa=C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/compile_simlib/questa} {riviera=C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/compile_simlib/riviera} {activehdl=C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_run impl_1

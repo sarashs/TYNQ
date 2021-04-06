@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_LUT6_RO_0_0_synth_1" LaunchDir="C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/design_1_LUT6_RO_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Frequency_counter_AX_0_3_synth_1" LaunchDir="C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/design_1_Frequency_counter_AX_0_3_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_LUT6_RO_1_0_synth_1" LaunchDir="C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/design_1_LUT6_RO_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_LUT6_RO_2_0_synth_1" LaunchDir="C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/design_1_LUT6_RO_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_LUT6_RO_3_0_synth_1" LaunchDir="C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/design_1_LUT6_RO_3_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+
