@@ -6,7 +6,7 @@
 ## How to use the simple ring Oscillator circuit
 
 Just run the simple_ro.tcl and it should work. If not then just make the project from scratch using the given sources, constraints and the AXI frequency counter IP. The block diagram should look like this:
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/block_design.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/block_design.JPG?raw=true)
 
 You can then modify the above to suit your needs. 
 
@@ -46,11 +46,11 @@ plt.xlabel('Sample Number')
 
 Which will out put the following:
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/hist.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/hist.JPG?raw=true)
 
 and
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/sample.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/sample.JPG?raw=true)
 
 Just for shits and giggles, I held an ice cube tp the chip for exactly 20 seconds from 20 to 40 seconds into the experiment (which took exactly 1:51s). The jump in the frequency can definitely be associated with that cooling process.
 
@@ -58,7 +58,7 @@ Just for shits and giggles, I held an ice cube tp the chip for exactly 20 second
 
 One thing that I noticed early on is that different instantiations of the RO circuit varry a lot in their output frequency. I am trying to limit that by restricting how the circuit is synthesized and implemented. I am using LUT6 premitives with pin loc constraints (like in the following image) to force the signal path within an inverter to be exactly the same (as much as possible). 
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/Inverters.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/Inverters.JPG?raw=true)
 
 also pblock constraints can be used to limit the spread of the inverters (say to a column).
 
@@ -75,15 +75,15 @@ My weird frequency counter can measure from 1.5 KHz all the way to >500 MHz, usi
 Here are some post synthesis timing simulation snapshots
 
 **10 MHz input:** 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/10MHz.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/10MHz.JPG?raw=true)
 **100 MHz input:**
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/100MHz.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/100MHz.JPG?raw=true)
 **200 MHz input:**
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/200MHz.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/200MHz.JPG?raw=true)
 **500 MHz input:**
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/500MHz.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/500MHz.JPG?raw=true)
 **1 GHz input (failure):**
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/1GHzFailure.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/1GHzFailure.JPG?raw=true)
 
 ## Heater circuit
 I employed a heater circuit in line with the basic Self Heating Element (SHE) in the following article (with slight modifications):
@@ -97,7 +97,7 @@ My circuit is controlled through an AXI-Lite IP which can support upto 512 self 
 
 I performed a simple test where I places around 10 SHEs around a 5 stage RO:
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/heater_arrangement.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/heater_arrangement.JPG?raw=true)
 
 where orange is for ROs and green for SHEs.
 
@@ -115,8 +115,8 @@ The frequency measurements along with the histogram of the data is depicted in t
 
 **Fequency measurements:**
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/high_temp.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/high_temp.JPG?raw=true)
 
 **Measurement histogram:**
 
-![alt text](https://github.com/sarashs/Simple_RO/blob/main/images/high_temp_hist.JPG?raw=true)
+![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/high_temp_hist.JPG?raw=true)
