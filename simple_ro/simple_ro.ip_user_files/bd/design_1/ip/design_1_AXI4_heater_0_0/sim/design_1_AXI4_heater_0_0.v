@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:AXI4_heater:1.0
-// IP Revision: 4
+// IP Revision: 5
 
 `timescale 1ns/1ps
 

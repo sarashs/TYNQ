@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:AXI4_heater:1.0
-// IP Revision: 4
+// IP Revision: 5
 
 (* X_CORE_INFO = "AXI4_heater_v1_0,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI4_heater,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=VERILOG,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,SIZE=480}" *)
+(* CORE_GENERATION_INFO = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI4_heater,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VERILOG,x_ipSimLanguage=VERILOG,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,SIZE=480}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_AXI4_heater_0_0 (
   s00_axi_aclk,

@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.741057",
-   "Default View_TopLeft":"352,634",
+   "Default View_ScaleFactor":"0.489386",
+   "Default View_TopLeft":"133,307",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
 #  -string -flagsOSRD
@@ -16,8 +16,8 @@ preplace inst LUT6_RO_2 -pg 1 -lvl 1 -x 410 -y 930 -defaultsOSRD
 preplace inst LUT6_RO_3 -pg 1 -lvl 1 -x 410 -y 1030 -defaultsOSRD
 preplace inst Temp_sensor -pg 1 -lvl 3 -x 1300 -y 130 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 2 -x 790 -y 790 -defaultsOSRD
-preplace inst AXI4_heater_0 -pg 1 -lvl 3 -x 1300 -y 500 -defaultsOSRD
 preplace inst AXI_counter_0 -pg 1 -lvl 3 -x 1300 -y 790 -defaultsOSRD
+preplace inst AXI4_heater_0 -pg 1 -lvl 3 -x 1300 -y 500 -defaultsOSRD
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 90 620 140 980
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 100 600
 preplace netloc System_Reset_peripheral_aresetn 1 1 2 610 160 940
@@ -26,10 +26,10 @@ preplace netloc LUT6_RO_1_outclk 1 1 1 620J 780n
 preplace netloc LUT6_RO_2_outclk 1 1 1 640J 800n
 preplace netloc LUT6_RO_3_outclk 1 1 1 650J 820n
 preplace netloc xlconcat_0_dout 1 2 1 990 780n
-preplace netloc Arm_Core_M_AXI_GP0 1 1 1 630 220n
-preplace netloc Arm_Core_axi_periph_M02_AXI 1 2 1 930 100n
-preplace netloc processing_system7_0_DDR 1 1 3 650J 480 950J 410 1450J
 preplace netloc Arm_Core_axi_periph_M01_AXI 1 2 1 960 320n
+preplace netloc Arm_Core_M_AXI_GP0 1 1 1 630 220n
+preplace netloc processing_system7_0_DDR 1 1 3 650J 480 950J 410 1450J
+preplace netloc Arm_Core_axi_periph_M02_AXI 1 2 1 930 100n
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 640J 490 990J 420 1440J
 preplace netloc Arm_Core_axi_periph_M00_AXI 1 2 1 970 300n
 levelinfo -pg 1 0 410 790 1300 1470

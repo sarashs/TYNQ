@@ -89,14 +89,18 @@
 
 	// Add user logic here
 	wire [16 * C_S00_AXI_DATA_WIDTH - 1:0] slv_out;
-	wire [SIZE - 1:0] w;
+	wire [16*SIZE - 1:0] w;
     generate
     genvar i;
+    genvar j;
     for (i=0; i<SIZE; i=i+1) 
-    begin : SHEs
+    begin : SHE_16
+    for (j=0; j<16; j=j+1)
+    begin : SHE
         (*DONT_TOUCH= "true"*) LUT6_SHE SHE(.control(slv_out[i]),
-                                            .in_clk(w[i]),
-                                            .feedback(w[i]));
+                                            .in_clk(w[i+j]),
+                                            .feedback(w[i+j]));
+    end
     end
     endgenerate
 	// User logic ends
