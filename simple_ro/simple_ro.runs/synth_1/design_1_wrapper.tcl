@@ -70,13 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param project.defaultIPCacheSetting none
 set_param ced.repoPaths C:/Users/User/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/ced_store/Vivado_example_project
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -92,6 +86,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
 set_property ip_repo_paths {
+  c:/Users/User/ring_oscillator_zynq/AXI_stream_heater/AXI_Stream_heater_1.0
   c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
   c:/Users/User/ring_oscillator_zynq/ip_repo
 } [current_project]

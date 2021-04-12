@@ -47,7 +47,7 @@
 // PART OF THIS FILE AT ALL TIMES.
 `timescale 1ns / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1_xadc_wiz_0_1,xadc_wiz_v3_3_8,{component_name=design_1_xadc_wiz_0_1,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=true,enable_Vccint_Alaram=false,enable_Vccaux_alaram=false,enable_vccpaux_alaram=false,enable_vccpint_alaram=false,ot_alaram=false,user_temp_alaram=false,timing_mode=continuous,channel_averaging=None,sequencer_mode=off,startup_channel_selection=single_channel}" *)
+(* CORE_GENERATION_INFO = "design_1_xadc_wiz_0_1,xadc_wiz_v3_3_8,{component_name=design_1_xadc_wiz_0_1,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=false,enable_Vccint_Alaram=false,enable_Vccaux_alaram=false,enable_vccpaux_alaram=false,enable_vccpint_alaram=false,ot_alaram=true,user_temp_alaram=true,timing_mode=continuous,channel_averaging=None,sequencer_mode=off,startup_channel_selection=single_channel}" *)
 
 
 module design_1_xadc_wiz_0_1
@@ -76,16 +76,16 @@ module design_1_xadc_wiz_0_1
     output busy_out,        
     output eoc_out, 
     output eos_out,
-    output vccddro_alarm_out,
+    output ot_out, 
+    output user_temp_alarm_out,
     output alarm_out ,                                          
-    output [11:0]  temp_out,
     input vp_in,                                               
     input vn_in
 );
 
           wire [7:0]  alm_int;
           assign alarm_out = alm_int[7];
-       assign vccddro_alarm_out = alm_int[6];
+          assign user_temp_alarm_out = alm_int[0];
 
     design_1_xadc_wiz_0_1_axi_xadc 
    #("design_1_xadc_wiz_0_1_axi_xadc","virtex7", 11, 32, 1,"design.txt")
@@ -115,8 +115,8 @@ module design_1_xadc_wiz_0_1
     .busy_out(busy_out), 
     .eoc_out(eoc_out), 
     .eos_out(eos_out),
+    .ot_out(ot_out),
     .alarm_out  (alm_int),
-    .temp_out    (temp_out),
     .vp_in (vp_in),
     .vn_in (vn_in)
 

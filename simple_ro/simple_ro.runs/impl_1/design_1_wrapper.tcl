@@ -114,10 +114,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
 
 OPTRACE "Implementation" START { ROLLUP_1 }
@@ -127,7 +123,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 3
-  set_param project.defaultIPCacheSetting none
   set_param ced.repoPaths C:/Users/User/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/ced_store/Vivado_example_project
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
@@ -139,8 +134,9 @@ OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/wt [current_project]
   set_property parent.project_path C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.xpr [current_project]
   set_property ip_repo_paths {
-  c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
-  c:/Users/User/ring_oscillator_zynq/ip_repo
+  C:/Users/User/ring_oscillator_zynq/AXI_stream_heater/AXI_Stream_heater_1.0
+  C:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
+  C:/Users/User/ring_oscillator_zynq/ip_repo
 } [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/ip [current_project]

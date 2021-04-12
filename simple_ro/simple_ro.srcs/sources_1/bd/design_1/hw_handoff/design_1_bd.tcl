@@ -173,7 +173,9 @@ proc create_root_design { parentCell } {
   # Create instance: AXI4_heater_0, and set properties
   set AXI4_heater_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI4_heater:1.0 AXI4_heater_0 ]
   set_property -dict [ list \
-   CONFIG.SIZE {480} \
+   CONFIG.block_size {600} \
+   CONFIG.elements_on {15} \
+   CONFIG.num_blocks {4} \
  ] $AXI4_heater_0
 
   # Create instance: AXI_counter_0, and set properties
@@ -1020,12 +1022,16 @@ proc create_root_design { parentCell } {
   # Create instance: Temp_sensor, and set properties
   set Temp_sensor [ create_bd_cell -type ip -vlnv xilinx.com:ip:xadc_wiz:3.3 Temp_sensor ]
   set_property -dict [ list \
-   CONFIG.ENABLE_TEMP_BUS {true} \
+   CONFIG.ENABLE_TEMP_BUS {false} \
+   CONFIG.ENABLE_VCCDDRO_ALARM {false} \
    CONFIG.ENABLE_VCCPAUX_ALARM {false} \
    CONFIG.ENABLE_VCCPINT_ALARM {false} \
-   CONFIG.OT_ALARM {false} \
+   CONFIG.OT_ALARM {true} \
    CONFIG.SINGLE_CHANNEL_SELECTION {TEMPERATURE} \
-   CONFIG.USER_TEMP_ALARM {false} \
+   CONFIG.TEMPERATURE_ALARM_OT_RESET {125.0} \
+   CONFIG.TEMPERATURE_ALARM_RESET {125} \
+   CONFIG.TEMPERATURE_ALARM_TRIGGER {125} \
+   CONFIG.USER_TEMP_ALARM {true} \
    CONFIG.VCCAUX_ALARM {false} \
    CONFIG.VCCINT_ALARM {false} \
  ] $Temp_sensor

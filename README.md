@@ -1,8 +1,7 @@
 # Simple Ring Oscillator for PYNQ-Z1
-## [Most recent updates]
-- The AXI peripheral is updated to support upto 4 RO sensors
-- Register mapping names are removed and access to measurements are only through register addresses (checkout the Jupyter notebook)
-- A python script is added to help with creating constraints on the ring oscillator
+## TODO:
+- Change SHE basic element to work with only one input (I5, I3, I2 etc) and observe the effect
+-add another set of heaters with a shape of empy centered squared and measure the center temperature, maybe it reaches 125 (ROs in the center of a SHE squares)
 ## How to use the simple ring Oscillator circuit
 
 Just run the simple_ro.tcl and it should work. If not then just make the project from scratch using the given sources, constraints and the AXI frequency counter IP. The block diagram should look like this:

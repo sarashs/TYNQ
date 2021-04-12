@@ -173,8 +173,8 @@ entity design_1_xadc_wiz_0_1_xadc_core_drp is
      channel_out            : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
      eoc_out                : out  STD_LOGIC;                        -- End of Conversion Signal
      eos_out                : out  STD_LOGIC;                        -- End of Sequence Signal
+     ot_out                 : out STD_LOGIC;
      alarm_out              : out STD_LOGIC_VECTOR (7 downto 0);
-     temp_out               : out std_logic_vector(11 downto 0);
      vp_in                  : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
      vn_in                  : in  STD_LOGIC
    );
@@ -184,54 +184,6 @@ end entity design_1_xadc_wiz_0_1_xadc_core_drp;
 -- Architecture Section
 -------------------------------------------------------------------------------
 architecture imp of design_1_xadc_wiz_0_1_xadc_core_drp is
-
-  component temperature_update
-  port (
-    reset           : in  std_logic;                      
-    clk             : in  std_logic;
-    temp_bus_update : in std_logic;
-    wait_cycle      : in   std_logic_vector(15 downto 0);
-    temp_out        : out std_logic_vector(11 downto 0);
-    -- DRP signals for Arbiter
-    daddr_o         : out std_logic_vector(7 downto 0);    
-    den_o           : out std_logic;
-    di_o            : out std_logic_vector(15 downto 0);
-    dwe_o           : out std_logic;
-    do_i            : in  std_logic_vector(15 downto 0);
-    drdy_i          : in  std_logic;
-    busy_o          : out std_logic
-  );
-  end component;
-
-component  drp_arbiter
-  port (
-  reset   : in     std_logic;                  
-  clk     : in     std_logic;                   -- input clock
-  jtaglocked: in     std_logic;                   -- input clock
-  bgrant_A : out    std_logic;  -- bus grant
-  bgrant_B : out    std_logic;  -- bus grant
-  bbusy_A   : in    std_logic;                    -- bus busy
-  bbusy_B   : in    std_logic := '0';                    -- bus busy
-  daddr_A  : in  std_logic_vector(7 downto 0);
-  den_A    : in  std_logic;
-  di_A     : in  std_logic_vector(15 downto 0);
-  dwe_A    : in  std_logic;
-  do_A     : out   std_logic_vector(15 downto 0);
-  drdy_A   : out   std_logic;
-  daddr_B  : in  std_logic_vector(7 downto 0);
-  den_B    : in  std_logic;
-  di_B     : in  std_logic_vector(15 downto 0);
-  dwe_B    : in  std_logic;
-  do_B     : out   std_logic_vector(15 downto 0);
-  drdy_B   : out   std_logic;
-  daddr_C  : out  std_logic_vector(7 downto 0);
-  den_C    : out  std_logic;
-  di_C     : out  std_logic_vector(15 downto 0);
-  dwe_C    : out  std_logic;
-  do_C     : in   std_logic_vector(15 downto 0);
-  drdy_C   : in   std_logic
-);
-	end component;
 -------------------------------------------------------------------------------
 -- Constant Declarations
 -------------------------------------------------------------------------------
@@ -545,13 +497,9 @@ begin
       if (Bus2IP_Rst = RESET_ACTIVE) then
         convst_reg_input       <= '0';
         hard_macro_rst_reg     <= '0';
-        temp_bus_update        <= '0';
-        temp_rd_wait_cycle_reg <= X"03E8";
       else
         case convst_reset_wrce_select is
           when "10"   =>   convst_reg_input       <= Bus2IP_Data(31);
-                           temp_bus_update        <= '1';
-                           temp_rd_wait_cycle_reg <= Bus2IP_Data(14 to 29);
           when "01"   =>   hard_macro_rst_reg     <= Bus2IP_Data(31);
           -- coverage off
     when others =>   null;
@@ -561,7 +509,12 @@ begin
     end if;
 end process CONVST_RST_PROCESS;
 
-
+   daddr_C <= '0' & daddr_i;
+   di_C <= di_i;
+   dwe_C <= dwe_actual;
+   den_C <= den_actual;
+   do_i <= do_C;
+   drdy_i <= drdy_C;
 
 
 -- Generate the WRITE ACK back to PLB
@@ -702,6 +655,8 @@ begin
     end if;
 end process ALARM_REG_PROCESS;
 
+-- OT out to top level port
+  ot_out <= ot_i;
 
 --------------------------
 -- OT_FALLING_EDGE_DETECT: this process is used to register the OT.
@@ -927,53 +882,6 @@ end process LOCAL_REG_WRITE_ACK_GEN_PROCESS;
 alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for XADC
 ------------------------------------------------------------------------
 
-   daddr_i_int <= '0' & daddr_i;
-
--- Instantiate the temperature_update  and arbiter
-   temperature_update_inst: temperature_update port map (
-      reset           => sysmon_hard_block_reset,
-      clk             => Bus2IP_Clk,
-      wait_cycle      => temp_rd_wait_cycle_reg,
-      temp_out        => temp_out,
-      temp_bus_update => temp_bus_update,
-      daddr_o         => daddr_A,   
-      den_o           => den_A,     
-      di_o            => di_A,      
-      dwe_o           => dwe_A,     
-      do_i            => do_A,      
-      drdy_i          => drdy_A,    
-      busy_o          => bbusy_A    
-   );
-
-   Inst_drp_arbiter: drp_arbiter port map (
-      reset           => sysmon_hard_block_reset,
-      clk             => Bus2IP_Clk ,
-      jtaglocked      => jtaglocked_i,
-      bgrant_A        => open ,
-      bgrant_B        => bgrant_B,
-      bbusy_A         => bbusy_A,
-      bbusy_B         => '0',
-      daddr_A         => daddr_A,
-      den_A           => den_A,
-      di_A            => di_A,
-      dwe_A           => dwe_A,
-      do_A            => do_A,
-      drdy_A          => drdy_A,
-      daddr_B         => daddr_i_int,
-      den_B           => den_actual,
-      di_B            => di_i,
-      dwe_B           => dwe_actual,
-      do_B            => do_i,
-      drdy_B          => drdy_i,
-      daddr_C         => daddr_C,
-      den_C           => den_C,
-      di_C            => di_C,
-      dwe_C           => dwe_C,
-      do_C            => do_C,
-      drdy_C          => drdy_C	
-   );
-
-
 -- Added interface to MUX ADDRESS for external address multiplexer from the
 -- XADC macro to core ports.
 
@@ -1061,7 +969,7 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
  XADC_INST : XADC
      generic map(
         INIT_40 => X"0000", -- config reg 0
-        INIT_41 => X"31AF", -- config reg 1
+        INIT_41 => X"31AC", -- config reg 1
         INIT_42 => X"0400", -- config reg 2
         INIT_48 => X"0100", -- Sequencer channel selection
         INIT_49 => X"0000", -- Sequencer channel selection
@@ -1071,14 +979,14 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
         INIT_4D => X"0000", -- Sequencer Bipolar selection
         INIT_4E => X"0000", -- Sequencer Acq time selection
         INIT_4F => X"0000", -- Sequencer Acq time selection
-        INIT_50 => X"B5ED", -- Temp alarm trigger
+        INIT_50 => X"CA3E", -- Temp alarm trigger
         INIT_51 => X"57E4", -- Vccint upper alarm limit
         INIT_52 => X"A147", -- Vccaux upper alarm limit
         INIT_53 => X"CA33",  -- Temp alarm OT upper
-        INIT_54 => X"A93A", -- Temp alarm reset
+        INIT_54 => X"CA3E", -- Temp alarm reset
         INIT_55 => X"52C6", -- Vccint lower alarm limit
         INIT_56 => X"9555", -- Vccaux lower alarm limit
-        INIT_57 => X"AE4E",  -- Temp alarm OT reset
+        INIT_57 => X"CA3E",  -- Temp alarm OT reset
         INIT_58 => X"5999",  -- Vccbram upper alarm limit
         INIT_5C => X"5111",  -- Vccbram lower alarm limit
         INIT_59 => X"5555",  -- Vccpint upper alarm limit

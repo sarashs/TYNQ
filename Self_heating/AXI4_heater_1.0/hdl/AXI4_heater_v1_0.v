@@ -4,7 +4,9 @@
 	module AXI4_heater_v1_0 #
 	(
 		// Users to add parameters here
-        parameter SIZE = 45,
+        parameter num_blocks = 5,
+        parameter block_size = 4,
+        parameter elements_on = 2,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -48,22 +50,8 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) AXI4_heater_v1_0_S00_AXI_inst (
-	    .slv_reg0_out(slv_out[C_S00_AXI_DATA_WIDTH - 1:0]),
-	    .slv_reg1_out(slv_out[2*C_S00_AXI_DATA_WIDTH - 1:C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg2_out(slv_out[3*C_S00_AXI_DATA_WIDTH - 1:2*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg3_out(slv_out[4*C_S00_AXI_DATA_WIDTH - 1:3*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg4_out(slv_out[5*C_S00_AXI_DATA_WIDTH - 1:4*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg5_out(slv_out[6*C_S00_AXI_DATA_WIDTH - 1:5*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg6_out(slv_out[7*C_S00_AXI_DATA_WIDTH - 1:6*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg7_out(slv_out[8*C_S00_AXI_DATA_WIDTH - 1:7*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg8_out(slv_out[9*C_S00_AXI_DATA_WIDTH - 1:8*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg9_out(slv_out[10*C_S00_AXI_DATA_WIDTH - 1:9*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg10_out(slv_out[11*C_S00_AXI_DATA_WIDTH - 1:10*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg11_out(slv_out[12*C_S00_AXI_DATA_WIDTH - 1:11*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg12_out(slv_out[13*C_S00_AXI_DATA_WIDTH - 1:12*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg13_out(slv_out[14*C_S00_AXI_DATA_WIDTH - 1:13*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg14_out(slv_out[15*C_S00_AXI_DATA_WIDTH - 1:14*C_S00_AXI_DATA_WIDTH]),
-	    .slv_reg15_out(slv_out[16*C_S00_AXI_DATA_WIDTH - 1:15*C_S00_AXI_DATA_WIDTH]),
+	    .slv_reg0_out(slv_out0[C_S00_AXI_DATA_WIDTH - 1:0]),
+	    .slv_reg1_out(slv_out0[2*C_S00_AXI_DATA_WIDTH - 1:C_S00_AXI_DATA_WIDTH]),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
@@ -88,21 +76,36 @@
 	);
 
 	// Add user logic here
-	wire [16 * C_S00_AXI_DATA_WIDTH - 1:0] slv_out;
-	wire [16*SIZE - 1:0] w;
+	wire [2*C_S00_AXI_DATA_WIDTH - 1:0] slv_out0; // we use slv 0 and 1 as heater control
+	//wire [C_S00_AXI_DATA_WIDTH - 1:0] slv_out1 = 10000; //and slv 2 as counter load  
+	wire [block_size*num_blocks - 1:0] w;
+	reg [num_blocks - 1:0] block_enable = elements_on;
+	reg [C_S00_AXI_DATA_WIDTH - 1:0] cnt;
+	// heaters
     generate
     genvar i;
     genvar j;
-    for (i=0; i<SIZE; i=i+1) 
-    begin : SHE_16
-    for (j=0; j<16; j=j+1)
-    begin : SHE
-        (*DONT_TOUCH= "true"*) LUT6_SHE SHE(.control(slv_out[i]),
-                                            .in_clk(w[i+j]),
-                                            .feedback(w[i+j]));
-    end
+    for (i=0; i < num_blocks; i=i+1) 
+    begin : SHE_block
+        for (j=0; j < block_size; j=j+1)
+        begin : SHE
+           (*DONT_TOUCH= "true"*) LUT6_SHE SHE(.control(slv_out0[i] & block_enable[i]),
+                                               .in_clk(w[i*block_size+j]),
+                                                .feedback(w[i*block_size+j]));
+        end
     end
     endgenerate
+    
+    // counter
+    always @ (posedge s00_axi_aclk)
+    begin
+        if (cnt == 0) begin
+            block_enable <= {block_enable[0], block_enable[num_blocks - 1:1]};
+            cnt <= 1000;
+        end else begin
+            cnt <= cnt - 1;
+        end
+	end
 	// User logic ends
-
+    
 	endmodule

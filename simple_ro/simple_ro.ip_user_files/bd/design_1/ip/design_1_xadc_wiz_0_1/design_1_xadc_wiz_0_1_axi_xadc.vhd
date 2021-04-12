@@ -194,8 +194,8 @@ entity design_1_xadc_wiz_0_1_axi_xadc is
     channel_out     : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
     eoc_out         : out  STD_LOGIC;                        -- End of Conversion Signal
     eos_out         : out  STD_LOGIC;                        -- End of Sequence Signal
+    ot_out          : out STD_LOGIC;
     alarm_out       : out STD_LOGIC_VECTOR (7 downto 0);                         -- OR'ed output of all the Alarms
-    temp_out        : out std_logic_vector(11 downto 0);     
     vp_in           : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
     vn_in           : in  STD_LOGIC
   );   
@@ -269,8 +269,8 @@ component design_1_xadc_wiz_0_1_xadc_core_drp
      channel_out            : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
      eoc_out                : out  STD_LOGIC;                        -- End of Conversion Signal
      eos_out                : out  STD_LOGIC;                        -- End of Sequence Signal
+     ot_out                 : out STD_LOGIC;
      alarm_out              : out STD_LOGIC_VECTOR (7 downto 0);                   
-     temp_out               : out std_logic_vector(11 downto 0);     
      vp_in                  : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
      vn_in                  : in  STD_LOGIC
    );
@@ -719,8 +719,8 @@ AXI_XADC_CORE_I : design_1_xadc_wiz_0_1_xadc_core_drp
     channel_out                  => channel_out,
     eoc_out                      => eoc_out,
     eos_out                      => eos_out,
+    ot_out                       => ot_out,
     alarm_out                    => alarm_out,
-    temp_out                     => temp_out, 
     vp_in                        => vp_in,
     vn_in                        => vn_in
    );

@@ -17,20 +17,6 @@
 		// Users to add ports here
         output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg0_out,
         output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg1_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg2_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg3_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg4_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg5_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg6_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg7_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg8_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg9_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg10_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg11_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg12_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg13_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg14_out,
-        output wire [C_S_AXI_DATA_WIDTH-1 : 0] slv_reg15_out,
         // User ports ends
 		// Do not modify the ports beyond this line
 
@@ -547,20 +533,6 @@
 	// Add user logic here
     assign slv_reg0_out = slv_reg0;
     assign slv_reg1_out = slv_reg1;
-    assign slv_reg2_out = slv_reg2;
-    assign slv_reg3_out = slv_reg3;
-    assign slv_reg4_out = slv_reg4;
-    assign slv_reg5_out = slv_reg5;
-    assign slv_reg6_out = slv_reg6;
-    assign slv_reg7_out = slv_reg7;
-    assign slv_reg8_out = slv_reg8;
-    assign slv_reg9_out = slv_reg9;
-    assign slv_reg10_out = slv_reg10;
-    assign slv_reg11_out = slv_reg11;
-    assign slv_reg12_out = slv_reg12;
-    assign slv_reg13_out = slv_reg13;
-    assign slv_reg14_out = slv_reg14;
-    assign slv_reg15_out = slv_reg15;
 	// User logic ends
 
 	endmodule
