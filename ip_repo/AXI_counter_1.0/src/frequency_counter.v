@@ -20,24 +20,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module frequency_counter 
+module frequency_counter #
+    (
+    parameter num_counters = 4
+    )
 	(
-    input wire [4-1:0] in_signal,
+    input wire [num_counters-1:0] in_signal,
     input clk,
-    output [4*32 - 1:0] freq 
+    output [num_counters*32 - 1:0] freq 
     );
 
-reg [4*32 - 1 :0] freq_count;
+reg [num_counters*32 - 1 :0] freq_count;
 reg [31:0] clk_count;
 reg clk_done;
-reg [4*32 - 1:0] freq_out;
+reg [num_counters*32 - 1:0] freq_out;
 
 
 assign freq = freq_out;
 	
 generate
 genvar i;  
-for (i = 0; i < 4; i = i+1) begin
+for (i = 0; i < num_counters-1; i = i+1) begin
 
 always @(posedge in_signal[i]) begin
     freq_count[(i+1)*32 - 1:i*32] = freq_count[(i+1)*32 - 1:i*32] + 1;

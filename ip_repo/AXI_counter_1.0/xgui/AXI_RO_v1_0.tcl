@@ -8,26 +8,26 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
 
-  ipgui::add_param $IPINST -name "num_blocks"
-  ipgui::add_param $IPINST -name "block_size"
+  ipgui::add_param $IPINST -name "num_stages"
+  ipgui::add_param $IPINST -name "num_oscillators"
 
 }
 
-proc update_PARAM_VALUE.block_size { PARAM_VALUE.block_size } {
-	# Procedure called to update block_size when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.num_oscillators { PARAM_VALUE.num_oscillators } {
+	# Procedure called to update num_oscillators when any of the dependent parameters in the arguments change
 }
 
-proc validate_PARAM_VALUE.block_size { PARAM_VALUE.block_size } {
-	# Procedure called to validate block_size
+proc validate_PARAM_VALUE.num_oscillators { PARAM_VALUE.num_oscillators } {
+	# Procedure called to validate num_oscillators
 	return true
 }
 
-proc update_PARAM_VALUE.num_blocks { PARAM_VALUE.num_blocks } {
-	# Procedure called to update num_blocks when any of the dependent parameters in the arguments change
+proc update_PARAM_VALUE.num_stages { PARAM_VALUE.num_stages } {
+	# Procedure called to update num_stages when any of the dependent parameters in the arguments change
 }
 
-proc validate_PARAM_VALUE.num_blocks { PARAM_VALUE.num_blocks } {
-	# Procedure called to validate num_blocks
+proc validate_PARAM_VALUE.num_stages { PARAM_VALUE.num_stages } {
+	# Procedure called to validate num_stages
 	return true
 }
 
@@ -78,13 +78,13 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_A
 	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
 }
 
-proc update_MODELPARAM_VALUE.num_blocks { MODELPARAM_VALUE.num_blocks PARAM_VALUE.num_blocks } {
+proc update_MODELPARAM_VALUE.num_stages { MODELPARAM_VALUE.num_stages PARAM_VALUE.num_stages } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.num_blocks}] ${MODELPARAM_VALUE.num_blocks}
+	set_property value [get_property value ${PARAM_VALUE.num_stages}] ${MODELPARAM_VALUE.num_stages}
 }
 
-proc update_MODELPARAM_VALUE.block_size { MODELPARAM_VALUE.block_size PARAM_VALUE.block_size } {
+proc update_MODELPARAM_VALUE.num_oscillators { MODELPARAM_VALUE.num_oscillators PARAM_VALUE.num_oscillators } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.block_size}] ${MODELPARAM_VALUE.block_size}
+	set_property value [get_property value ${PARAM_VALUE.num_oscillators}] ${MODELPARAM_VALUE.num_oscillators}
 }
 

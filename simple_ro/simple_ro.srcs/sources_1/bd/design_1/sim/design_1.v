@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Sat Apr 10 11:10:18 2021
+//Date        : Tue Apr 13 23:14:59 2021
 //Host        : DESKTOP-AI964DL running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=17,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=14,da_axi4_s2mm_cnt=1,da_board_cnt=5,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=15,da_axi4_s2mm_cnt=1,da_board_cnt=5,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -147,10 +147,6 @@ module design_1
   wire Arm_Core_axi_periph_M02_AXI_WREADY;
   wire [3:0]Arm_Core_axi_periph_M02_AXI_WSTRB;
   wire Arm_Core_axi_periph_M02_AXI_WVALID;
-  wire LUT6_RO_0_outclk;
-  wire LUT6_RO_1_outclk;
-  wire LUT6_RO_2_outclk;
-  wire LUT6_RO_3_outclk;
   wire [0:0]System_Reset_peripheral_aresetn;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
@@ -175,7 +171,6 @@ module design_1
   wire processing_system7_0_FIXED_IO_PS_CLK;
   wire processing_system7_0_FIXED_IO_PS_PORB;
   wire processing_system7_0_FIXED_IO_PS_SRSTB;
-  wire [3:0]xlconcat_0_dout;
 
   design_1_AXI4_heater_0_0 AXI4_heater_0
        (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
@@ -199,9 +194,8 @@ module design_1
         .s00_axi_wready(Arm_Core_axi_periph_M01_AXI_WREADY),
         .s00_axi_wstrb(Arm_Core_axi_periph_M01_AXI_WSTRB),
         .s00_axi_wvalid(Arm_Core_axi_periph_M01_AXI_WVALID));
-  design_1_AXI_counter_0_2 AXI_counter_0
-       (.input_signal(xlconcat_0_dout),
-        .s00_axi_aclk(processing_system7_0_FCLK_CLK0),
+  design_1_AXI_RO_0_0 AXI_RO_0
+       (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(Arm_Core_axi_periph_M00_AXI_ARADDR[6:0]),
         .s00_axi_aresetn(System_Reset_peripheral_aresetn),
         .s00_axi_arprot(Arm_Core_axi_periph_M00_AXI_ARPROT),
@@ -390,14 +384,6 @@ module design_1
         .S00_AXI_wready(Arm_Core_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(Arm_Core_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(Arm_Core_M_AXI_GP0_WVALID));
-  design_1_LUT6_RO_0_0 LUT6_RO_0
-       (.outclk(LUT6_RO_0_outclk));
-  design_1_LUT6_RO_1_0 LUT6_RO_1
-       (.outclk(LUT6_RO_1_outclk));
-  design_1_LUT6_RO_2_0 LUT6_RO_2
-       (.outclk(LUT6_RO_2_outclk));
-  design_1_LUT6_RO_3_0 LUT6_RO_3
-       (.outclk(LUT6_RO_3_outclk));
   design_1_rst_ps7_0_100M_0 System_Reset
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -427,12 +413,6 @@ module design_1
         .s_axi_wvalid(Arm_Core_axi_periph_M02_AXI_WVALID),
         .vn_in(1'b0),
         .vp_in(1'b0));
-  design_1_xlconcat_0_0 xlconcat_0
-       (.In0(LUT6_RO_0_outclk),
-        .In1(LUT6_RO_1_outclk),
-        .In2(LUT6_RO_2_outclk),
-        .In3(LUT6_RO_3_outclk),
-        .dout(xlconcat_0_dout));
 endmodule
 
 module design_1_Arm_Core_axi_periph_0

@@ -28,7 +28,7 @@ module LUT6_SHE(
 // LUT6: 6-input Look-Up Table with general output
 // 7 Series
 // Xilinx HDL Language Template, version 2018.3
-//(* LOCK_PINS="I0:A6, I1:A1, I2:A2, I3:A3, I4:A4, I5:A5" *) // Arash: this is important to make the inverters consistent
+(* LOCK_PINS="I0:A6, I1:A1, I2:A2, I3:A3, I4:A4, I5:A5" *) // Arash: this is important to make the inverters consistent
 LUT6 #(
  .INIT(64'h0000000000000002) // Arash: This should make an inverter anded with the contril signal
 ) LUT6_inst (

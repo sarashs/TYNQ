@@ -11,11 +11,13 @@
 
 		// Parameters of Axi Slave Bus Interface S00_AXI
 		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
-		parameter integer C_S00_AXI_ADDR_WIDTH	= 7
+		parameter integer C_S00_AXI_ADDR_WIDTH	= 7,
+		parameter num_stages = 5,
+		parameter num_oscillators = 4
 	)
 	(
 		// Users to add ports here
-        input wire [4 - 1 : 0] input_signal,
+        //input wire [4 - 1 : 0] input_signal,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -73,9 +75,28 @@
 	);
 
 	// Add user logic here
-	wire [4*32-1:0] frequency_counter_wire;
+	//wire [32*32-1:0] frequency_counter_wire;
 	
-    frequency_counter frequency_counter_instance(
+	
+    (*DONT_TOUCH= "true"*) wire [num_oscillators*(num_stages+1)-1 : 0] w;
+    (*DONT_TOUCH= "true"*) wire [num_oscillators - 1 : 0] input_signal;
+    generate
+    genvar j;
+    genvar i;
+    for (j=0; j<num_oscillators; j=j+1)
+    begin : RO
+        for (i=0; i<num_stages; i=i+1) 
+        begin : notGate
+           (*DONT_TOUCH= "true"*) LUT6_NOT Inverter(.in_sig(w[j*num_stages+i+j]), .out_sig(w[j*num_stages+j+i+1]));
+        end
+        (*DONT_TOUCH= "true"*) assign w[j*num_stages+j] = w[(j+1)*num_stages+j]; //nand Control(w[0], w[SIZE-1], rst);
+        assign input_signal[j] = w[j*num_stages+j];
+    end
+    endgenerate
+	
+    frequency_counter #
+    ( .num_counters(num_oscillators)) frequency_counter_instance
+    (
     .in_signal(input_signal),
     .clk(s00_axi_aclk),
     .freq(frequency_counter_wire)

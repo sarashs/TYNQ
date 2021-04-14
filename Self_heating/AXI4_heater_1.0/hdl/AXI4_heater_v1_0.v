@@ -4,9 +4,9 @@
 	module AXI4_heater_v1_0 #
 	(
 		// Users to add parameters here
-        parameter num_blocks = 5,
-        parameter block_size = 4,
-        parameter elements_on = 2,
+        parameter num_blocks = 4,
+        parameter block_size = 2,
+        //parameter elements_on = 2,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -76,11 +76,9 @@
 	);
 
 	// Add user logic here
-	wire [2*C_S00_AXI_DATA_WIDTH - 1:0] slv_out0; // we use slv 0 and 1 as heater control
+	wire [2*C_S00_AXI_DATA_WIDTH - 1:0] slv_out0; // we use slv 0 and 1 as heater control they are concatenated to each other to make this signal
 	//wire [C_S00_AXI_DATA_WIDTH - 1:0] slv_out1 = 10000; //and slv 2 as counter load  
 	wire [block_size*num_blocks - 1:0] w;
-	reg [num_blocks - 1:0] block_enable = elements_on;
-	reg [C_S00_AXI_DATA_WIDTH - 1:0] cnt;
 	// heaters
     generate
     genvar i;
@@ -89,23 +87,12 @@
     begin : SHE_block
         for (j=0; j < block_size; j=j+1)
         begin : SHE
-           (*DONT_TOUCH= "true"*) LUT6_SHE SHE(.control(slv_out0[i] & block_enable[i]),
+           (*DONT_TOUCH= "true"*) LUT6_SHE SHE(.control(slv_out0[i]),
                                                .in_clk(w[i*block_size+j]),
                                                 .feedback(w[i*block_size+j]));
         end
     end
     endgenerate
-    
-    // counter
-    always @ (posedge s00_axi_aclk)
-    begin
-        if (cnt == 0) begin
-            block_enable <= {block_enable[0], block_enable[num_blocks - 1:1]};
-            cnt <= 1000;
-        end else begin
-            cnt <= cnt - 1;
-        end
-	end
 	// User logic ends
     
 	endmodule

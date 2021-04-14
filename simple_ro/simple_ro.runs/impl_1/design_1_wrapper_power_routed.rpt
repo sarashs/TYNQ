@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Sat Apr 10 13:05:59 2021
+| Date             : Tue Apr 13 18:40:02 2021
 | Host             : DESKTOP-AI964DL running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 1.406        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.272        |
+| Dynamic (W)              | 1.271        |
 | Device Static (W)        | 0.134        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 68.8         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.008 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     7257 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     3654 |     53200 |            6.87 |
+| Slice Logic             |     0.002 |     7189 |       --- |             --- |
+|   LUT as Logic          |     0.001 |     3614 |     53200 |            6.79 |
 |   Register              |    <0.001 |     2715 |    106400 |            2.55 |
 |   CARRY4                |    <0.001 |       66 |     13300 |            0.50 |
 |   BUFG                  |    <0.001 |        5 |        32 |           15.63 |
 |   F7/F8 Muxes           |    <0.001 |      224 |     53200 |            0.42 |
 |   LUT as Shift Register |    <0.001 |       62 |     17400 |            0.36 |
-|   Others                |     0.000 |      248 |       --- |             --- |
-| Signals                 |     0.004 |     6204 |       --- |             --- |
+|   Others                |     0.000 |      220 |       --- |             --- |
+| Signals                 |     0.004 |     6162 |       --- |             --- |
 | XADC                    |     0.002 |        1 |       --- |             --- |
 | PS7                     |     1.256 |        1 |       --- |             --- |
 | Static Power            |     0.134 |          |           |                 |
@@ -151,8 +151,8 @@ Table of Contents
 +-------------------------+-----------+
 | Name                    | Power (W) |
 +-------------------------+-----------+
-| design_1_wrapper        |     1.272 |
-|   design_1_i            |     1.272 |
+| design_1_wrapper        |     1.271 |
+|   design_1_i            |     1.271 |
 |     AXI4_heater_0       |     0.002 |
 |       inst              |     0.002 |
 |     AXI_counter_0       |     0.005 |

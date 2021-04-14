@@ -21,13 +21,8 @@
         "m01_couplers": {},
         "m02_couplers": {}
       },
-      "LUT6_RO_0": "",
-      "LUT6_RO_1": "",
-      "LUT6_RO_2": "",
-      "LUT6_RO_3": "",
       "Temp_sensor": "",
-      "xlconcat_0": "",
-      "AXI_counter_0": "",
+      "AXI_RO_0": "",
       "AXI4_heater_0": ""
     },
     "interface_ports": {
@@ -1918,16 +1913,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2116,24 +2111,6 @@
               "s00_couplers/S_AXI"
             ]
           },
-          "m00_couplers_to_Arm_Core_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
-          "m01_couplers_to_Arm_Core_axi_periph": {
-            "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
@@ -2146,16 +2123,34 @@
               "m00_couplers/S_AXI"
             ]
           },
-          "m02_couplers_to_Arm_Core_axi_periph": {
+          "m01_couplers_to_Arm_Core_axi_periph": {
             "interface_ports": [
-              "M02_AXI",
-              "m02_couplers/M_AXI"
+              "M01_AXI",
+              "m01_couplers/M_AXI"
             ]
           },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_Arm_Core_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "m02_couplers_to_Arm_Core_axi_periph": {
+            "interface_ports": [
+              "M02_AXI",
+              "m02_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           }
         },
@@ -2187,82 +2182,6 @@
               "m01_couplers/S_ARESETN",
               "m02_couplers/S_ARESETN"
             ]
-          }
-        }
-      },
-      "LUT6_RO_0": {
-        "vlnv": "xilinx.com:module_ref:LUT6_RO:1.0",
-        "xci_name": "design_1_LUT6_RO_0_0",
-        "parameters": {
-          "SIZE": {
-            "value": "5"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "LUT6_RO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "outclk": {
-            "direction": "O"
-          }
-        }
-      },
-      "LUT6_RO_1": {
-        "vlnv": "xilinx.com:module_ref:LUT6_RO:1.0",
-        "xci_name": "design_1_LUT6_RO_1_0",
-        "parameters": {
-          "SIZE": {
-            "value": "5"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "LUT6_RO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "outclk": {
-            "direction": "O"
-          }
-        }
-      },
-      "LUT6_RO_2": {
-        "vlnv": "xilinx.com:module_ref:LUT6_RO:1.0",
-        "xci_name": "design_1_LUT6_RO_2_0",
-        "parameters": {
-          "SIZE": {
-            "value": "5"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "LUT6_RO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "outclk": {
-            "direction": "O"
-          }
-        }
-      },
-      "LUT6_RO_3": {
-        "vlnv": "xilinx.com:module_ref:LUT6_RO:1.0",
-        "xci_name": "design_1_LUT6_RO_3_0",
-        "parameters": {
-          "SIZE": {
-            "value": "5"
-          }
-        },
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "LUT6_RO",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "outclk": {
-            "direction": "O"
           }
         }
       },
@@ -2308,28 +2227,16 @@
           }
         }
       },
-      "xlconcat_0": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "design_1_xlconcat_0_0",
-        "parameters": {
-          "NUM_PORTS": {
-            "value": "4"
-          }
-        }
-      },
-      "AXI_counter_0": {
-        "vlnv": "xilinx.com:user:AXI_counter:1.0",
-        "xci_name": "design_1_AXI_counter_0_2"
+      "AXI_RO_0": {
+        "vlnv": "xilinx.com:user:AXI_RO:1.0",
+        "xci_name": "design_1_AXI_RO_0_0"
       },
       "AXI4_heater_0": {
         "vlnv": "xilinx.com:user:AXI4_heater:1.0",
         "xci_name": "design_1_AXI4_heater_0_0",
         "parameters": {
           "block_size": {
-            "value": "600"
-          },
-          "elements_on": {
-            "value": "15"
+            "value": "592"
           },
           "num_blocks": {
             "value": "4"
@@ -2338,6 +2245,30 @@
       }
     },
     "interface_nets": {
+      "Arm_Core_axi_periph_M02_AXI": {
+        "interface_ports": [
+          "Arm_Core_axi_periph/M02_AXI",
+          "Temp_sensor/s_axi_lite"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "Arm_Core/DDR"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "Arm_Core/FIXED_IO"
+        ]
+      },
+      "Arm_Core_axi_periph_M01_AXI": {
+        "interface_ports": [
+          "Arm_Core_axi_periph/M01_AXI",
+          "AXI4_heater_0/S00_AXI"
+        ]
+      },
       "Arm_Core_M_AXI_GP0": {
         "interface_ports": [
           "Arm_Core/M_AXI_GP0",
@@ -2347,31 +2278,7 @@
       "Arm_Core_axi_periph_M00_AXI": {
         "interface_ports": [
           "Arm_Core_axi_periph/M00_AXI",
-          "AXI_counter_0/S00_AXI"
-        ]
-      },
-      "Arm_Core_axi_periph_M01_AXI": {
-        "interface_ports": [
-          "Arm_Core_axi_periph/M01_AXI",
-          "AXI4_heater_0/S00_AXI"
-        ]
-      },
-      "Arm_Core_axi_periph_M02_AXI": {
-        "interface_ports": [
-          "Arm_Core_axi_periph/M02_AXI",
-          "Temp_sensor/s_axi_lite"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "Arm_Core/FIXED_IO"
-        ]
-      },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "Arm_Core/DDR"
+          "AXI_RO_0/S00_AXI"
         ]
       }
     },
@@ -2387,7 +2294,7 @@
           "Arm_Core_axi_periph/M01_ACLK",
           "Arm_Core_axi_periph/M02_ACLK",
           "Temp_sensor/s_axi_aclk",
-          "AXI_counter_0/s00_axi_aclk",
+          "AXI_RO_0/s00_axi_aclk",
           "AXI4_heater_0/s00_axi_aclk"
         ]
       },
@@ -2406,38 +2313,8 @@
           "Arm_Core_axi_periph/M01_ARESETN",
           "Arm_Core_axi_periph/M02_ARESETN",
           "Temp_sensor/s_axi_aresetn",
-          "AXI_counter_0/s00_axi_aresetn",
+          "AXI_RO_0/s00_axi_aresetn",
           "AXI4_heater_0/s00_axi_aresetn"
-        ]
-      },
-      "LUT6_RO_0_outclk": {
-        "ports": [
-          "LUT6_RO_0/outclk",
-          "xlconcat_0/In0"
-        ]
-      },
-      "LUT6_RO_1_outclk": {
-        "ports": [
-          "LUT6_RO_1/outclk",
-          "xlconcat_0/In1"
-        ]
-      },
-      "LUT6_RO_2_outclk": {
-        "ports": [
-          "LUT6_RO_2/outclk",
-          "xlconcat_0/In2"
-        ]
-      },
-      "LUT6_RO_3_outclk": {
-        "ports": [
-          "LUT6_RO_3/outclk",
-          "xlconcat_0/In3"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "AXI_counter_0/input_signal"
         ]
       }
     },
@@ -2453,8 +2330,8 @@
                 "offset": "0x43C10000",
                 "range": "64K"
               },
-              "SEG_AXI_counter_0_S00_AXI_reg": {
-                "address_block": "/AXI_counter_0/S00_AXI/S00_AXI_reg",
+              "SEG_AXI_RO_0_S00_AXI_reg": {
+                "address_block": "/AXI_RO_0/S00_AXI/S00_AXI_reg",
                 "offset": "0x43C00000",
                 "range": "64K"
               },

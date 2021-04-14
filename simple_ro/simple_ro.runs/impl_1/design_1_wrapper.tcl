@@ -114,6 +114,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
 
 OPTRACE "Implementation" START { ROLLUP_1 }
@@ -124,13 +125,8 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 3
   set_param ced.repoPaths C:/Users/User/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/ced_store/Vivado_example_project
-OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7z020clg400-1
-  set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-OPTRACE "create in-memory project" END { }
-OPTRACE "set parameters" START { }
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper.dcp
   set_property webtalk.parent_dir C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/wt [current_project]
   set_property parent.project_path C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.xpr [current_project]
   set_property ip_repo_paths {
@@ -142,28 +138,9 @@ OPTRACE "set parameters" START { }
   set_property ip_output_repo C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-OPTRACE "set parameters" END { }
-OPTRACE "add files" START { }
-  add_files -quiet C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/synth_1/design_1_wrapper.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd
-  set_param project.isImplRun false
-OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/constrs_location/new/design_1_wrapper.xdc
-OPTRACE "read constraints: implementation" END { }
-OPTRACE "add files" END { }
-OPTRACE "link_design" START { }
-  set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7z020clg400-1
-OPTRACE "link_design" END { }
-  set_param project.isImplRun false
-OPTRACE "gray box cells" START { }
-OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }
-  write_hwdef -force -file design_1_wrapper.hwdef
 OPTRACE "init_design_write_hwdef" END { }
   close_msg_db -file init_design.pb
 } RESULT]

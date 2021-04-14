@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:AXI4_heater:1.0
-// IP Revision: 13
+// IP Revision: 16
 
 `timescale 1ns/1ps
 
@@ -128,8 +128,7 @@ input wire s00_axi_rready;
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(6),  // Width of S_AXI address bus
     .num_blocks(4),
-    .block_size(600),
-    .elements_on(15)
+    .block_size(592)
   ) inst (
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),

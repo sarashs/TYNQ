@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8a55f254</spirit:value>
+            <spirit:value>3d3f96da</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>8a55f254</spirit:value>
+            <spirit:value>3d3f96da</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -296,7 +296,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>43672412</spirit:value>
+            <spirit:value>7da7ffcc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -642,28 +642,16 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>num_blocks</spirit:name>
         <spirit:displayName>Num Blocks</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.num_blocks">5</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.num_blocks">4</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>block_size</spirit:name>
         <spirit:displayName>Block Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.block_size">4</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="integer">
-        <spirit:name>elements_on</spirit:name>
-        <spirit:displayName>Elements On</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.elements_on">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.block_size">2</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:choices>
-    <spirit:choice>
-      <spirit:name>choice_list_6418d1be</spirit:name>
-      <spirit:enumeration>1</spirit:enumeration>
-      <spirit:enumeration>3</spirit:enumeration>
-      <spirit:enumeration>7</spirit:enumeration>
-      <spirit:enumeration>15</spirit:enumeration>
-    </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_list_6fc15197</spirit:name>
       <spirit:enumeration>32</spirit:enumeration>
@@ -693,7 +681,7 @@
       <spirit:file>
         <spirit:name>hdl/AXI4_heater_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_1ab77e58</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7508a1f2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -716,7 +704,7 @@
       <spirit:file>
         <spirit:name>xgui/AXI4_heater_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_43672412</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7da7ffcc</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -728,7 +716,7 @@
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>Supports up to 8192 heating elements</spirit:description>
+  <spirit:description>Supports up to 64 blocks, the blocks can be turned on through slave registers 0 and 1</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
@@ -787,17 +775,12 @@
     <spirit:parameter>
       <spirit:name>num_blocks</spirit:name>
       <spirit:displayName>Num Blocks</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.num_blocks" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">5</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.num_blocks" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>block_size</spirit:name>
       <spirit:displayName>Block Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.block_size" spirit:minimum="1" spirit:maximum="1600" spirit:rangeType="long">4</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>elements_on</spirit:name>
-      <spirit:displayName>Elements On</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.elements_on" spirit:choiceRef="choice_list_6418d1be">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.block_size" spirit:minimum="1" spirit:maximum="1600" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -808,9 +791,9 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>AXI4_heater_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>13</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-04-10T05:17:30Z</xilinx:coreCreationDateTime>
+      <xilinx:displayName>AXI4_heater_v1</xilinx:displayName>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-04-14T06:14:34Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@64a86385_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@55324268_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
@@ -993,16 +976,61 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@c88f27a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@599328ad_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@443f8b1d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57d27a15_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@194632db_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46827f92_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20d82007_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53608e96_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e3a160f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e813f8c_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c608335_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f49df4c_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fc1f6cf_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7114bf8b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@274c520e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@613e2185_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f91c1d6_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44967a32_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d990a4_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a06680a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d561c9a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bf93cf4_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42ecea19_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2426aa90_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@353e6aab_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e944773_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@102befda_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c52e422_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58297f07_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@794f1627_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e51cdc_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@500ac62e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77c86e9d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f64375e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@394b96b8_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6168104f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ff39584_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e105efa_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20da86a4_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c582e33_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e71dbd_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9b41e2b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65c2292a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70bc89ec_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63d58c6_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10ad87b0_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49722eb0_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d41f9f6_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="addc58e4"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="22195cfd"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="da2de411"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="3bd71674"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="55de3334"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="b18d6bb5"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="1e9727c5"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c49e77c4"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

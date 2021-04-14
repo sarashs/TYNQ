@@ -1,39 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Apr 10 11:10:19 2021" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr 13 23:14:59 2021" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="www.digilentinc.com:pynq-z1:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_MIO">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="Arm_Core_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="Arm_Core_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="Arm_Core_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="Arm_Core_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="Arm_Core_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="Arm_Core" PORT="PS_PORB"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="Arm_Core_DDR_CAS_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="Arm_Core" PORT="DDR_CAS_n"/>
@@ -109,6 +79,36 @@
         <CONNECTION INSTANCE="Arm_Core" PORT="DDR_DQS"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="Arm_Core_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="Arm_Core_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="Arm_Core_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="Arm_Core_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="Arm_Core_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Arm_Core" PORT="PS_PORB"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -159,7 +159,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="13" FULLNAME="/AXI4_heater_0" HWVERSION="1.0" INSTANCE="AXI4_heater_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_heater" VLNV="xilinx.com:user:AXI4_heater:1.0">
+    <MODULE COREREVISION="16" FULLNAME="/AXI4_heater_0" HWVERSION="1.0" INSTANCE="AXI4_heater_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI4_heater" VLNV="xilinx.com:user:AXI4_heater:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -168,8 +168,7 @@
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="6"/>
         <PARAMETER NAME="num_blocks" VALUE="4"/>
-        <PARAMETER NAME="block_size" VALUE="600"/>
-        <PARAMETER NAME="elements_on" VALUE="15"/>
+        <PARAMETER NAME="block_size" VALUE="592"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_AXI4_heater_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C10000"/>
@@ -341,7 +340,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/AXI_counter_0" HWVERSION="1.0" INSTANCE="AXI_counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI_counter" VLNV="xilinx.com:user:AXI_counter:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/AXI_RO_0" HWVERSION="1.0" INSTANCE="AXI_RO_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AXI_RO" VLNV="xilinx.com:user:AXI_RO:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -349,17 +348,14 @@
       <PARAMETERS>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="7"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI_counter_0_2"/>
+        <PARAMETER NAME="num_stages" VALUE="5"/>
+        <PARAMETER NAME="num_oscillators" VALUE="4"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_AXI_RO_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C00000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C0FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="3" NAME="input_signal" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT CLKFREQUENCY="1e+08" DIR="I" NAME="s00_axi_aclk" SIGIS="clk" SIGNAME="Arm_Core_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core" PORT="FCLK_CLK0"/>
@@ -370,97 +366,97 @@
             <CONNECTION INSTANCE="System_Reset" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="6" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awaddr">
+        <PORT DIR="I" LEFT="6" NAME="s00_axi_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s00_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awprot">
+        <PORT DIR="I" LEFT="2" NAME="s00_axi_awprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_awvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awvalid">
+        <PORT DIR="I" NAME="s00_axi_awvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_awready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awready">
+        <PORT DIR="O" NAME="s00_axi_awready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s00_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wdata">
+        <PORT DIR="I" LEFT="31" NAME="s00_axi_wdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s00_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wstrb">
+        <PORT DIR="I" LEFT="3" NAME="s00_axi_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_wvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wvalid">
+        <PORT DIR="I" NAME="s00_axi_wvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_wready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wready">
+        <PORT DIR="O" NAME="s00_axi_wready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s00_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bresp">
+        <PORT DIR="O" LEFT="1" NAME="s00_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_bvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bvalid">
+        <PORT DIR="O" NAME="s00_axi_bvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_bready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bready">
+        <PORT DIR="I" NAME="s00_axi_bready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="6" NAME="s00_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_araddr">
+        <PORT DIR="I" LEFT="6" NAME="s00_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="s00_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arprot">
+        <PORT DIR="I" LEFT="2" NAME="s00_axi_arprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arprot">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_arvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arvalid">
+        <PORT DIR="I" NAME="s00_axi_arvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_arready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arready">
+        <PORT DIR="O" NAME="s00_axi_arready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s00_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rdata">
+        <PORT DIR="O" LEFT="31" NAME="s00_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s00_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rresp">
+        <PORT DIR="O" LEFT="1" NAME="s00_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axi_rvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rvalid">
+        <PORT DIR="O" NAME="s00_axi_rvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s00_axi_rready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rready">
+        <PORT DIR="I" NAME="s00_axi_rready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
@@ -1675,7 +1671,7 @@
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_aclk"/>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="AXI4_heater_0" PORT="s00_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
@@ -1917,12 +1913,12 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
       <MEMORYMAP>
-        <MEMRANGE ADDRESSBLOCK="S00_AXI_reg" BASENAME="C_S00_AXI_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S00_AXI_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="AXI_counter_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S00_AXI"/>
+        <MEMRANGE ADDRESSBLOCK="S00_AXI_reg" BASENAME="C_S00_AXI_BASEADDR" BASEVALUE="0x43C00000" HIGHNAME="C_S00_AXI_HIGHADDR" HIGHVALUE="0x43C0FFFF" INSTANCE="AXI_RO_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S00_AXI"/>
         <MEMRANGE ADDRESSBLOCK="S00_AXI_reg" BASENAME="C_S00_AXI_BASEADDR" BASEVALUE="0x43C10000" HIGHNAME="C_S00_AXI_HIGHADDR" HIGHVALUE="0x43C1FFFF" INSTANCE="AXI4_heater_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S00_AXI"/>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_BASEADDR" BASEVALUE="0x43C20000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x43C2FFFF" INSTANCE="Temp_sensor" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_lite"/>
       </MEMORYMAP>
       <PERIPHERALS>
-        <PERIPHERAL INSTANCE="AXI_counter_0"/>
+        <PERIPHERAL INSTANCE="AXI_RO_0"/>
         <PERIPHERAL INSTANCE="AXI4_heater_0"/>
         <PERIPHERAL INSTANCE="Temp_sensor"/>
       </PERIPHERALS>
@@ -2490,91 +2486,99 @@
             <CONNECTION INSTANCE="Arm_Core" PORT="M_AXI_GP0_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awvalid">
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awready">
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wdata">
+        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wstrb">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wvalid">
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wready">
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bresp">
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bvalid">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bready">
+        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_araddr">
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_arvalid">
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_arready">
+        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rdata">
+        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rresp">
+        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rvalid">
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rready">
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="AXI_RO_0_s00_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI4_heater_0_s00_axi_awaddr">
@@ -2672,99 +2676,91 @@
             <CONNECTION INSTANCE="AXI4_heater_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_awaddr"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awprot">
+        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_awprot"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awvalid">
+        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_awvalid"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_awready">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_awready"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wdata">
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_wdata"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wstrb">
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_wstrb"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wvalid">
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_wvalid"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_wready">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_wready"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bresp">
+        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_bresp"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bvalid">
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_bvalid"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_bready">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_bready"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_araddr">
+        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_araddr"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arprot">
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_arprot"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arvalid">
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_arvalid"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_AXI_arready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_arready">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_arready"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rdata">
+        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_rdata"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rresp">
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="Arm_Core_axi_periph_M02_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M00_AXI_rvalid" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_rready" SIGIS="undef" SIGNAME="AXI_counter_0_s00_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_rready"/>
+            <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2882,70 +2878,6 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/LUT6_RO_0" HWVERSION="1.0" INSTANCE="LUT6_RO_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="LUT6_RO" VLNV="xilinx.com:module_ref:LUT6_RO:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="SIZE" VALUE="5"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_LUT6_RO_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" NAME="outclk" SIGIS="undef" SIGNAME="LUT6_RO_0_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/LUT6_RO_1" HWVERSION="1.0" INSTANCE="LUT6_RO_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="LUT6_RO" VLNV="xilinx.com:module_ref:LUT6_RO:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="SIZE" VALUE="5"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_LUT6_RO_1_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" NAME="outclk" SIGIS="undef" SIGNAME="LUT6_RO_1_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/LUT6_RO_2" HWVERSION="1.0" INSTANCE="LUT6_RO_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="LUT6_RO" VLNV="xilinx.com:module_ref:LUT6_RO:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="SIZE" VALUE="5"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_LUT6_RO_2_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" NAME="outclk" SIGIS="undef" SIGNAME="LUT6_RO_2_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In2"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/LUT6_RO_3" HWVERSION="1.0" INSTANCE="LUT6_RO_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="LUT6_RO" VLNV="xilinx.com:module_ref:LUT6_RO:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="SIZE" VALUE="5"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_LUT6_RO_3_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" NAME="outclk" SIGIS="undef" SIGNAME="LUT6_RO_3_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In3"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="13" FULLNAME="/System_Reset" HWVERSION="5.0" INSTANCE="System_Reset" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
@@ -2991,7 +2923,7 @@
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="Arm_Core_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="Temp_sensor" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="s00_axi_aresetn"/>
+            <CONNECTION INSTANCE="AXI_RO_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="AXI4_heater_0" PORT="s00_axi_aresetn"/>
           </CONNECTIONS>
         </PORT>
@@ -3412,75 +3344,6 @@
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
-    </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/xlconcat_0" HWVERSION="2.1" INSTANCE="xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN1_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="dout_width" VALUE="4"/>
-        <PARAMETER NAME="NUM_PORTS" VALUE="4"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconcat_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="0" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="LUT6_RO_0_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LUT6_RO_0" PORT="outclk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="LUT6_RO_1_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LUT6_RO_1" PORT="outclk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In2" RIGHT="0" SIGIS="undef" SIGNAME="LUT6_RO_2_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LUT6_RO_2" PORT="outclk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="In3" RIGHT="0" SIGIS="undef" SIGNAME="LUT6_RO_3_outclk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="LUT6_RO_3" PORT="outclk"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="AXI_counter_0" PORT="input_signal"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
     </MODULE>
   </MODULES>
 

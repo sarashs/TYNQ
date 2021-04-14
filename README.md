@@ -1,7 +1,8 @@
 # Simple Ring Oscillator for PYNQ-Z1
 ## TODO:
-- Change SHE basic element to work with only one input (I5, I3, I2 etc) and observe the effect
--add another set of heaters with a shape of empy centered squared and measure the center temperature, maybe it reaches 125 (ROs in the center of a SHE squares)
+-update the constrained creator file such that the block control is destributed evenly.
+-write the control scheme for temperature control.
+-Implement the CRO sensors.
 ## How to use the simple ring Oscillator circuit
 
 Just run the simple_ro.tcl and it should work. If not then just make the project from scratch using the given sources, constraints and the AXI frequency counter IP. The block diagram should look like this:
@@ -60,6 +61,13 @@ One thing that I noticed early on is that different instantiations of the RO cir
 ![alt text](https://github.com/sarashs/ring_oscillator_zynq/blob/main/images/Inverters.JPG?raw=true)
 
 also pblock constraints can be used to limit the spread of the inverters (say to a column).
+
+Based on my experiments the above assumption is valid and the ROs are the fastest when the inverter input is connected to A6 (I5).
+
+## Controlable Ring Oscillator (CRO)
+
+We also implemented CROs in line with: https://ieeexplore.ieee.org/document/6927390
+CROs allow us to perform BTI and HCI separation experiments.
 
 ### Python scripts
 

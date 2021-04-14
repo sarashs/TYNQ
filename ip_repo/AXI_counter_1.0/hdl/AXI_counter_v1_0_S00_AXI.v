@@ -15,7 +15,7 @@
 	)
 	(
 		// Users to add ports here
-        input wire [4*32-1:0] frequency_counter_out,
+        input wire [32*32-1:0] frequency_counter_out,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -654,34 +654,34 @@
 	        5'h01   : reg_data_out <= frequency_counter_out[63:32];//slv_reg1;
 	        5'h02   : reg_data_out <= frequency_counter_out[95:64];//slv_reg2;
 	        5'h03   : reg_data_out <= frequency_counter_out[127:96];//slv_reg3;
-	        5'h04   : reg_data_out <= slv_reg4;
-	        5'h05   : reg_data_out <= slv_reg5;
-	        5'h06   : reg_data_out <= slv_reg6;
-	        5'h07   : reg_data_out <= slv_reg7;
-	        5'h08   : reg_data_out <= slv_reg8;
-	        5'h09   : reg_data_out <= slv_reg9;
-	        5'h0A   : reg_data_out <= slv_reg10;
-	        5'h0B   : reg_data_out <= slv_reg11;
-	        5'h0C   : reg_data_out <= slv_reg12;
-	        5'h0D   : reg_data_out <= slv_reg13;
-	        5'h0E   : reg_data_out <= slv_reg14;
-	        5'h0F   : reg_data_out <= slv_reg15;
-	        5'h10   : reg_data_out <= slv_reg16;
-	        5'h11   : reg_data_out <= slv_reg17;
-	        5'h12   : reg_data_out <= slv_reg18;
-	        5'h13   : reg_data_out <= slv_reg19;
-	        5'h14   : reg_data_out <= slv_reg20;
-	        5'h15   : reg_data_out <= slv_reg21;
-	        5'h16   : reg_data_out <= slv_reg22;
-	        5'h17   : reg_data_out <= slv_reg23;
-	        5'h18   : reg_data_out <= slv_reg24;
-	        5'h19   : reg_data_out <= slv_reg25;
-	        5'h1A   : reg_data_out <= slv_reg26;
-	        5'h1B   : reg_data_out <= slv_reg27;
-	        5'h1C   : reg_data_out <= slv_reg28;
-	        5'h1D   : reg_data_out <= slv_reg29;
-	        5'h1E   : reg_data_out <= slv_reg30;
-	        5'h1F   : reg_data_out <= slv_reg31;
+	        5'h04   : reg_data_out <= frequency_counter_out[159:128];
+	        5'h05   : reg_data_out <= frequency_counter_out[191:160];
+	        5'h06   : reg_data_out <= frequency_counter_out[223:192];
+	        5'h07   : reg_data_out <= frequency_counter_out[255:224];
+	        5'h08   : reg_data_out <= frequency_counter_out[287:256];
+	        5'h09   : reg_data_out <= frequency_counter_out[319:288];
+	        5'h0A   : reg_data_out <= frequency_counter_out[351:320];
+	        5'h0B   : reg_data_out <= frequency_counter_out[383:352];
+	        5'h0C   : reg_data_out <= frequency_counter_out[415:384];
+	        5'h0D   : reg_data_out <= frequency_counter_out[447:416];
+	        5'h0E   : reg_data_out <= frequency_counter_out[479:448];
+	        5'h0F   : reg_data_out <= frequency_counter_out[511:480];
+	        5'h10   : reg_data_out <= frequency_counter_out[543:512];
+	        5'h11   : reg_data_out <= frequency_counter_out[575:544];
+	        5'h12   : reg_data_out <= frequency_counter_out[607:576];
+	        5'h13   : reg_data_out <= frequency_counter_out[639:608];
+	        5'h14   : reg_data_out <= frequency_counter_out[671:640];
+	        5'h15   : reg_data_out <= frequency_counter_out[703:672];
+	        5'h16   : reg_data_out <= frequency_counter_out[735:704];
+	        5'h17   : reg_data_out <= frequency_counter_out[767:736];
+	        5'h18   : reg_data_out <= frequency_counter_out[799:768];
+	        5'h19   : reg_data_out <= frequency_counter_out[831:800];
+	        5'h1A   : reg_data_out <= frequency_counter_out[863:832];
+	        5'h1B   : reg_data_out <= frequency_counter_out[895:864];
+	        5'h1C   : reg_data_out <= frequency_counter_out[927:896];
+	        5'h1D   : reg_data_out <= frequency_counter_out[959:928];
+	        5'h1E   : reg_data_out <= frequency_counter_out[991:960];
+	        5'h1F   : reg_data_out <= frequency_counter_out[1023:992];
 	        default : reg_data_out <= 0;
 	      endcase
 	end
