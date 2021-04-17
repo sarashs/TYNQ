@@ -29,6 +29,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../AXI_CRO/AXI_CRO_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../AXI_stream_heater/AXI_Stream_heater_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../Self_heating/AXI4_heater_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo"/>
@@ -49,13 +50,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="49"/>
-    <Option Name="WTModelSimExportSim" Val="49"/>
-    <Option Name="WTQuestaExportSim" Val="49"/>
-    <Option Name="WTIesExportSim" Val="49"/>
-    <Option Name="WTVcsExportSim" Val="49"/>
-    <Option Name="WTRivieraExportSim" Val="49"/>
-    <Option Name="WTActivehdlExportSim" Val="49"/>
+    <Option Name="WTXSimExportSim" Val="53"/>
+    <Option Name="WTModelSimExportSim" Val="53"/>
+    <Option Name="WTQuestaExportSim" Val="53"/>
+    <Option Name="WTIesExportSim" Val="53"/>
+    <Option Name="WTVcsExportSim" Val="53"/>
+    <Option Name="WTRivieraExportSim" Val="53"/>
+    <Option Name="WTActivehdlExportSim" Val="53"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -80,30 +81,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/LUT6_NOT.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/LUT6_RO.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/simple_ro.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

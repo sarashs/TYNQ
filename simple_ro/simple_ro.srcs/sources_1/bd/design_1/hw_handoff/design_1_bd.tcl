@@ -163,16 +163,6 @@ proc create_root_design { parentCell } {
 
   # Create ports
 
-  # Create instance: AXI4_heater_0, and set properties
-  set AXI4_heater_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI4_heater:1.0 AXI4_heater_0 ]
-  set_property -dict [ list \
-   CONFIG.block_size {592} \
-   CONFIG.num_blocks {4} \
- ] $AXI4_heater_0
-
-  # Create instance: AXI_RO_0, and set properties
-  set AXI_RO_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI_RO:1.0 AXI_RO_0 ]
-
   # Create instance: Arm_Core, and set properties
   set Arm_Core [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 Arm_Core ]
   set_property -dict [ list \
@@ -949,8 +939,21 @@ proc create_root_design { parentCell } {
   # Create instance: Arm_Core_axi_periph, and set properties
   set Arm_Core_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 Arm_Core_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {3} \
+   CONFIG.NUM_MI {4} \
  ] $Arm_Core_axi_periph
+
+  # Create instance: BTI, and set properties
+  set BTI [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI_3stage_BTI:1.0 BTI ]
+  set_property -dict [ list \
+   CONFIG.num_oscillators {31} \
+ ] $BTI
+
+  # Create instance: RO, and set properties
+  set RO [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI_RO:1.0 RO ]
+  set_property -dict [ list \
+   CONFIG.num_oscillators {31} \
+   CONFIG.num_stages {3} \
+ ] $RO
 
   # Create instance: System_Reset, and set properties
   set System_Reset [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 System_Reset ]
@@ -972,22 +975,31 @@ proc create_root_design { parentCell } {
    CONFIG.VCCINT_ALARM {false} \
  ] $Temp_sensor
 
+  # Create instance: heater, and set properties
+  set heater [ create_bd_cell -type ip -vlnv xilinx.com:user:AXI4_heater:1.0 heater ]
+  set_property -dict [ list \
+   CONFIG.block_size {36} \
+   CONFIG.num_blocks {64} \
+ ] $heater
+
   # Create interface connections
   connect_bd_intf_net -intf_net Arm_Core_M_AXI_GP0 [get_bd_intf_pins Arm_Core/M_AXI_GP0] [get_bd_intf_pins Arm_Core_axi_periph/S00_AXI]
-  connect_bd_intf_net -intf_net Arm_Core_axi_periph_M00_AXI [get_bd_intf_pins AXI_RO_0/S00_AXI] [get_bd_intf_pins Arm_Core_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net Arm_Core_axi_periph_M01_AXI [get_bd_intf_pins AXI4_heater_0/S00_AXI] [get_bd_intf_pins Arm_Core_axi_periph/M01_AXI]
+  connect_bd_intf_net -intf_net Arm_Core_axi_periph_M00_AXI [get_bd_intf_pins Arm_Core_axi_periph/M00_AXI] [get_bd_intf_pins RO/S00_AXI]
+  connect_bd_intf_net -intf_net Arm_Core_axi_periph_M01_AXI [get_bd_intf_pins Arm_Core_axi_periph/M01_AXI] [get_bd_intf_pins heater/S00_AXI]
   connect_bd_intf_net -intf_net Arm_Core_axi_periph_M02_AXI [get_bd_intf_pins Arm_Core_axi_periph/M02_AXI] [get_bd_intf_pins Temp_sensor/s_axi_lite]
+  connect_bd_intf_net -intf_net Arm_Core_axi_periph_M03_AXI [get_bd_intf_pins Arm_Core_axi_periph/M03_AXI] [get_bd_intf_pins BTI/S00_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins Arm_Core/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins Arm_Core/FIXED_IO]
 
   # Create port connections
-  connect_bd_net -net System_Reset_peripheral_aresetn [get_bd_pins AXI4_heater_0/s00_axi_aresetn] [get_bd_pins AXI_RO_0/s00_axi_aresetn] [get_bd_pins Arm_Core_axi_periph/ARESETN] [get_bd_pins Arm_Core_axi_periph/M00_ARESETN] [get_bd_pins Arm_Core_axi_periph/M01_ARESETN] [get_bd_pins Arm_Core_axi_periph/M02_ARESETN] [get_bd_pins Arm_Core_axi_periph/S00_ARESETN] [get_bd_pins System_Reset/peripheral_aresetn] [get_bd_pins Temp_sensor/s_axi_aresetn]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins AXI4_heater_0/s00_axi_aclk] [get_bd_pins AXI_RO_0/s00_axi_aclk] [get_bd_pins Arm_Core/FCLK_CLK0] [get_bd_pins Arm_Core/M_AXI_GP0_ACLK] [get_bd_pins Arm_Core_axi_periph/ACLK] [get_bd_pins Arm_Core_axi_periph/M00_ACLK] [get_bd_pins Arm_Core_axi_periph/M01_ACLK] [get_bd_pins Arm_Core_axi_periph/M02_ACLK] [get_bd_pins Arm_Core_axi_periph/S00_ACLK] [get_bd_pins System_Reset/slowest_sync_clk] [get_bd_pins Temp_sensor/s_axi_aclk]
+  connect_bd_net -net System_Reset_peripheral_aresetn [get_bd_pins Arm_Core_axi_periph/ARESETN] [get_bd_pins Arm_Core_axi_periph/M00_ARESETN] [get_bd_pins Arm_Core_axi_periph/M01_ARESETN] [get_bd_pins Arm_Core_axi_periph/M02_ARESETN] [get_bd_pins Arm_Core_axi_periph/M03_ARESETN] [get_bd_pins Arm_Core_axi_periph/S00_ARESETN] [get_bd_pins BTI/s00_axi_aresetn] [get_bd_pins RO/s00_axi_aresetn] [get_bd_pins System_Reset/peripheral_aresetn] [get_bd_pins Temp_sensor/s_axi_aresetn] [get_bd_pins heater/s00_axi_aresetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins Arm_Core/FCLK_CLK0] [get_bd_pins Arm_Core/M_AXI_GP0_ACLK] [get_bd_pins Arm_Core_axi_periph/ACLK] [get_bd_pins Arm_Core_axi_periph/M00_ACLK] [get_bd_pins Arm_Core_axi_periph/M01_ACLK] [get_bd_pins Arm_Core_axi_periph/M02_ACLK] [get_bd_pins Arm_Core_axi_periph/M03_ACLK] [get_bd_pins Arm_Core_axi_periph/S00_ACLK] [get_bd_pins BTI/s00_axi_aclk] [get_bd_pins RO/s00_axi_aclk] [get_bd_pins System_Reset/slowest_sync_clk] [get_bd_pins Temp_sensor/s_axi_aclk] [get_bd_pins heater/s00_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins Arm_Core/FCLK_RESET0_N] [get_bd_pins System_Reset/ext_reset_in]
 
   # Create address segments
-  assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs AXI4_heater_0/S00_AXI/S00_AXI_reg] -force
-  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs AXI_RO_0/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs heater/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C30000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs BTI/S00_AXI/S00_AXI_reg] -force
+  assign_bd_address -offset 0x43C00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs RO/S00_AXI/S00_AXI_reg] -force
   assign_bd_address -offset 0x43C20000 -range 0x00010000 -target_address_space [get_bd_addr_spaces Arm_Core/Data] [get_bd_addr_segs Temp_sensor/s_axi_lite/Reg] -force
 
 

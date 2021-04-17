@@ -72,6 +72,9 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param ced.repoPaths C:/Users/User/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/ced_store/Vivado_example_project
+set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
@@ -87,6 +90,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
 set_property ip_repo_paths {
+  c:/Users/User/ring_oscillator_zynq/AXI_CRO/AXI_CRO_1.0
   c:/Users/User/ring_oscillator_zynq/AXI_stream_heater/AXI_Stream_heater_1.0
   c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
   c:/Users/User/ring_oscillator_zynq/ip_repo
@@ -96,11 +100,7 @@ set_property ip_output_repo c:/Users/User/ring_oscillator_zynq/simple_ro/simple_
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {
-  C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/new/LUT6_NOT.v
-  C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/new/LUT6_RO.v
-  C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-}
+read_verilog -library xil_defaultlib C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc]

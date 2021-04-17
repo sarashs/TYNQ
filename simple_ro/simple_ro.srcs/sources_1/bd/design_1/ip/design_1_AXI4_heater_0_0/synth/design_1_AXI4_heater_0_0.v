@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "AXI4_heater_v1_0,Vivado 2020.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI4_heater,x_ipVersion=1.0,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=VERILOG,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,num_blocks=4,block_size=592}" *)
+(* CORE_GENERATION_INFO = "design_1_AXI4_heater_0_0,AXI4_heater_v1_0,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=AXI4_heater,x_ipVersion=1.0,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=VERILOG,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=6,num_blocks=64,block_size=36}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_AXI4_heater_0_0 (
   s00_axi_aclk,
@@ -128,8 +128,8 @@ input wire s00_axi_rready;
   AXI4_heater_v1_0 #(
     .C_S00_AXI_DATA_WIDTH(32),  // Width of S_AXI data bus
     .C_S00_AXI_ADDR_WIDTH(6),  // Width of S_AXI address bus
-    .num_blocks(4),
-    .block_size(592)
+    .num_blocks(64),
+    .block_size(36)
   ) inst (
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
