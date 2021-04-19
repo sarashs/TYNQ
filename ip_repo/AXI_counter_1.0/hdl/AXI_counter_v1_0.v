@@ -13,7 +13,7 @@
 		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
 		parameter integer C_S00_AXI_ADDR_WIDTH	= 7,
 		parameter num_stages = 5,
-		parameter num_oscillators = 4
+		parameter num_oscillators = 31
 	)
 	(
 		// Users to add ports here
@@ -75,7 +75,7 @@
 	);
 
 	// Add user logic here
-	//wire [32*32-1:0] frequency_counter_wire;
+	(*DONT_TOUCH= "true"*) wire [32*32-1:0] frequency_counter_wire;
 	
 	
     (*DONT_TOUCH= "true"*) wire [num_oscillators*(num_stages+1)-1 : 0] w;

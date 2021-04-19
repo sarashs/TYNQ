@@ -82,15 +82,16 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1.v" \
-  "../../../bd/design_1/ipshared/d920/hdl/AXI_counter_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/a350/hdl/AXI_counter_v1_0_S00_AXI.v" \
   "../../../../simple_ro.srcs/sources_1/bd/AppData/Roaming/Xilinx/Vivado/-force/LUT6_NOT.v" \
-  "../../../bd/design_1/ipshared/d920/src/frequency_counter.v" \
-  "../../../bd/design_1/ipshared/d920/hdl/AXI_counter_v1_0.v" \
+  "../../../bd/design_1/ipshared/a350/src/frequency_counter.v" \
+  "../../../bd/design_1/ipshared/a350/hdl/AXI_counter_v1_0.v" \
   "../../../bd/design_1/ip/design_1_AXI_RO_0_0/sim/design_1_AXI_RO_0_0.v" \
-  "../../../bd/design_1/ipshared/5696/hdl/AXI_CRO_v1_0_S00_AXI.v" \
+  "../../../bd/design_1/ipshared/0124/hdl/AXI_CRO_v1_0_S00_AXI.v" \
   "../../../bd/design_1/ipshared/LUT6_NAND.v" \
   "../../../bd/design_1/ipshared/LUT6_NOT.v" \
-  "../../../bd/design_1/ipshared/5696/hdl/AXI_CRO_v1_0.v" \
+  "../../../bd/design_1/ipshared/frequency_counter.v" \
+  "../../../bd/design_1/ipshared/0124/hdl/AXI_CRO_v1_0.v" \
   "../../../bd/design_1/ip/design_1_AXI_3stage_CRO_0_0/sim/design_1_AXI_3stage_CRO_0_0.v" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_21 \

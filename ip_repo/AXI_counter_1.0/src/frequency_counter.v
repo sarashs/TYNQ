@@ -36,14 +36,14 @@ reg clk_done;
 reg [num_counters*32 - 1:0] freq_out;
 
 
-assign freq = freq_out;
+(*DONT_TOUCH= "true"*) assign freq = freq_out;
 	
 generate
 genvar i;  
-for (i = 0; i < num_counters-1; i = i+1) begin
+for (i = 0; i < num_counters; i = i+1) begin
 
 always @(posedge in_signal[i]) begin
-    freq_count[(i+1)*32 - 1:i*32] = freq_count[(i+1)*32 - 1:i*32] + 1;
+    (*DONT_TOUCH= "true"*) freq_count[(i+1)*32 - 1:i*32] = freq_count[(i+1)*32 - 1:i*32] + 1;
     if (clk_done == 1) begin
         freq_count[(i+1)*32 - 1:i*32] = 0; 
     end

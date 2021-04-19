@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Fri Apr 16 01:07:44 2021
-# Process ID: 11724
+# Start of session at: Mon Apr 19 14:01:52 2021
+# Process ID: 13272
 # Current directory: C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1
 # Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 # Log file: C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper.vdi
@@ -20,8 +20,8 @@ Command: link_design -top design_1_wrapper -part xc7z020clg400-1
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Device 21-403] Loading part xc7z020clg400-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1062.336 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 147 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.199 . Memory (MB): peak = 1062.238 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 899 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2020.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -36,13 +36,13 @@ Finished Parsing XDC File [c:/Users/User/ring_oscillator_zynq/simple_ro/simple_r
 Parsing XDC File [C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/constrs_location/new/design_1_wrapper.xdc]
 Finished Parsing XDC File [C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/constrs_location/new/design_1_wrapper.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1062.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1062.238 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1062.336 ; gain = 0.000
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1062.238 ; gain = 0.000
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
@@ -53,60 +53,60 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1062.336 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1062.238 ; gain = 0.000
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Cache Timing Information Task | Checksum: 15a823687
+Ending Cache Timing Information Task | Checksum: f228ca4e
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1482.742 ; gain = 420.406
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1494.031 ; gain = 431.793
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 1c0cfb766
+Phase 1 Retarget | Checksum: 1fa7f3e57
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.441 . Memory (MB): peak = 1695.988 ; gain = 0.000
-INFO: [Opt 31-389] Phase Retarget created 78 cells and removed 111 cells
-INFO: [Opt 31-1021] In phase Retarget, 62 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.575 . Memory (MB): peak = 1700.719 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 50 cells and removed 83 cells
+INFO: [Opt 31-1021] In phase Retarget, 94 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 14cf7440f
+Phase 2 Constant propagation | Checksum: 11854f3c1
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.506 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.663 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 2 cells and removed 4 cells
-INFO: [Opt 31-1021] In phase Constant propagation, 124 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Constant propagation, 156 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 1e74e203c
+Phase 3 Sweep | Checksum: 1924aa8d6
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.995 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 181 cells
-INFO: [Opt 31-1021] In phase Sweep, 248 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Sweep, 2264 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 1e74e203c
+Phase 4 BUFG optimization | Checksum: 1924aa8d6
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
-INFO: [Opt 31-1021] In phase BUFG optimization, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase BUFG optimization, 62 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 1e74e203c
+Phase 5 Shift Register Optimization | Checksum: 1924aa8d6
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 1e74e203c
+Phase 6 Post Processing Netlist | Checksum: 1924aa8d6
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
-INFO: [Opt 31-1021] In phase Post Processing Netlist, 62 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 94 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 Opt_design Change Summary
 =========================
 
@@ -114,49 +114,49 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |              78  |             111  |                                             62  |
-|  Constant propagation         |               2  |               4  |                                            124  |
-|  Sweep                        |               0  |             181  |                                            248  |
-|  BUFG optimization            |               0  |               0  |                                              2  |
+|  Retarget                     |              50  |              83  |                                             94  |
+|  Constant propagation         |               2  |               4  |                                            156  |
+|  Sweep                        |               0  |             181  |                                           2264  |
+|  BUFG optimization            |               0  |               0  |                                             62  |
 |  Shift Register Optimization  |               0  |               0  |                                              0  |
-|  Post Processing Netlist      |               0  |               0  |                                             62  |
+|  Post Processing Netlist      |               0  |               0  |                                             94  |
 -------------------------------------------------------------------------------------------------------------------------
 
 
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 11a206bbe
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1700.719 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: e58e66e7
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1700.719 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
-Ending Power Optimization Task | Checksum: 11a206bbe
+Ending Power Optimization Task | Checksum: e58e66e7
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1700.719 ; gain = 0.000
 
 Starting Final Cleanup Task
-Ending Final Cleanup Task | Checksum: 11a206bbe
+Ending Final Cleanup Task | Checksum: e58e66e7
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1700.719 ; gain = 0.000
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Ending Netlist Obfuscation Task | Checksum: 11a206bbe
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1700.719 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: e58e66e7
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 35 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1695.988 ; gain = 633.652
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1700.719 ; gain = 638.480
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.260 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.242 . Memory (MB): peak = 1700.719 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 Command: report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
@@ -282,48 +282,416 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 3b736022
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1700.719 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: aa4ba625
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1700.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1700.719 ; gain = 0.000
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__29' is driving clock pin of 1 registers. This could lead to large hold time violations. First few involved registers are:
-	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0] {FDRE}
-WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__29' is driving clock pin of 1 registers. This could lead to large hold time violations. First few involved registers are:
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[963] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[964] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[965] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[967] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[961] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__10' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[612] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[609] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[613] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[610] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__12' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[546] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[553] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[554] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[555] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__11' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[587] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[598] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[603] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[607] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[597] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__0' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[930] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[931] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[936] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[937] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__15' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[455] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[468] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[478] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[470] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__17' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[403] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[405] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[391] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__18' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[356] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[358] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[359] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[360] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__16' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[420] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[426] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[421] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[433] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__19' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[323] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[321] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[322] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[330] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__1' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[912] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[903] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[911] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[913] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[914] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__2' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[867] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[869] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[871] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[870] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[868] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__21' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[278] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[258] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[260] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[281] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[257] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__22' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[239] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[240] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[229] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[228] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__14' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[481] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[482] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[483] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[484] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__20' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[291] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[292] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[290] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[289] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__23' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[193] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[194] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[195] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[196] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__24' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[179] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[185] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[189] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[164] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[170] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__13' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[513] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[521] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[523] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[528] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__28' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[34] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[39] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[41] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[40] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[47] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__9' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[655] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[664] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[665] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[642] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[657] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__25' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[154] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[156] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[140] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[143] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__7' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[707] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[708] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[706] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[709] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__5' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[770] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[769] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__26' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[110] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[106] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[117] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[115] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__27' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[93] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[82] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[70] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__4' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[805] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[811] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[806] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[807] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[821] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__6' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[737] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[738] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[741] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[745] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[746] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__8' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[692] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[673] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[679] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[695] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[684] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__29' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[7] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[27] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[25] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[9] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[2] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/BTI/inst/w_inst__3' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[833] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[834] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[835] {FDRE}
+	design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[852] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__0' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[929] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[930] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[931] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[932] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__10' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[613] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[609] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[611] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[615] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__12' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[545] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[569] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[570] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[552] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__13' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[515] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[517] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[529] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[530] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[531] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__14' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[501] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[482] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[495] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[488] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[499] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__16' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[418] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[417] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[419] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[420] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__1' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[912] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[914] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[923] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[922] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__15' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[455] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[453] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[454] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[456] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[457] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__18' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[368] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[358] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[359] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[370] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[361] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__19' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[321] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[330] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[332] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[325] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[328] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__2' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[873] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[889] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[890] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[888] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[876] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__20' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[312] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[315] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[313] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[311] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[314] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__21' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[279] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[275] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[267] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[282] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[283] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__11' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[578] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[581] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[583] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[577] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__17' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[385] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[403] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[413] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[410] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[975] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[980] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[976] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[967] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[982] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__28' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[34] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[39] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[37] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[40] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__7' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[719] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[721] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[720] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[722] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__29' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[10] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[11] {FDRE}
 	design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[14] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[12] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__24' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[166] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[167] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[168] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[169] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[170] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__27' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[68] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[73] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[72] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[66] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__26' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[98] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[116] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[126] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[102] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[117] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__3' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[838] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[841] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[842] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[836] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__5' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[775] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[790] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[783] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[797] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[792] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__8' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[673] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[675] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[678] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[674] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__22' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[246] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[250] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[242] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[253] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__6' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[748] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[746] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[745] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[737] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__9' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[648] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[641] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[652] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[656] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[658] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__23' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[204] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[203] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[193] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[195] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[197] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__25' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[129] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[131] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[133] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[139] {FDRE}
+WARNING: [Place 30-568] A LUT 'design_1_i/RO/inst/w_inst__4' is driving clock pin of 32 registers. This could lead to large hold time violations. First few involved registers are:
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[805] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[803] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[801] {FDRE}
+	design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[806] {FDRE}
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 17f5c8a3c
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: df1c73bc
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1700.719 ; gain = 0.000
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 268d79e62
+Phase 1.3 Build Placer Netlist Model | Checksum: 21d464189
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 268d79e62
+Phase 1.4 Constrain Clocks/Macros | Checksum: 21d464189
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 268d79e62
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1706.762 ; gain = 6.043
+Phase 1 Placer Initialization | Checksum: 21d464189
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 2779800c2
+Phase 2.1 Floorplanning | Checksum: 1bab66d6f
 
-Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 2.2 Global Placement Core
 
 Phase 2.2.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 84 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 82 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-775] End 1 Pass. Optimized 26 nets or cells. Created 0 new cell, deleted 26 existing cells and moved 0 existing cell
+INFO: [Physopt 32-775] End 1 Pass. Optimized 39 nets or cells. Created 0 new cell, deleted 39 existing cells and moved 0 existing cell
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -334,7 +702,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for HD net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1706.762 ; gain = 0.000
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -343,7 +711,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |             26  |                    26  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |             39  |                    39  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -351,59 +719,59 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |             26  |                    26  |           0  |           3  |  00:00:00  |
+|  Total                                            |            0  |             39  |                    39  |           0  |           3  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.2.1 Physical Synthesis In Placer | Checksum: 20d2b67c1
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 2217db4b9
 
-Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Phase 2.2 Global Placement Core | Checksum: 1eb579c90
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1706.762 ; gain = 6.043
+Phase 2.2 Global Placement Core | Checksum: 1fd5fc333
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Phase 2 Global Placement | Checksum: 1eb579c90
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1706.762 ; gain = 6.043
+Phase 2 Global Placement | Checksum: 1fd5fc333
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 1bebdf669
+Phase 3.1 Commit Multi Column Macros | Checksum: 20c8b8b61
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 118d1817d
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1f4016acd
 
-Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: f3edaca2
+Phase 3.3 Area Swap Optimization | Checksum: 23e0b863e
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: dbdd140a
+Phase 3.4 Pipeline Register Optimization | Checksum: 28295427e
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 16d610a34
+Phase 3.5 Small Shape Detail Placement | Checksum: 1cadfaac3
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 128929ccd
+Phase 3.6 Re-assign LUT pins | Checksum: 1d66e4607
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: f0422565
+Phase 3.7 Pipeline Register Optimization | Checksum: 199d509c7
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1695.988 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: f0422565
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1706.762 ; gain = 6.043
+Phase 3 Detail Placement | Checksum: 199d509c7
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1695.988 ; gain = 0.000
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1706.762 ; gain = 6.043
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -411,7 +779,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 164a389f8
+Post Placement Optimization Initialization | Checksum: 15c6f512e
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -419,76 +787,76 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=2.198 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 1c44a1395
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=2.400 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: f59de82d
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1726.363 ; gain = 0.000
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.196 . Memory (MB): peak = 1745.141 ; gain = 0.000
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: 17b7dafad
+Ending Physical Synthesis Task | Checksum: 106f77026
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.169 . Memory (MB): peak = 1726.363 ; gain = 0.000
-Phase 4.1.1.1 BUFG Insertion | Checksum: 164a389f8
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.226 . Memory (MB): peak = 1745.141 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 15c6f512e
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
-INFO: [Place 30-746] Post Placement Timing Summary WNS=2.198. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: a8c66331
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
+INFO: [Place 30-746] Post Placement Timing Summary WNS=2.400. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1a1aafff2
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
-Phase 4.1 Post Commit Optimization | Checksum: a8c66331
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
+Phase 4.1 Post Commit Optimization | Checksum: 1a1aafff2
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: a8c66331
+Phase 4.2 Post Placement Cleanup | Checksum: 1a1aafff2
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: a8c66331
+Phase 4.3 Placer Reporting | Checksum: 1a1aafff2
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1726.363 ; gain = 0.000
-Phase 4.4 Final Placement Cleanup | Checksum: 1612038f1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1745.141 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 2770f08c7
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1612038f1
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 2770f08c7
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
-Ending Placer Task | Checksum: 1552a79d1
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
+Ending Placer Task | Checksum: 1a118b839
 
-Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1726.363 ; gain = 30.375
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1745.141 ; gain = 44.422
 INFO: [Common 17-83] Releasing license: Implementation
-70 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+70 Infos, 162 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1726.363 ; gain = 30.375
+place_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 1745.141 ; gain = 44.422
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.430 . Memory (MB): peak = 1726.398 ; gain = 0.035
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.811 . Memory (MB): peak = 1745.141 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper_placed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_io -file design_1_wrapper_io_placed.rpt
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1726.398 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1745.141 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb
 INFO: [runtcl-4] Executing : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1726.398 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1745.141 ; gain = 0.000
 Command: phys_opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
 INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
 INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
 INFO: [Common 17-83] Releasing license: Implementation
-79 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+79 Infos, 162 Warnings, 0 Critical Warnings and 0 Errors encountered.
 phys_opt_design completed successfully
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.427 . Memory (MB): peak = 1758.738 ; gain = 17.914
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.760 . Memory (MB): peak = 1776.266 ; gain = 17.750
 INFO: [Common 17-1381] The checkpoint 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper_physopt.dcp' has been generated.
 Command: route_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
@@ -602,120 +970,120 @@ INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more in
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 7f0681ff ConstDB: 0 ShapeSum: d623f7d2 RouteDB: 0
+Checksum: PlaceDB: a21429c3 ConstDB: 0 ShapeSum: ff048e76 RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: 10105edc6
+Phase 1 Build RT Design | Checksum: 11a156001
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 1911.234 ; gain = 141.484
-Post Restoration Checksum: NetGraph: ad11af88 NumContArr: 53f43e3e Constraints: 0 Timing: 0
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 1912.582 ; gain = 118.254
+Post Restoration Checksum: NetGraph: 71721832 NumContArr: a8a347cf Constraints: 0 Timing: 0
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: 10105edc6
+Phase 2.1 Create Timer | Checksum: 11a156001
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 1911.234 ; gain = 141.484
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 1912.582 ; gain = 118.254
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: 10105edc6
+Phase 2.2 Fix Topology Constraints | Checksum: 11a156001
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 1917.465 ; gain = 147.715
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 1918.840 ; gain = 124.512
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: 10105edc6
+Phase 2.3 Pre Route Cleanup | Checksum: 11a156001
 
-Time (s): cpu = 00:00:33 ; elapsed = 00:00:23 . Memory (MB): peak = 1917.465 ; gain = 147.715
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:25 . Memory (MB): peak = 1918.840 ; gain = 124.512
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 127ae7636
+Phase 2.4 Update Timing | Checksum: 1d69e3bc1
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 1943.031 ; gain = 173.281
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.306  | TNS=0.000  | WHS=-0.190 | THS=-19.545|
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:27 . Memory (MB): peak = 1945.773 ; gain = 151.445
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.508  | TNS=0.000  | WHS=-0.153 | THS=-18.809|
 
-Phase 2 Router Initialization | Checksum: 120330621
+Phase 2 Router Initialization | Checksum: fb2eb8cf
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:28 . Memory (MB): peak = 1945.773 ; gain = 151.445
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.00362431 %
-  Global Horizontal Routing Utilization  = 0.00473293 %
+  Global Vertical Routing Utilization    = 0.409133 %
+  Global Horizontal Routing Utilization  = 0.233857 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 5191
+  Number of Failed Nets               = 9853
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 5189
-  Number of Partially Routed Nets     = 2
-  Number of Node Overlaps             = 0
+  Number of Unrouted Nets             = 9852
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 89
 
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: db29c8b1
+Phase 3 Initial Routing | Checksum: 1c56ff98b
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:29 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 308
- Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 490
+ Number of Nodes with overlaps = 5
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.760  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.426  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 24453e25d
+Phase 4.1 Global Iteration 0 | Checksum: 162bc770a
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 4.2 Global Iteration 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.760  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.426  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 20422c520
+Phase 4.2 Global Iteration 1 | Checksum: 1e4d27a74
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
-Phase 4 Rip-up And Reroute | Checksum: 20422c520
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 1946.031 ; gain = 151.703
+Phase 4 Rip-up And Reroute | Checksum: 1e4d27a74
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 20422c520
+Phase 5.1 Delay CleanUp | Checksum: 1e4d27a74
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 20422c520
+Phase 5.2 Clock Skew Optimization | Checksum: 1e4d27a74
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
-Phase 5 Delay and Skew Optimization | Checksum: 20422c520
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
+Phase 5 Delay and Skew Optimization | Checksum: 1e4d27a74
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:27 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 135812ecf
+Phase 6.1.1 Update Timing | Checksum: 17eec6840
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.774  | TNS=0.000  | WHS=0.014  | THS=0.000  |
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.440  | TNS=0.000  | WHS=0.032  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 14e5ece4f
+Phase 6.1 Hold Fix Iter | Checksum: 20566640c
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
-Phase 6 Post Hold Fix | Checksum: 14e5ece4f
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
+Phase 6 Post Hold Fix | Checksum: 20566640c
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 1.07435 %
-  Global Horizontal Routing Utilization  = 1.26876 %
+  Global Vertical Routing Utilization    = 1.95651 %
+  Global Horizontal Routing Utilization  = 2.20495 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -725,44 +1093,44 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1d03535b4
+Phase 7 Route finalize | Checksum: 1abf58507
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1d03535b4
+Phase 8 Verifying routed nets | Checksum: 1abf58507
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:32 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 2487af67a
+Phase 9 Depositing Routes | Checksum: 171f1ddca
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:33 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=1.774  | TNS=0.000  | WHS=0.014  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=2.440  | TNS=0.000  | WHS=0.032  | THS=0.000  |
 
 INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 2487af67a
+Phase 10 Post Router Timing | Checksum: 171f1ddca
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:33 . Memory (MB): peak = 1946.031 ; gain = 151.703
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:40 ; elapsed = 00:00:28 . Memory (MB): peak = 1943.031 ; gain = 173.281
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:33 . Memory (MB): peak = 1946.031 ; gain = 151.703
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-95 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+95 Infos, 262 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 1943.031 ; gain = 184.293
+route_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:35 . Memory (MB): peak = 1946.031 ; gain = 169.766
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.547 . Memory (MB): peak = 1947.723 ; gain = 4.691
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1953.160 ; gain = 7.129
 INFO: [Common 17-1381] The checkpoint 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/design_1_wrapper_routed.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 Command: report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
@@ -782,7 +1150,7 @@ INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-107 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+107 Infos, 262 Warnings, 0 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
 INFO: [runtcl-4] Executing : report_route_status -file design_1_wrapper_route_status.rpt -pb design_1_wrapper_route_status.pb
 INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation 
@@ -903,12 +1271,192 @@ WARNING: [DRC LUTLP-2] Combinatorial Loop Allowed: 1 LUT cells form a combinator
 WARNING: [DRC LUTLP-2] Combinatorial Loop Allowed: 1 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/heater/inst/SHE_block[11].SHE[34].SHE/LUT6_inst.
 INFO: [Common 17-14] Message 'DRC LUTLP-2' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[0] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__29/O, cell design_1_i/BTI/inst/w_inst__29. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[10] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__19/O, cell design_1_i/BTI/inst/w_inst__19. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[11] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__18/O, cell design_1_i/BTI/inst/w_inst__18. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[12] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__17/O, cell design_1_i/BTI/inst/w_inst__17. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[13] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__16/O, cell design_1_i/BTI/inst/w_inst__16. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[14] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__15/O, cell design_1_i/BTI/inst/w_inst__15. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[15] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__14/O, cell design_1_i/BTI/inst/w_inst__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[16] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__13/O, cell design_1_i/BTI/inst/w_inst__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[17] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__12/O, cell design_1_i/BTI/inst/w_inst__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[18] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__11/O, cell design_1_i/BTI/inst/w_inst__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[19] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__10/O, cell design_1_i/BTI/inst/w_inst__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[1] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__28/O, cell design_1_i/BTI/inst/w_inst__28. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[20] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__9/O, cell design_1_i/BTI/inst/w_inst__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[21] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__8/O, cell design_1_i/BTI/inst/w_inst__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[22] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__7/O, cell design_1_i/BTI/inst/w_inst__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[23] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__6/O, cell design_1_i/BTI/inst/w_inst__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[24] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__5/O, cell design_1_i/BTI/inst/w_inst__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[25] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__4/O, cell design_1_i/BTI/inst/w_inst__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[26] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__3/O, cell design_1_i/BTI/inst/w_inst__3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[27] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__2/O, cell design_1_i/BTI/inst/w_inst__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[28] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__1/O, cell design_1_i/BTI/inst/w_inst__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[29] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__0/O, cell design_1_i/BTI/inst/w_inst__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[2] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__27/O, cell design_1_i/BTI/inst/w_inst__27. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[30] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst/O, cell design_1_i/BTI/inst/w_inst. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[3] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__26/O, cell design_1_i/BTI/inst/w_inst__26. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[4] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__25/O, cell design_1_i/BTI/inst/w_inst__25. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[5] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__24/O, cell design_1_i/BTI/inst/w_inst__24. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[6] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__23/O, cell design_1_i/BTI/inst/w_inst__23. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[7] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__22/O, cell design_1_i/BTI/inst/w_inst__22. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[8] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__21/O, cell design_1_i/BTI/inst/w_inst__21. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/BTI/inst/input_signal[9] is a gated clock net sourced by a combinational pin design_1_i/BTI/inst/w_inst__20/O, cell design_1_i/BTI/inst/w_inst__20. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[0] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__29/O, cell design_1_i/RO/inst/w_inst__29. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__29 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0]
-WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__29 is driving clock pin of 1 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0]
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2370 Warnings
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[10] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__19/O, cell design_1_i/RO/inst/w_inst__19. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[11] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__18/O, cell design_1_i/RO/inst/w_inst__18. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[12] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__17/O, cell design_1_i/RO/inst/w_inst__17. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[13] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__16/O, cell design_1_i/RO/inst/w_inst__16. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[14] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__15/O, cell design_1_i/RO/inst/w_inst__15. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[15] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__14/O, cell design_1_i/RO/inst/w_inst__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[16] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__13/O, cell design_1_i/RO/inst/w_inst__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[17] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__12/O, cell design_1_i/RO/inst/w_inst__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[18] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__11/O, cell design_1_i/RO/inst/w_inst__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[19] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__10/O, cell design_1_i/RO/inst/w_inst__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[1] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__28/O, cell design_1_i/RO/inst/w_inst__28. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[20] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__9/O, cell design_1_i/RO/inst/w_inst__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[21] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__8/O, cell design_1_i/RO/inst/w_inst__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[22] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__7/O, cell design_1_i/RO/inst/w_inst__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[23] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__6/O, cell design_1_i/RO/inst/w_inst__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[24] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__5/O, cell design_1_i/RO/inst/w_inst__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[25] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__4/O, cell design_1_i/RO/inst/w_inst__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[26] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__3/O, cell design_1_i/RO/inst/w_inst__3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[27] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__2/O, cell design_1_i/RO/inst/w_inst__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[28] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__1/O, cell design_1_i/RO/inst/w_inst__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[29] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__0/O, cell design_1_i/RO/inst/w_inst__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[2] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__27/O, cell design_1_i/RO/inst/w_inst__27. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[30] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst/O, cell design_1_i/RO/inst/w_inst. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[3] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__26/O, cell design_1_i/RO/inst/w_inst__26. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[4] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__25/O, cell design_1_i/RO/inst/w_inst__25. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[5] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__24/O, cell design_1_i/RO/inst/w_inst__24. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[6] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__23/O, cell design_1_i/RO/inst/w_inst__23. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[7] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__22/O, cell design_1_i/RO/inst/w_inst__22. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[8] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__21/O, cell design_1_i/RO/inst/w_inst__21. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net design_1_i/RO/inst/input_signal[9] is a gated clock net sourced by a combinational pin design_1_i/RO/inst/w_inst__20/O, cell design_1_i/RO/inst/w_inst__20. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[960], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[961], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[962], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[963], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[964], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[965], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[966], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[967], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[968], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[969], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[970], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[971], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[972], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[973], design_1_i/BTI/inst/frequency_counter_instance/genblk1[30].freq_count_reg[974]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__0 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[929], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[930], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[931], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[932], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[933], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[934], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[935], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[936], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[937], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[938], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[939], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[940], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941], design_1_i/BTI/inst/frequency_counter_instance/genblk1[29].freq_count_reg[942]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__1 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[896], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[897], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[898], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[899], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[900], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[901], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[902], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[903], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[904], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[905], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[906], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[907], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[908], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909], design_1_i/BTI/inst/frequency_counter_instance/genblk1[28].freq_count_reg[910]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__10 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[609], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[610], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[611], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[612], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[613], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[614], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[615], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[616], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[617], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[618], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[619], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[620], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[621], design_1_i/BTI/inst/frequency_counter_instance/genblk1[19].freq_count_reg[622]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__11 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[577], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[578], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[579], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[580], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[581], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[582], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[583], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[584], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[585], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[586], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[587], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[588], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[589], design_1_i/BTI/inst/frequency_counter_instance/genblk1[18].freq_count_reg[590]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__12 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[545], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[546], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[547], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[548], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[549], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[550], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[551], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[552], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[553], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[554], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[555], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[556], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[557], design_1_i/BTI/inst/frequency_counter_instance/genblk1[17].freq_count_reg[558]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__13 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[513], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[514], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[515], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[516], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[517], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[518], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[519], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[520], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[521], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[522], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[523], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[524], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[525], design_1_i/BTI/inst/frequency_counter_instance/genblk1[16].freq_count_reg[526]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__14 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[481], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[482], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[483], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[484], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[485], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[486], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[487], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[488], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[489], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[490], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[491], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[492], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[493], design_1_i/BTI/inst/frequency_counter_instance/genblk1[15].freq_count_reg[494]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__15 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[449], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[450], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[451], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[452], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[453], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[454], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[455], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[456], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[457], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[458], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[459], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[460], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[461], design_1_i/BTI/inst/frequency_counter_instance/genblk1[14].freq_count_reg[462]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__16 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[417], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[418], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[419], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[420], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[421], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[422], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[423], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[424], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[425], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[426], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[427], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[428], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[429], design_1_i/BTI/inst/frequency_counter_instance/genblk1[13].freq_count_reg[430]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__17 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[385], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[386], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[387], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[388], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[389], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[390], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[391], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[392], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[393], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[394], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[395], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[396], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397], design_1_i/BTI/inst/frequency_counter_instance/genblk1[12].freq_count_reg[398]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__18 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[353], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[354], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[355], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[356], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[357], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[358], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[359], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[360], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[361], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[362], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[363], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[364], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[365], design_1_i/BTI/inst/frequency_counter_instance/genblk1[11].freq_count_reg[366]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__19 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[321], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[322], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[323], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[324], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[325], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[326], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[327], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[328], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[329], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[330], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[331], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[332], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[333], design_1_i/BTI/inst/frequency_counter_instance/genblk1[10].freq_count_reg[334]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__2 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[864], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[865], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[866], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[867], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[868], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[869], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[870], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[871], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[872], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[873], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[874], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[875], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[876], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[877], design_1_i/BTI/inst/frequency_counter_instance/genblk1[27].freq_count_reg[878]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__20 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[289], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[290], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[291], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[292], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[293], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[294], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[295], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[296], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[297], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[298], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[299], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[300], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[301], design_1_i/BTI/inst/frequency_counter_instance/genblk1[9].freq_count_reg[302]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__21 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[256], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[257], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[258], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[259], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[260], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[261], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[262], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[263], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[264], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[265], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[266], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[267], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[268], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[269], design_1_i/BTI/inst/frequency_counter_instance/genblk1[8].freq_count_reg[270]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__22 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[224], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[225], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[226], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[227], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[228], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[229], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[230], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[231], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[232], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[233], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[234], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[235], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[236], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237], design_1_i/BTI/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__23 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[193], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[194], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[195], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[196], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[197], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[198], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[199], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[200], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[201], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[202], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[203], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[204], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[205], design_1_i/BTI/inst/frequency_counter_instance/genblk1[6].freq_count_reg[206]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__24 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[160], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[161], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[162], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[163], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[164], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[165], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[166], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[167], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[168], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[169], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[170], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[171], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[172], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[173], design_1_i/BTI/inst/frequency_counter_instance/genblk1[5].freq_count_reg[174]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__25 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[129], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[130], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[131], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[132], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[133], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[134], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[135], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[136], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[137], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[138], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[139], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[140], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141], design_1_i/BTI/inst/frequency_counter_instance/genblk1[4].freq_count_reg[142]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__26 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[100], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[101], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[102], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[103], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[104], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[105], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[106], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[107], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[108], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[109], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[110], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[111], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[112], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[113], design_1_i/BTI/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__27 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[65], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[66], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[67], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[68], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[69], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[70], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[71], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[72], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[73], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[74], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[75], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[76], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[77], design_1_i/BTI/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__28 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[33], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[34], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[35], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[36], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[37], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[38], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[39], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[40], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[41], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[42], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[43], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[44], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[45], design_1_i/BTI/inst/frequency_counter_instance/genblk1[1].freq_count_reg[46]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__29 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[10], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[11], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[12], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[13], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[14], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[15], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[16], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[17], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[18], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[19], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[1], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[20], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[21], design_1_i/BTI/inst/frequency_counter_instance/genblk1[0].freq_count_reg[22]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__3 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[833], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[834], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[835], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[836], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[837], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[838], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[839], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[840], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[841], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[842], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[843], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[844], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845], design_1_i/BTI/inst/frequency_counter_instance/genblk1[26].freq_count_reg[846]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__4 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[801], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[802], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[803], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[804], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[805], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[806], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[807], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[808], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[809], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[810], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[811], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[812], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[813], design_1_i/BTI/inst/frequency_counter_instance/genblk1[25].freq_count_reg[814]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__5 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[769], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[770], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[771], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[772], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[773], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[774], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[775], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[776], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[777], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[778], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[779], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[780], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781], design_1_i/BTI/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__6 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[736], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[737], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[738], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[739], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[740], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[741], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[742], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[743], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[744], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[745], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[746], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[747], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[748], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[749], design_1_i/BTI/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__7 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[705], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[706], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[707], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[708], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[709], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[710], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[711], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[712], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[713], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[714], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[715], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[716], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[717], design_1_i/BTI/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__8 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[673], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[674], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[675], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[676], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[677], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[678], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[679], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[680], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[681], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[682], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[683], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[684], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[685], design_1_i/BTI/inst/frequency_counter_instance/genblk1[21].freq_count_reg[686]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/BTI/inst/w_inst__9 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[640], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[641], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[642], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[643], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[644], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[645], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[646], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[647], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[648], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[649], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[650], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[651], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[652], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[653], design_1_i/BTI/inst/frequency_counter_instance/genblk1[20].freq_count_reg[654]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[960], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[961], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[962], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[963], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[964], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[965], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[966], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[967], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[968], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[969], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[970], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[971], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[972], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[973], design_1_i/RO/inst/frequency_counter_instance/genblk1[30].freq_count_reg[974]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__0 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[929], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[930], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[931], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[932], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[933], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[934], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[935], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[936], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[937], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[938], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[939], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[940], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941], design_1_i/RO/inst/frequency_counter_instance/genblk1[29].freq_count_reg[942]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__1 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[896], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[897], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[898], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[899], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[900], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[901], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[902], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[903], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[904], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[905], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[906], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[907], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[908], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909], design_1_i/RO/inst/frequency_counter_instance/genblk1[28].freq_count_reg[910]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__10 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[609], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[610], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[611], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[612], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[613], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[614], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[615], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[616], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[617], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[618], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[619], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[620], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[621], design_1_i/RO/inst/frequency_counter_instance/genblk1[19].freq_count_reg[622]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__11 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[577], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[578], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[579], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[580], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[581], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[582], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[583], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[584], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[585], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[586], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[587], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[588], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[589], design_1_i/RO/inst/frequency_counter_instance/genblk1[18].freq_count_reg[590]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__12 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[545], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[546], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[547], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[548], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[549], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[550], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[551], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[552], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[553], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[554], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[555], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[556], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[557], design_1_i/RO/inst/frequency_counter_instance/genblk1[17].freq_count_reg[558]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__13 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[513], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[514], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[515], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[516], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[517], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[518], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[519], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[520], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[521], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[522], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[523], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[524], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[525], design_1_i/RO/inst/frequency_counter_instance/genblk1[16].freq_count_reg[526]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__14 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[481], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[482], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[483], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[484], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[485], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[486], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[487], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[488], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[489], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[490], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[491], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[492], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[493], design_1_i/RO/inst/frequency_counter_instance/genblk1[15].freq_count_reg[494]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__15 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[449], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[450], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[451], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[452], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[453], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[454], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[455], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[456], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[457], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[458], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[459], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[460], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[461], design_1_i/RO/inst/frequency_counter_instance/genblk1[14].freq_count_reg[462]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__16 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[417], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[418], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[419], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[420], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[421], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[422], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[423], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[424], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[425], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[426], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[427], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[428], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[429], design_1_i/RO/inst/frequency_counter_instance/genblk1[13].freq_count_reg[430]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__17 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[385], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[386], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[387], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[388], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[389], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[390], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[391], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[392], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[393], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[394], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[395], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[396], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397], design_1_i/RO/inst/frequency_counter_instance/genblk1[12].freq_count_reg[398]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__18 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[353], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[354], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[355], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[356], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[357], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[358], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[359], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[360], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[361], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[362], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[363], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[364], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[365], design_1_i/RO/inst/frequency_counter_instance/genblk1[11].freq_count_reg[366]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__19 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[321], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[322], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[323], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[324], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[325], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[326], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[327], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[328], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[329], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[330], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[331], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[332], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[333], design_1_i/RO/inst/frequency_counter_instance/genblk1[10].freq_count_reg[334]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__2 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[864], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[865], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[866], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[867], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[868], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[869], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[870], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[871], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[872], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[873], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[874], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[875], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[876], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[877], design_1_i/RO/inst/frequency_counter_instance/genblk1[27].freq_count_reg[878]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__20 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[289], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[290], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[291], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[292], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[293], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[294], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[295], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[296], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[297], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[298], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[299], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[300], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[301], design_1_i/RO/inst/frequency_counter_instance/genblk1[9].freq_count_reg[302]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__21 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[256], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[257], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[258], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[259], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[260], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[261], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[262], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[263], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[264], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[265], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[266], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[267], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[268], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[269], design_1_i/RO/inst/frequency_counter_instance/genblk1[8].freq_count_reg[270]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__22 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[224], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[225], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[226], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[227], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[228], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[229], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[230], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[231], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[232], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[233], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[234], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[235], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[236], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237], design_1_i/RO/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__23 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[193], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[194], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[195], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[196], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[197], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[198], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[199], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[200], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[201], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[202], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[203], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[204], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[205], design_1_i/RO/inst/frequency_counter_instance/genblk1[6].freq_count_reg[206]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__24 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[160], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[161], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[162], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[163], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[164], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[165], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[166], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[167], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[168], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[169], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[170], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[171], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[172], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[173], design_1_i/RO/inst/frequency_counter_instance/genblk1[5].freq_count_reg[174]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__25 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[129], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[130], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[131], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[132], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[133], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[134], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[135], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[136], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[137], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[138], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[139], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[140], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141], design_1_i/RO/inst/frequency_counter_instance/genblk1[4].freq_count_reg[142]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__26 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[100], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[101], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[102], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[103], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[104], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[105], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[106], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[107], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[108], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[109], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[110], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[111], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[112], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[113], design_1_i/RO/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__27 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[65], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[66], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[67], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[68], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[69], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[70], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[71], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[72], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[73], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[74], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[75], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[76], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[77], design_1_i/RO/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__28 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[33], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[34], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[35], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[36], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[37], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[38], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[39], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[40], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[41], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[42], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[43], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[44], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[45], design_1_i/RO/inst/frequency_counter_instance/genblk1[1].freq_count_reg[46]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__29 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[10], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[11], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[12], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[13], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[14], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[15], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[16], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[17], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[18], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[19], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[1], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[20], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[21], design_1_i/RO/inst/frequency_counter_instance/genblk1[0].freq_count_reg[22]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__3 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[833], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[834], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[835], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[836], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[837], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[838], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[839], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[840], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[841], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[842], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[843], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[844], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845], design_1_i/RO/inst/frequency_counter_instance/genblk1[26].freq_count_reg[846]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__4 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[801], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[802], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[803], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[804], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[805], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[806], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[807], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[808], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[809], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[810], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[811], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[812], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[813], design_1_i/RO/inst/frequency_counter_instance/genblk1[25].freq_count_reg[814]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__5 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[769], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[770], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[771], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[772], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[773], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[774], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[775], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[776], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[777], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[778], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[779], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[780], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781], design_1_i/RO/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__6 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[736], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[737], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[738], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[739], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[740], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[741], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[742], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[743], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[744], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[745], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[746], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[747], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[748], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[749], design_1_i/RO/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__7 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[705], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[706], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[707], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[708], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[709], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[710], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[711], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[712], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[713], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[714], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[715], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[716], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[717], design_1_i/RO/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__8 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[673], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[674], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[675], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[676], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[677], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[678], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[679], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[680], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[681], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[682], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[683], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[684], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[685], design_1_i/RO/inst/frequency_counter_instance/genblk1[21].freq_count_reg[686]... and (the first 15 of 32 listed)
+WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT design_1_i/RO/inst/w_inst__9 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
+design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[640], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[641], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[642], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[643], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[644], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[645], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[646], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[647], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[648], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[649], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[650], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[651], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[652], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[653], design_1_i/RO/inst/frequency_counter_instance/genblk1[20].freq_count_reg[654]... and (the first 15 of 32 listed)
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 2490 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
 Loading data files...
@@ -920,9 +1468,9 @@ Creating bitstream...
 Writing bitstream ./design_1_wrapper.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-186] 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Fri Apr 16 01:09:33 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-186] 'C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Mon Apr 19 14:04:01 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
 INFO: [Common 17-83] Releasing license: Implementation
-129 Infos, 306 Warnings, 0 Critical Warnings and 0 Errors encountered.
+129 Infos, 486 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2425.684 ; gain = 438.656
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 16 01:09:33 2021...
+write_bitstream: Time (s): cpu = 00:00:22 ; elapsed = 00:00:20 . Memory (MB): peak = 2457.770 ; gain = 451.344
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 19 14:04:01 2021...

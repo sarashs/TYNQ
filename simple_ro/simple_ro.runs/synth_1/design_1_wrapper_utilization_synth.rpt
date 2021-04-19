@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Fri Apr 16 00:44:38 2021
+| Date         : Mon Apr 19 14:01:44 2021
 | Host         : DESKTOP-AI964DL running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -30,15 +30,15 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 3781 |  2490 |     53200 |  7.11 |
-|   LUT as Logic             | 3715 |  2490 |     53200 |  6.98 |
+| Slice LUTs*                | 4415 |  2490 |     53200 |  8.30 |
+|   LUT as Logic             | 4349 |  2490 |     53200 |  8.17 |
 |   LUT as Memory            |   66 |     0 |     17400 |  0.38 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |   66 |     0 |           |       |
-| Slice Registers            | 1690 |     0 |    106400 |  1.59 |
-|   Register as Flip Flop    | 1690 |     0 |    106400 |  1.59 |
+| Slice Registers            | 5689 |     0 |    106400 |  5.35 |
+|   Register as Flip Flop    | 5689 |     0 |    106400 |  5.35 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |   64 |     0 |     26600 |  0.24 |
+| F7 Muxes                   |  320 |     0 |     26600 |  1.20 |
 | F8 Muxes                   |   32 |     0 |     13300 |  0.24 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 54    |          Yes |         Set |            - |
-| 1636  |          Yes |       Reset |            - |
+| 5635  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -115,7 +115,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
+| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
 | BUFIO      |    0 |     0 |        16 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         4 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         4 |  0.00 |
@@ -148,23 +148,23 @@ Table of Contents
 +----------+------+----------------------+
 | Ref Name | Used |  Functional Category |
 +----------+------+----------------------+
-| LUT6     | 3030 |                  LUT |
-| FDRE     | 1636 |         Flop & Latch |
-| LUT3     |  287 |                  LUT |
-| LUT1     |  190 |                  LUT |
+| FDRE     | 5635 |         Flop & Latch |
+| LUT6     | 3573 |                  LUT |
+| CARRY4   |  546 |           CarryLogic |
+| MUXF7    |  320 |                MuxFx |
+| LUT3     |  288 |                  LUT |
+| LUT1     |  284 |                  LUT |
 | LUT4     |  170 |                  LUT |
-| LUT5     |  161 |                  LUT |
+| LUT5     |  160 |                  LUT |
 | BIBUF    |  130 |                   IO |
-| LUT2     |   90 |                  LUT |
-| MUXF7    |   64 |                MuxFx |
+| LUT2     |   87 |                  LUT |
 | FDSE     |   54 |         Flop & Latch |
-| CARRY4   |   50 |           CarryLogic |
 | SRLC32E  |   47 |   Distributed Memory |
 | MUXF8    |   32 |                MuxFx |
 | SRL16E   |   19 |   Distributed Memory |
+| BUFG     |    3 |                Clock |
 | XADC     |    1 |               Others |
 | PS7      |    1 | Specialized Resource |
-| BUFG     |    1 |                Clock |
 +----------+------+----------------------+
 
 

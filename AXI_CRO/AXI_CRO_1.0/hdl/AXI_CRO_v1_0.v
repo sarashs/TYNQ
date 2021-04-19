@@ -4,7 +4,7 @@
 	module AXI_CRO_v1_0 #
 	(
 		// Users to add parameters here
-		parameter num_oscillators = 4,
+		parameter num_oscillators = 31,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -77,7 +77,7 @@
 	// Add user logic here
 	(*DONT_TOUCH= "true"*) wire [num_oscillators*4-1 : 0] w;
     (*DONT_TOUCH= "true"*) wire [num_oscillators - 1 : 0] input_signal;
-    
+    (*DONT_TOUCH= "true"*) wire [32*31 - 1 : 0] frequency_counter_wire;
     // when the control signal is off, the middle inverter will experience BTI and the other two won't experience anything
     //when the control signal is on, everything will toggle (and experience HCI)
     generate
