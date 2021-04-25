@@ -7,7 +7,6 @@ Created on Thu Apr 22 20:41:33 2021
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-import seaborn as sns
 from itertools import product as prd
 import random
 import json
@@ -33,7 +32,7 @@ class Constraints(object):
         self, first_instance_names='design_1_i/LUT6_RO_0/inst/Inverter/LUT6_inst',
         other_instance_names='design_1_i/LUT6_RO_0/inst/notGates[@inst].Inverter/LUT6_inst',
         max_loop1=1, max_loop2=1, num_stages=3, shape=np.array([[3, 0], [0, 0]]).astype(int),
-        lut_type='ALL', start_location=(0, 0), shuffle="NO", architecture_path='ZYNQ7000.json'
+        lut_type='ALL', shuffle="NO", architecture_path='ZYNQ7000.json'
     ):
         """
         Parameters
@@ -47,10 +46,9 @@ class Constraints(object):
         self.shape = shape.astype(int)  # num Slices in x * y
         self.lut_type = lut_type  # A, B, C, D, All
         # {generic_name : [num_RO, num_stages, location_tuple]} ; location_tuple = (x1, y1, x2, y2)
-        self.start_location = start_location
         self.shuffle = shuffle
         self.data_dict = {'x': [], 'y': [], 'A': [], 'B': [], 'C': [], 'D': []}
-        self._outputfile = "constraints"
+        self._outputfile = "constraints.XDC"
         with open(architecture_path) as f:
             self._architecture = json.loads(f.read())
         self._max_x = self._architecture['MAX'][0]
@@ -91,7 +89,7 @@ class Constraints(object):
         list_shape1 = list(range(self.shape.shape[1]))
         list_shape11 = []
         if "YES" in self.shuffle:
-            print("Shufflinh")
+            print("Shuffling")
             for i in range(self.shape.shape[0]):
                 j = random.choice(list_shape0)
                 list_shape00.append(j)
@@ -103,17 +101,9 @@ class Constraints(object):
         else:
             list_shape00 = list_shape0
             list_shape11 = list_shape1
-        with open(self._outputfile + ".XDC", "a") as file:
+        with open(self._outputfile, "a") as file:
             for i in list_shape00:
-                x = self.start_location[0] + i
                 for j in list_shape11:
-                    y = self.start_location[1] + j
-                    self.data_dict['x'].append(x)
-                    self.data_dict['y'].append(y)
-                    self.data_dict['A'].append(0)
-                    self.data_dict['B'].append(0)
-                    self.data_dict['C'].append(0)
-                    self.data_dict['D'].append(0)
                     while self.shape[i][j] > 0:
                         self.shape[i][j] -= 1
                         ROs -= 1
@@ -136,8 +126,7 @@ class Constraints(object):
                             lut_type = lut_types[self.shape[i][j] % 4]
                         else:
                             lut_type = self.lut_type
-                        self.data_dict[lut_type][-1] += 1
-                        str5 = f'X{x}Y{y} [get_cells '
+                        str5 = f'X{i}Y{j} [get_cells '
                         file.write(str1 + lut_type + str2 + str3 + "\n")
                         file.write(str4 + str5 + str3 + "\n")
 
@@ -146,7 +135,7 @@ class Constraints(object):
         This function generates contraints to supress combinational loop errors.
         """
 
-        with open(self._outputfile + ".XDC", "a") as file:
+        with open(self._outputfile, "a") as file:
             file.write("\n")
             for ROs in range(self.num_ROs):
                 file.write(
@@ -156,38 +145,17 @@ class Constraints(object):
                     ).replace('@inst2', str(ROs % self.max_loop1)) + '}' + ']' + "\n"
                 )
 
-    def plot(self):
-        """
-        Heatmap plot of the locations.
-        """
-
-        key_list = list(self.data_dict.keys())
-        for item in key_list:
-            if len(self.data_dict[item]) < len(self.data_dict['x']):
-                self.data_dict[item] += (len(self.data_dict['x']) - len(self.data_dict[item])) * [0]
-        dataframe = pd.DataFrame(self.data_dict)
-        dataframe['6LUT'] = dataframe['A'] + dataframe['B'] + dataframe['C'] + dataframe['D']
-        for i, j in prd(list(range(self.start_location[0]-5, self.start_location[0]+45)),
-                        list(range(self.start_location[1]-5, self.start_location[1]+30))):
-            if (i, j) not in list(zip(self.data_dict['x'], self.data_dict['y'])):
-                df = pd.DataFrame({'x': [i], 'y': [j], 'A': [0], 'B': [
-                                  0], 'C': [0], 'D': [0], '6LUT': [0]})
-                dataframe = dataframe.append(df, ignore_index=True)
-        dataframe_long = dataframe.pivot_table(index='x', columns='y', values='6LUT')
-        f, ax = plt.subplots(figsize=(12, 9))
-        sns.heatmap(dataframe_long, annot=False, fmt="d", linewidths=.1, ax=ax)
-        return dataframe
-
     def check_and_propose(self, lut_placement, slice_type='L'):
         """
         checks whether a proposed placement satisfies the slice type condition
-        and if it doesn't propose a new placement.
+        and if it doesn't propose a new placement. To prevent the plancement on
+        a certain location set it to a negative number (-1).
 
         parameters
         ----------
         lut_placement nparray: desired placement shape
 
-        slice_type str: desired slice type
+        slice_type str: desired slice type 'L', 'M', 'ALL'
 
         return
         ------
@@ -196,13 +164,15 @@ class Constraints(object):
         assert lut_placement.shape[0] == self._max_x+1
         assert lut_placement.shape[1] == self._max_y+1
         output = np.copy(lut_placement)
+        if slice_type.endswith('ALL'):
+            slice_type = ['L', 'M']
         for i in range(self._max_x+1):
             for j in range(self._max_y+1):
                 if lut_placement[i, j] > 0:
                     delta = 1
                     x = i
                     y = j
-                    while self(x, y) != slice_type:
+                    while self(x, y) not in slice_type:
                         output[i, j] = 0
                         for delta_x, delta_y in prd(
                             list(range(-delta, delta)), list(range(-delta, delta))
@@ -216,7 +186,7 @@ class Constraints(object):
                                 x = i + delta_x
                                 y = j + delta_y
                                 if (
-                                    (self(x, y) == slice_type) and
+                                    (self(x, y) in slice_type) and
                                     (output[x, y] == 0)
                                 ):
                                     output[x, y] = lut_placement[i, j]
@@ -225,6 +195,7 @@ class Constraints(object):
                                     x = i
                                     y = j
                         delta += 1
+        output[output < 0] = 0
         a = np.copy(output)
         a = a.T
         for i in self._architecture['L']:
@@ -234,8 +205,7 @@ class Constraints(object):
             if a[i[1], i[0]] == 0:
                 a[i[1], i[0]] = -2
         for i in self._architecture['N']:
-            #assert a[i[1], i[0]] == 0
-            a[i[1], i[0]] = 0
+            assert a[i[1], i[0]] == 0
         cmap = plt.cm.jet
         cmaplist = ["b", "yellowgreen", "gray", "lightsalmon", "salmon", "red", "brown"]
         cmap = matplotlib.colors.ListedColormap(cmaplist)
@@ -258,3 +228,155 @@ class Constraints(object):
         for item in self._architecture['M']:
             if x == item[0]:
                 return 'M'
+
+
+def heater_xdc(
+        locations, outputfile, Num_Blocks=64, Block_Size=36, architecture_path='ZYNQ7000.json'
+):
+    """
+    Create constraints for the heater IP for TestChip design.
+
+    parameters
+    ----------
+    Num_Blocks int: As per heater IP
+
+    Block_Size int: As per heater IP
+
+    start_location (int, int):
+
+    locations nparray:
+
+    architecture_path str:
+
+    return
+    ------
+    None
+    """
+    assert (
+        sum(sum(locations)) == Block_Size * Num_Blocks
+    ), "Block_Size*Num_Blocks should match the number of inverters!"
+    a = Constraints(
+        first_instance_names='',
+        other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/LUT6_inst',
+        max_loop1=Block_Size, max_loop2=0, num_stages=Block_Size*Num_Blocks, shape=locations,
+        lut_type="ALL", shuffle="YES",
+        architecture_path='ZYNQ7000.json'
+    )
+    a._outputfile = outputfile
+    a.check_and_propose(locations, slice_type='ALL')
+    a = Constraints(
+        first_instance_names='',
+        other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/feedback',
+        max_loop1=Block_Size, max_loop2=0, num_stages=Block_Size*Num_Blocks, shape=locations,
+        lut_type="ALL", shuffle="YES",
+        architecture_path='ZYNQ7000.json'
+    )
+    a.RO_location()
+    a.loops()
+
+
+def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
+    """
+    Create constraints for the RO IP for TestChip design.
+
+    parameters
+    ----------
+    Num_Oscillators int: As per heater IP
+
+    Num_Stages int: As per heater IP
+
+    locations nparray:
+
+    slice_type str:
+
+    return
+    ------
+    None
+    """
+    assert (
+        sum(sum(locations)) == Num_Oscillators * Num_Stages
+    ), "Block_Size*Num_Blocks should match the number of inverters!"
+    number_of_instances = Num_Oscillators // 32 + 1
+    RO_locations = dict()
+    for i in range(number_of_instances):
+        # TODO: Apply the name convention to the TestChip class as well
+        instance_name = f'RO{i}'
+        instance_num_oscillators = 32 if (
+            number_of_instances-1-i > 0
+        ) else (Num_Oscillators-32*(i+1))
+        count = 0
+        loc_copy = np.copy(locations)
+        for x in locations.shape[0]:
+            for y in locations.shape[1]:
+                if count == (instance_num_oscillators*Num_Stages):
+                    loc_copy[x, y] = 0
+                count += loc_copy[x, y]
+                if loc_copy[x, y] > 0:
+                    RO_locations[f'{instance_name}_{count//Num_Stages}'] = (x, y)
+        a = Constraints(
+            first_instance_names='',
+            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
+            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*Num_Stages,
+            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            architecture_path='ZYNQ7000.json'
+        )
+        a.check_and_propose(locations, slice_type='ALL')
+        a.RO_location()
+        a = Constraints(
+            first_instance_names='',
+            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]/w[0]',
+            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*Num_Stages,
+            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            architecture_path='ZYNQ7000.json'
+        )
+        a.loops()
+    with open('RO_locations.json', 'w') as file:
+        json.dump(RO_locations, file)
+
+# TODO: Fix the BTI sensor so that it fits my format here
+
+
+def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
+    """
+    Create constraints for the BTI IP for TestChip design.
+
+    parameters
+    ----------
+    Num_Oscillators int: As per heater IP
+
+    return
+    ------
+    None
+    """
+    assert (
+        sum(sum(locations)) == Num_Oscillators * 3
+    ), "Block_Size*Num_Blocks should match the number of inverters!"
+    number_of_instances = Num_Oscillators // 31 + 1
+    BTI_locations = dict()
+    for i in range(number_of_instances):
+        # TODO: Apply the name convention to the TestChip class as well
+        instance_name = f'RO{i}'
+        instance_num_oscillators = 31 if (
+            number_of_instances-1-i > 0
+        ) else (Num_Oscillators-31*(i+1))
+        count = 0
+        loc_copy = np.copy(locations)
+        for x in locations.shape[0]:
+            for y in locations.shape[1]:
+                if count == (instance_num_oscillators*Num_Stages):
+                    loc_copy[x, y] = 0
+                count += loc_copy[x, y]
+                if loc_copy[x, y] > 0:
+                    RO_locations[f'{instance_name}_{count//Num_Stages}'] = (x, y)
+        a = Constraints(
+            first_instance_names='',
+            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
+            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*3,
+            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            architecture_path='ZYNQ7000.json'
+        )
+        a.check_and_propose(locations, slice_type='ALL')
+        a.RO_location()
+        a.loops()
+    with open('BTI_locations.json', 'w') as file:
+        json.dump(BTI_locations, file)
