@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 from itertools import product as prd
 import random
 import json
-import pandas as pd
 
 
 class Constraints(object):
@@ -31,7 +30,7 @@ class Constraints(object):
     def __init__(
         self, first_instance_names='design_1_i/LUT6_RO_0/inst/Inverter/LUT6_inst',
         other_instance_names='design_1_i/LUT6_RO_0/inst/notGates[@inst].Inverter/LUT6_inst',
-        max_loop1=1, max_loop2=1, num_stages=3, shape=np.array([[3, 0], [0, 0]]).astype(int),
+        max_loop1=1, num_stages=3, shape=np.array([[3, 0], [0, 0]]).astype(int),
         lut_type='ALL', shuffle="NO", architecture_path='ZYNQ7000.json'
     ):
         """
@@ -41,7 +40,6 @@ class Constraints(object):
         self.first_instance_names = first_instance_names
         self.other_instance_names = other_instance_names
         self.max_loop1 = max_loop1
-        self.max_loop2 = max_loop2
         self.num_ROs = num_stages
         self.shape = shape.astype(int)  # num Slices in x * y
         self.lut_type = lut_type  # A, B, C, D, All
@@ -54,23 +52,6 @@ class Constraints(object):
         self._max_x = self._architecture['MAX'][0]
         self._max_y = self._architecture['MAX'][1]
         assert self.shape.sum() == num_stages
-
-    def plot_type(self):
-        a = np.zeros((self._max_y+1, self._max_x+1))
-        for i in self._architecture['L']:
-            a[i[1], i[0]] = -1
-        for i in self._architecture['M']:
-            a[i[1], i[0]] = -2
-        cmap = plt.cm.jet
-        cmaplist = ["b", "yellowgreen", "gray"]
-        cmap = matplotlib.colors.ListedColormap(cmaplist)
-        norm = matplotlib.colors.BoundaryNorm(np.arange(-2.5, 1), cmap.N)
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        cax = ax.matshow(a, origin='lower', cmap=cmap, norm=norm)
-        cb = fig.colorbar(cax, ticks=[-2, -1, 0])
-        cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA'])
-        plt.show()
 
     def RO_location(self):
         """
@@ -258,7 +239,7 @@ def heater_xdc(
     a = Constraints(
         first_instance_names='',
         other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/LUT6_inst',
-        max_loop1=Block_Size, max_loop2=0, num_stages=Block_Size*Num_Blocks, shape=locations,
+        max_loop1=Block_Size, num_stages=Block_Size*Num_Blocks, shape=locations,
         lut_type="ALL", shuffle="YES",
         architecture_path='ZYNQ7000.json'
     )
@@ -267,7 +248,7 @@ def heater_xdc(
     a = Constraints(
         first_instance_names='',
         other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/feedback',
-        max_loop1=Block_Size, max_loop2=0, num_stages=Block_Size*Num_Blocks, shape=locations,
+        max_loop1=Block_Size, num_stages=Block_Size*Num_Blocks, shape=locations,
         lut_type="ALL", shuffle="YES",
         architecture_path='ZYNQ7000.json'
     )
@@ -315,8 +296,9 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
                     RO_locations[f'{instance_name}_{count//Num_Stages}'] = (x, y)
         a = Constraints(
             first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
-            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*Num_Stages,
+            other_instance_names=f'design_1_i/{instance_name}/inst/{instance_name}'
+            '[@inst1].notGate[@inst2].Inverter/LUT6_inst',
+            max_loop1=Num_Stages, num_stages=instance_num_oscillators*Num_Stages,
             shape=loc_copy, lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
@@ -324,8 +306,8 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
         a.RO_location()
         a = Constraints(
             first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]/w[0]',
-            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*Num_Stages,
+            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
+            max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
             shape=loc_copy, lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
@@ -355,7 +337,7 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
     BTI_locations = dict()
     for i in range(number_of_instances):
         # TODO: Apply the name convention to the TestChip class as well
-        instance_name = f'RO{i}'
+        instance_name = f'BTI{i}'
         instance_num_oscillators = 31 if (
             number_of_instances-1-i > 0
         ) else (Num_Oscillators-31*(i+1))
@@ -363,20 +345,62 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
         loc_copy = np.copy(locations)
         for x in locations.shape[0]:
             for y in locations.shape[1]:
-                if count == (instance_num_oscillators*Num_Stages):
+                if count == (instance_num_oscillators*3):
                     loc_copy[x, y] = 0
                 count += loc_copy[x, y]
                 if loc_copy[x, y] > 0:
-                    RO_locations[f'{instance_name}_{count//Num_Stages}'] = (x, y)
+                    BTI_locations[f'{instance_name}_{count//3}'] = (x, y)
         a = Constraints(
-            first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
-            max_loop1=1, max_loop2=0, num_stages=instance_num_oscillators*3,
+            first_instance_names='design_1_i/{instance_name}/inst/CRO[@inst1].NAND/LUT6_inst',
+            other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter@inst2',
+            max_loop1=3, num_stages=instance_num_oscillators*3,
             shape=loc_copy, lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
         a.check_and_propose(locations, slice_type='ALL')
         a.RO_location()
+        a = Constraints(
+            first_instance_names='',
+            other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter0/in0[0]',
+            max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
+            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            architecture_path='ZYNQ7000.json'
+        )
         a.loops()
     with open('BTI_locations.json', 'w') as file:
         json.dump(BTI_locations, file)
+
+
+def chipresources():
+    """
+    Reads the architecture file and produces an ndarray with the dimentions of the input file.
+
+    parameters
+    ----------
+    None
+
+    return
+    ------
+    chipreseources ndarray
+    """
+    with open('ZYNQ7000.json') as f:
+        architecture = json.loads(f.read())
+    chipreseources = np.zeros((architecture['MAX'][0]+1, architecture['MAX'][1]+1))
+    for item in architecture['N']:
+        chipreseources[item[0], item[1]] = -1
+    a = np.zeros((architecture['MAX'][1] + 1, architecture['MAX'][0] + 1))
+    for i in architecture['L']:
+        a[i[1], i[0]] = -1
+    for i in architecture['M']:
+        a[i[1], i[0]] = -2
+    cmap = plt.cm.jet
+    cmaplist = ["b", "yellowgreen", "gray"]
+    cmap = matplotlib.colors.ListedColormap(cmaplist)
+    norm = matplotlib.colors.BoundaryNorm(np.arange(-2.5, 1), cmap.N)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(a, origin='lower', cmap=cmap, norm=norm)
+    cb = fig.colorbar(cax, ticks=[-2, -1, 0])
+    cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA'])
+    plt.show()
+    return chipreseources
