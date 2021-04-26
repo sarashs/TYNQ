@@ -125,6 +125,7 @@ class Constraints(object):
                         '@inst1', str(ROs // self.max_loop1)
                     ).replace('@inst2', str(ROs % self.max_loop1)) + '}' + ']' + "\n"
                 )
+    # TODO: take this out of the class
 
     def check_and_propose(self, lut_placement, slice_type='L'):
         """
@@ -277,26 +278,28 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
     assert (
         sum(sum(locations)) == Num_Oscillators * Num_Stages
     ), "Block_Size*Num_Blocks should match the number of inverters!"
-    number_of_instances = Num_Oscillators // 32 + 1
+    number_of_instances = np.ceil(Num_Oscillators / 32).astype(int)
     RO_locations = dict()
+    RO_num = 0
     for i in range(number_of_instances):
         # TODO: Apply the name convention to the TestChip class as well
         instance_name = f'RO{i}'
         instance_num_oscillators = 32 if (
             number_of_instances-1-i > 0
-        ) else (Num_Oscillators-32*(i+1))
+        ) else (Num_Oscillators-32*(i))
         count = 0
         loc_copy = np.copy(locations)
-        for x in locations.shape[0]:
-            for y in locations.shape[1]:
+        for x in range(locations.shape[0]):
+            for y in range(locations.shape[1]):
                 if count == (instance_num_oscillators*Num_Stages):
                     loc_copy[x, y] = 0
                 count += loc_copy[x, y]
                 if loc_copy[x, y] > 0:
-                    RO_locations[f'{instance_name}_{count//Num_Stages}'] = (x, y)
+                    RO_locations[RO_num] = (x, y)
+                    RO_num += 1
         a = Constraints(
             first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/{instance_name}'
+            other_instance_names=f'design_1_i/{instance_name}/inst/RO'
             '[@inst1].notGate[@inst2].Inverter/LUT6_inst',
             max_loop1=Num_Stages, num_stages=instance_num_oscillators*Num_Stages,
             shape=loc_copy, lut_type="ALL", shuffle="NO",
@@ -308,7 +311,7 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
             first_instance_names='',
             other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
             max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
-            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
         a.loops()
@@ -333,23 +336,25 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
     assert (
         sum(sum(locations)) == Num_Oscillators * 3
     ), "Block_Size*Num_Blocks should match the number of inverters!"
-    number_of_instances = Num_Oscillators // 31 + 1
+    number_of_instances = np.ceil(Num_Oscillators / 32).astype(int)
     BTI_locations = dict()
+    BTI_num = 0
     for i in range(number_of_instances):
         # TODO: Apply the name convention to the TestChip class as well
         instance_name = f'BTI{i}'
         instance_num_oscillators = 31 if (
             number_of_instances-1-i > 0
-        ) else (Num_Oscillators-31*(i+1))
+        ) else (Num_Oscillators-31*(i))
         count = 0
         loc_copy = np.copy(locations)
-        for x in locations.shape[0]:
-            for y in locations.shape[1]:
+        for x in range(locations.shape[0]):
+            for y in range(locations.shape[1]):
                 if count == (instance_num_oscillators*3):
                     loc_copy[x, y] = 0
                 count += loc_copy[x, y]
                 if loc_copy[x, y] > 0:
-                    BTI_locations[f'{instance_name}_{count//3}'] = (x, y)
+                    BTI_locations[BTI_num] = (x, y)
+                    BTI_num += 1
         a = Constraints(
             first_instance_names='design_1_i/{instance_name}/inst/CRO[@inst1].NAND/LUT6_inst',
             other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter@inst2',
@@ -363,7 +368,7 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
             first_instance_names='',
             other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter0/in0[0]',
             max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
-            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
         a.loops()
