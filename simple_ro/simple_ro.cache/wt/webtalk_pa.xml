@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Apr 21 22:40:08 2021">
+<application name="pa" timeStamp="Tue Apr 27 08:56:41 2021">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="06373bc1c4644b359f5a0bc3464a1c62" type="ProjectID"/>
 <property name="ProjectIteration" value="45" type="ProjectIteration"/>
@@ -18,71 +18,74 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="CoreView" value="2" type="JavaHandler"/>
-<property name="CustomizeRSBBlock" value="25" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="26" type="JavaHandler"/>
 <property name="EditDelete" value="4" type="JavaHandler"/>
 <property name="EditProperties" value="2" type="JavaHandler"/>
 <property name="EditUndo" value="1" type="JavaHandler"/>
 <property name="EditUnplace" value="20" type="JavaHandler"/>
 <property name="FedToggleRoutingResourcesCmdHandler" value="1" type="JavaHandler"/>
-<property name="FileExit" value="13" type="JavaHandler"/>
+<property name="FileExit" value="16" type="JavaHandler"/>
 <property name="HighglightDefaultColor" value="2" type="JavaHandler"/>
 <property name="NewExportHardware" value="4" type="JavaHandler"/>
+<property name="NewProject" value="1" type="JavaHandler"/>
 <property name="ReportIPStatus" value="5" type="JavaHandler"/>
 <property name="RunBitgen" value="35" type="JavaHandler"/>
 <property name="RunImplementation" value="11" type="JavaHandler"/>
 <property name="RunSynthesis" value="5" type="JavaHandler"/>
 <property name="SaveDesign" value="1" type="JavaHandler"/>
 <property name="SaveProjectAs" value="1" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="1" type="JavaHandler"/>
 <property name="ShowView" value="12" type="JavaHandler"/>
 <property name="ShowWorldView" value="1" type="JavaHandler"/>
 <property name="ToggleSelectAreaMode" value="2" type="JavaHandler"/>
 <property name="ToggleZoomAreaMode" value="4" type="JavaHandler"/>
 <property name="UnhighlightSelection" value="2" type="JavaHandler"/>
 <property name="UpgradeIP" value="15" type="JavaHandler"/>
-<property name="ViewTaskImplementation" value="26" type="JavaHandler"/>
+<property name="ViewTaskImplementation" value="27" type="JavaHandler"/>
 <property name="ViewTaskRTLAnalysis" value="3" type="JavaHandler"/>
 <property name="ViewTaskSynthesis" value="11" type="JavaHandler"/>
 <property name="WriteProjectTcl" value="1" type="JavaHandler"/>
-<property name="ZoomFit" value="6" type="JavaHandler"/>
+<property name="ZoomFit" value="8" type="JavaHandler"/>
 <property name="ZoomIn" value="3" type="JavaHandler"/>
 <property name="ZoomOut" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
-<property name="BaseDialog_CANCEL" value="12" type="GuiHandlerData"/>
+<property name="BaseDialog_CANCEL" value="13" type="GuiHandlerData"/>
 <property name="BaseDialog_OK" value="125" type="GuiHandlerData"/>
 <property name="BaseDialog_YES" value="37" type="GuiHandlerData"/>
 <property name="BaseReportTab_RERUN" value="23" type="GuiHandlerData"/>
+<property name="BoardChooser_BOARD_TABLE" value="1" type="GuiHandlerData"/>
 <property name="ClosePlanner_YES" value="4" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_MESSAGES" value="6" type="GuiHandlerData"/>
-<property name="CmdMsgDialog_OK" value="16" type="GuiHandlerData"/>
+<property name="CmdMsgDialog_OK" value="17" type="GuiHandlerData"/>
 <property name="CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES" value="1" type="GuiHandlerData"/>
 <property name="CoreAndInterfacesBaseTreeTablePanel_REMOVE_FROM_PROJECT" value="1" type="GuiHandlerData"/>
 <property name="CoreTreeTablePanel_CORE_TREE_TABLE" value="11" type="GuiHandlerData"/>
 <property name="DefaultOptionPane_CLOSE" value="2" type="GuiHandlerData"/>
 <property name="DeviceOptionsView_TABBED_PANE" value="2" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="112" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="126" type="GuiHandlerData"/>
 <property name="FloorplanEditor_METRIC" value="14" type="GuiHandlerData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="71" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="72" type="GuiHandlerData"/>
 <property name="GraphicalView_SELECT" value="11" type="GuiHandlerData"/>
-<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="4" type="GuiHandlerData"/>
+<property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="5" type="GuiHandlerData"/>
 <property name="HWorldViewOverview_HIDE_WORLD_VIEW" value="1" type="GuiHandlerData"/>
 <property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="15" type="GuiHandlerData"/>
 <property name="IPStatusTablePanel_IP_STATUS_TABLE" value="4" type="GuiHandlerData"/>
 <property name="InstanceMenu_FLOORPLANNING" value="111" type="GuiHandlerData"/>
-<property name="MainMenuMgr_CHECKPOINT" value="9" type="GuiHandlerData"/>
+<property name="MainMenuMgr_CHECKPOINT" value="10" type="GuiHandlerData"/>
 <property name="MainMenuMgr_CONSTRAINTS" value="7" type="GuiHandlerData"/>
-<property name="MainMenuMgr_EDIT" value="10" type="GuiHandlerData"/>
+<property name="MainMenuMgr_EDIT" value="12" type="GuiHandlerData"/>
 <property name="MainMenuMgr_EXPORT" value="9" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FILE" value="20" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FILE" value="24" type="GuiHandlerData"/>
 <property name="MainMenuMgr_FLOORPLANNING" value="2" type="GuiHandlerData"/>
-<property name="MainMenuMgr_FLOW" value="16" type="GuiHandlerData"/>
+<property name="MainMenuMgr_FLOW" value="18" type="GuiHandlerData"/>
 <property name="MainMenuMgr_IMPORT" value="7" type="GuiHandlerData"/>
 <property name="MainMenuMgr_IO_PLANNING" value="2" type="GuiHandlerData"/>
 <property name="MainMenuMgr_IP" value="7" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN" value="5" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN_BLOCK_DESIGN" value="5" type="GuiHandlerData"/>
 <property name="MainMenuMgr_OPEN_RECENT_PROJECT" value="3" type="GuiHandlerData"/>
-<property name="MainMenuMgr_PROJECT" value="14" type="GuiHandlerData"/>
+<property name="MainMenuMgr_PROJECT" value="17" type="GuiHandlerData"/>
 <property name="MainMenuMgr_REPORTS" value="4" type="GuiHandlerData"/>
 <property name="MainMenuMgr_SETTINGS" value="5" type="GuiHandlerData"/>
 <property name="MainMenuMgr_TEXT_EDITOR" value="10" type="GuiHandlerData"/>
@@ -100,6 +103,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_GOTO_IMPLEMENTED_DESIGN" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_GOTO_NETLIST_DESIGN" value="4" type="GuiHandlerData"/>
 <property name="PACommandNames_HIGHLIGHT_DEFAULT_COLOR" value="2" type="GuiHandlerData"/>
+<property name="PACommandNames_NEW_PROJECT" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_BITGEN" value="29" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_IMPLEMENTATION" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_RUN_SYNTHESIS" value="1" type="GuiHandlerData"/>
@@ -111,14 +115,14 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_WRITE_CONFIG_MEMORY_FILE" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_WRITE_PROJECT_TCL" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_AREA" value="4" type="GuiHandlerData"/>
-<property name="PACommandNames_ZOOM_FIT" value="6" type="GuiHandlerData"/>
+<property name="PACommandNames_ZOOM_FIT" value="8" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_IN" value="3" type="GuiHandlerData"/>
 <property name="PACommandNames_ZOOM_OUT" value="1" type="GuiHandlerData"/>
 <property name="PAGraphicalView_VIEW" value="21" type="GuiHandlerData"/>
-<property name="PAViews_CODE" value="6" type="GuiHandlerData"/>
-<property name="PAViews_DEVICE" value="607" type="GuiHandlerData"/>
+<property name="PAViews_CODE" value="7" type="GuiHandlerData"/>
+<property name="PAViews_DEVICE" value="608" type="GuiHandlerData"/>
 <property name="PAViews_IP_CATALOG" value="1" type="GuiHandlerData"/>
-<property name="PAViews_PROJECT_SUMMARY" value="21" type="GuiHandlerData"/>
+<property name="PAViews_PROJECT_SUMMARY" value="24" type="GuiHandlerData"/>
 <property name="PAViews_SCHEMATIC" value="4" type="GuiHandlerData"/>
 <property name="PlanAheadTab_REFRESH_CHANGED_MODULES" value="3" type="GuiHandlerData"/>
 <property name="PrimitivesMenu_COLOR" value="2" type="GuiHandlerData"/>
@@ -127,32 +131,36 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PrimitivesMenu_UNFIX_CELLS" value="1" type="GuiHandlerData"/>
 <property name="ProgressDialog_BACKGROUND" value="9" type="GuiHandlerData"/>
 <property name="ProgressDialog_CANCEL" value="2" type="GuiHandlerData"/>
+<property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiHandlerData"/>
 <property name="ProjectTab_CLOSE_DESIGN" value="15" type="GuiHandlerData"/>
 <property name="ProjectTab_RELOAD" value="20" type="GuiHandlerData"/>
-<property name="RDICommands_COPY" value="11" type="GuiHandlerData"/>
+<property name="RDICommands_COPY" value="12" type="GuiHandlerData"/>
 <property name="RDICommands_CUSTOM_COMMANDS" value="1" type="GuiHandlerData"/>
 <property name="RDICommands_DELETE" value="2" type="GuiHandlerData"/>
 <property name="RDICommands_PROPERTIES" value="2" type="GuiHandlerData"/>
 <property name="RDICommands_SAVE_FILE" value="14" type="GuiHandlerData"/>
 <property name="RDICommands_SHOW_WORLD_VIEW" value="1" type="GuiHandlerData"/>
 <property name="RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION" value="2" type="GuiHandlerData"/>
+<property name="RSBBlockPropPanels_NAME" value="2" type="GuiHandlerData"/>
 <property name="SaveProjectUtils_SAVE" value="22" type="GuiHandlerData"/>
 <property name="SelectMenu_HIGHLIGHT" value="59" type="GuiHandlerData"/>
 <property name="SelectMenu_MARK" value="25" type="GuiHandlerData"/>
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="15" type="GuiHandlerData"/>
+<property name="SrcMenu_OPEN_SELECTED_SOURCE_FILES" value="1" type="GuiHandlerData"/>
 <property name="StaleRunDialog_RUN_SYNTHESIS" value="2" type="GuiHandlerData"/>
-<property name="StaleRunDialog_YES" value="1" type="GuiHandlerData"/>
-<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="7" type="GuiHandlerData"/>
+<property name="StaleRunDialog_YES" value="2" type="GuiHandlerData"/>
+<property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="8" type="GuiHandlerData"/>
 <property name="SystemBuilderView_ADD_IP" value="2" type="GuiHandlerData"/>
 <property name="SystemTab_REPORT_IP_STATUS" value="5" type="GuiHandlerData"/>
 <property name="SystemTab_SHOW_IP_STATUS" value="4" type="GuiHandlerData"/>
 <property name="SystemTab_UPGRADE_LATER" value="1" type="GuiHandlerData"/>
-<property name="SystemTreeView_SYSTEM_TREE" value="1" type="GuiHandlerData"/>
+<property name="SystemTreeView_SYSTEM_TREE" value="3" type="GuiHandlerData"/>
+<property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="1" type="GuiHandlerData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="118" type="GuiMode"/>
+<property name="GuiMode" value="123" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="103" type="TclMode"/>
+<property name="TclMode" value="107" type="TclMode"/>
 </item>
 </section>
 </application>

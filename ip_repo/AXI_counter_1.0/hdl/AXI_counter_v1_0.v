@@ -87,10 +87,16 @@
     begin : RO
         for (i=0; i<num_stages; i=i+1) 
         begin : notGate
-           (*DONT_TOUCH= "true"*) LUT6_NOT Inverter(.in_sig(w[j*num_stages+i+j]), .out_sig(w[j*num_stages+j+i+1]));
+           (*DONT_TOUCH= "true"*) LUT6_NOT Inverter(.in_sig(w[j*num_stages+i+j]), .out_sig(w[j*num_stages+i+1+j]));
         end
-        (*DONT_TOUCH= "true"*) assign w[j*num_stages+j] = w[(j+1)*num_stages+j]; //nand Control(w[0], w[SIZE-1], rst);
-        assign input_signal[j] = w[j*num_stages+j];
+        //(*DONT_TOUCH= "true"*) assign w[j*num_stages+j] = w[(j+1)*num_stages+j]; //nand Control(w[0], w[SIZE-1], rst);
+        //(*DONT_TOUCH= "true"*) LUT6_NOT Inverter(.in_sig(w[(j+1)*num_stages+j-1]), .out_sig(w[j*num_stages+j]));
+        //assign input_signal[j] = w[j*num_stages+j];
+    one2two(
+    .input1(w[(j+1)*num_stages+j]),
+    .output1(w[j*num_stages+j]),
+    .output2(input_signal[j])
+    );
     end
     endgenerate
 	

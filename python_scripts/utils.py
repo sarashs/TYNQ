@@ -40,7 +40,7 @@ class Constraints(object):
         self.first_instance_names = first_instance_names
         self.other_instance_names = other_instance_names
         self.max_loop1 = max_loop1
-        self.num_ROs = num_stages
+        self.num_stages = num_stages
         self.shape = shape.astype(int)  # num Slices in x * y
         self.lut_type = lut_type  # A, B, C, D, All
         # {generic_name : [num_RO, num_stages, location_tuple]} ; location_tuple = (x1, y1, x2, y2)
@@ -61,7 +61,7 @@ class Constraints(object):
         ----------
         """
         lut_types = ['A', 'B', 'C', 'D']
-        ROs = self.num_ROs
+        ROs = self.num_stages
         str1 = 'set_property BEL '
         str2 = '6LUT [get_cells '
         str4 = 'set_property LOC SLICE_'
@@ -89,19 +89,23 @@ class Constraints(object):
                         self.shape[i][j] -= 1
                         ROs -= 1
                         if len(self.first_instance_names) > 1:
-                            if ROs == 0:
-                                str3 = self.first_instance_names + ']'
+                            if ROs % self.max_loop1 == self.max_loop1 - 1:
+                                str3 = self.first_instance_names.replace(
+                                    '@inst1', str(ROs // self.max_loop1)
+                                ).replace(
+                                    '@inst2', str(ROs % self.max_loop1)
+                                ) + ']'
                             else:
                                 str3 = '{' + self.other_instance_names.replace(
-                                    '@inst1', str((ROs-1) // self.max_loop1)
+                                    '@inst1', str(ROs // self.max_loop1)
                                 ).replace(
-                                    '@inst2', str((ROs-1) % self.max_loop1)
+                                    '@inst2', str(ROs % self.max_loop1)
                                 ) + '}' + ']'
                         else:
                             str3 = '{' + self.other_instance_names.replace(
                                 '@inst1', str(ROs // self.max_loop1)
                             ).replace(
-                                '@inst2', str((ROs) % self.max_loop1)
+                                '@inst2', str(ROs % self.max_loop1)
                             ) + '}' + ']'
                         if 'ALL' in self.lut_type.upper():
                             lut_type = lut_types[self.shape[i][j] % 4]
@@ -118,15 +122,15 @@ class Constraints(object):
 
         with open(self._outputfile, "a") as file:
             file.write("\n")
-            for ROs in range(self.num_ROs):
+            for ROs in range(self.num_stages):
                 file.write(
                     "set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {" +
                     self.other_instance_names.replace(
                         '@inst1', str(ROs // self.max_loop1)
                     ).replace('@inst2', str(ROs % self.max_loop1)) + '}' + ']' + "\n"
                 )
-    # TODO: take this out of the class
 
+    # TODO: take this out of the class
     def check_and_propose(self, lut_placement, slice_type='L'):
         """
         checks whether a proposed placement satisfies the slice type condition
@@ -295,10 +299,12 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
                     loc_copy[x, y] = 0
                 count += loc_copy[x, y]
                 if loc_copy[x, y] > 0:
+                    locations[x, y] = 0
                     RO_locations[RO_num] = (x, y)
                     RO_num += 1
         a = Constraints(
-            first_instance_names='',
+            first_instance_names=f'design_1_i/{instance_name}/'
+            'inst/RO[@inst1].nolabel_line95/LUT6_2_inst',
             other_instance_names=f'design_1_i/{instance_name}/inst/RO'
             '[@inst1].notGate[@inst2].Inverter/LUT6_inst',
             max_loop1=Num_Stages, num_stages=instance_num_oscillators*Num_Stages,
@@ -309,7 +315,8 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
         a.RO_location()
         a = Constraints(
             first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/input_signal[@inst1]',
+            other_instance_names=f'design_1_i/{instance_name}/inst/'
+            'RO[@inst2].notGate[0].Inverter/out_sig',
             max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
             shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
@@ -353,10 +360,11 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
                     loc_copy[x, y] = 0
                 count += loc_copy[x, y]
                 if loc_copy[x, y] > 0:
+                    locations[x, y] = 0
                     BTI_locations[BTI_num] = (x, y)
                     BTI_num += 1
         a = Constraints(
-            first_instance_names='design_1_i/{instance_name}/inst/CRO[@inst1].NAND/LUT6_inst',
+            first_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].NAND/LUT6_inst',
             other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter@inst2',
             max_loop1=3, num_stages=instance_num_oscillators*3,
             shape=loc_copy, lut_type="ALL", shuffle="NO",
@@ -366,7 +374,7 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
         a.RO_location()
         a = Constraints(
             first_instance_names='',
-            other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter0/in0[0]',
+            other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst2].Inverter0/in0[0]',
             max_loop1=instance_num_oscillators, num_stages=instance_num_oscillators,
             shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
