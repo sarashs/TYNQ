@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Mon Apr 19 13:57:57 2021
+//Date        : Sun May  2 02:13:28 2021
 //Host        : DESKTOP-AI964DL running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -380,7 +380,7 @@ module design_1
         .S00_AXI_wready(Arm_Core_M_AXI_GP0_WREADY),
         .S00_AXI_wstrb(Arm_Core_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(Arm_Core_M_AXI_GP0_WVALID));
-  design_1_AXI_3stage_CRO_0_0 BTI
+  design_1_AXI_3stage_CRO_0_0 BTI0
        (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(Arm_Core_axi_periph_M03_AXI_ARADDR[6:0]),
         .s00_axi_aresetn(System_Reset_peripheral_aresetn),
@@ -402,7 +402,7 @@ module design_1
         .s00_axi_wready(Arm_Core_axi_periph_M03_AXI_WREADY),
         .s00_axi_wstrb(Arm_Core_axi_periph_M03_AXI_WSTRB),
         .s00_axi_wvalid(Arm_Core_axi_periph_M03_AXI_WVALID));
-  design_1_AXI_RO_0_0 RO
+  design_1_AXI_RO_0_0 RO0
        (.s00_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s00_axi_araddr(Arm_Core_axi_periph_M00_AXI_ARADDR[6:0]),
         .s00_axi_aresetn(System_Reset_peripheral_aresetn),

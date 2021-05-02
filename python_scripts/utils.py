@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from itertools import product as prd
 import random
 import json
+from tqdm import tqdm
 
 
 class Constraints(object):
@@ -130,80 +131,6 @@ class Constraints(object):
                     ).replace('@inst2', str(ROs % self.max_loop1)) + '}' + ']' + "\n"
                 )
 
-    # TODO: take this out of the class
-    def check_and_propose(self, lut_placement, slice_type='L'):
-        """
-        checks whether a proposed placement satisfies the slice type condition
-        and if it doesn't propose a new placement. To prevent the plancement on
-        a certain location set it to a negative number (-1).
-
-        parameters
-        ----------
-        lut_placement nparray: desired placement shape
-
-        slice_type str: desired slice type 'L', 'M', 'ALL'
-
-        return
-        ------
-        nparray: proposed placement that satisfies the slice condition
-        """
-        assert lut_placement.shape[0] == self._max_x+1
-        assert lut_placement.shape[1] == self._max_y+1
-        output = np.copy(lut_placement)
-        if slice_type.endswith('ALL'):
-            slice_type = ['L', 'M']
-        for i in range(self._max_x+1):
-            for j in range(self._max_y+1):
-                if lut_placement[i, j] > 0:
-                    delta = 1
-                    x = i
-                    y = j
-                    while self(x, y) not in slice_type:
-                        output[i, j] = 0
-                        for delta_x, delta_y in prd(
-                            list(range(-delta, delta)), list(range(-delta, delta))
-                        ):
-                            if (
-                                (i + delta_x <= self._max_x) and
-                                (j + delta_y <= self._max_y) and
-                                (0 <= i + delta_x) and
-                                (0 <= j + delta_y)
-                            ):
-                                x = i + delta_x
-                                y = j + delta_y
-                                if (
-                                    (self(x, y) in slice_type) and
-                                    (output[x, y] == 0)
-                                ):
-                                    output[x, y] = lut_placement[i, j]
-                                    break
-                                else:
-                                    x = i
-                                    y = j
-                        delta += 1
-        output[output < 0] = 0
-        a = np.copy(output)
-        a = a.T
-        for i in self._architecture['L']:
-            if a[i[1], i[0]] == 0:
-                a[i[1], i[0]] = -1
-        for i in self._architecture['M']:
-            if a[i[1], i[0]] == 0:
-                a[i[1], i[0]] = -2
-        for i in self._architecture['N']:
-            assert a[i[1], i[0]] == 0
-        cmap = plt.cm.jet
-        cmaplist = ["b", "yellowgreen", "gray", "lightsalmon", "salmon", "red", "brown"]
-        cmap = matplotlib.colors.ListedColormap(cmaplist)
-        norm = matplotlib.colors.BoundaryNorm(np.arange(-2.5, 5), cmap.N)
-        fig = plt.figure()
-        ax = fig.add_subplot(111)
-        cax = ax.matshow(a, origin='lower', cmap=cmap, norm=norm)
-        cb = fig.colorbar(cax, ticks=[-2, -1, 0, 1, 2, 3, 4])
-        cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA', '1-LUT', '2-LUT', '3-LUT', '4-LUT'])
-        plt.show()
-        return output
-
     def __call__(self, x, y):
         for item in self._architecture['N']:
             if x == item[0] and y == item[1]:
@@ -216,8 +143,142 @@ class Constraints(object):
                 return 'M'
 
 
+def fill(chipreseources, init_coord=(0, 0), dim=(24, 24), architecture_path='ZYNQ7000.json'):
+    """
+    Fill up all of the available resources in a given block,
+    this function helps with heater placement
+
+    parameters
+    ----------
+    chipreseources nparray: resources available for placement (0)
+    and forbidden spots (-1)
+
+    init_coord int tuple: starting corrdinateion (x, y)
+
+    dim int tuple: dimentions in slice unit (each slice will hold exactly 4 LUTs)
+
+    return
+    ------
+    nparray: proposed block placement
+    """
+    assert (init_coord[0] + dim[0]) < chipreseources.shape[0]
+    assert (init_coord[1] + dim[1]) < chipreseources.shape[1]
+    with open(architecture_path) as f:
+        architecture = json.loads(f.read())
+    lut_placement = np.copy(chipreseources)
+    for item in architecture['N']:
+        lut_placement[item[0], item[1]] = -1
+    y_dim = dim[1]
+    y = init_coord[1]
+    while y_dim > 0:
+        x_dim = dim[0]
+        x = init_coord[0]
+        while x_dim > 0:
+            if lut_placement[x, y] == 0:
+                lut_placement[x, y] = 4
+                x_dim -= 1
+            x += 1
+        y_dim -= 1
+        y += 1
+    plot_layout(lut_placement)
+    return lut_placement
+
+
+def check_and_propose(lut_placement, slice_type='L', architecture_path='ZYNQ7000.json'):
+    """
+    checks whether a proposed placement satisfies the slice type condition
+    and if it doesn't propose a new placement. To forbid the plancement on
+    a certain location set it to a negative number (-1).
+
+    parameters
+    ----------
+    lut_placement nparray: desired placement shape
+
+    slice_type str: desired slice type 'L', 'M', 'ALL'
+
+    return
+    ------
+    nparray: proposed placement that satisfies the slice condition
+    """
+    with open(architecture_path) as f:
+        architecture = json.loads(f.read())
+    assert lut_placement.shape[0] == architecture['MAX'][0]+1
+    assert lut_placement.shape[1] == architecture['MAX'][1]+1
+    output = np.copy(lut_placement)
+    if slice_type.endswith('ALL'):
+        type_values = architecture['L'] + architecture['M']
+    else:
+        type_values = architecture[slice_type]
+    for i in tqdm(range(architecture['MAX'][0]+1)):
+        for j in range(architecture['MAX'][1]+1):
+            if lut_placement[i, j] > 0:
+                delta = 1
+                x = i
+                y = j
+                while [x, y] not in type_values:
+                    output[i, j] = 0 if output[i, j] > 0 else output[i, j]
+                    delta_x_list = list(range(-delta, delta))
+                    delta_y_list = delta_x_list
+                    random.shuffle(delta_x_list)
+                    random.shuffle(delta_y_list)
+                    for delta_x, delta_y in prd(delta_x_list, delta_y_list):
+                        if (
+                            (i + delta_x <= architecture['MAX'][0]) and
+                            (j + delta_y <= architecture['MAX'][1]) and
+                            (0 <= i + delta_x) and
+                            (0 <= j + delta_y)
+                        ):
+                            x = i + delta_x
+                            y = j + delta_y
+                            if (
+                                ([x, y] in type_values) and
+                                (output[x, y] == 0)
+                            ):
+                                output[x, y] = lut_placement[i, j]
+                                break
+                            else:
+                                x = i
+                                y = j
+                    delta += 1
+    # output[output < 0] = 0
+    resource_usage = np.copy(output)
+    plot_layout(resource_usage)
+    return output
+
+
+def plot_layout(resource_usage):
+    """Plots the FPGA resource usage"""
+    with open('ZYNQ7000.json') as f:
+        architecture = json.loads(f.read())
+    a = np.copy(resource_usage)
+    a = a.T
+    for i in architecture['L']:
+        if a[i[1], i[0]] == 0:
+            a[i[1], i[0]] = -1
+        elif a[i[1], i[0]] == -1:
+            a[i[1], i[0]] = 0
+    for i in architecture['M']:
+        if a[i[1], i[0]] == 0:
+            a[i[1], i[0]] = -2
+        elif a[i[1], i[0]] == -1:
+            a[i[1], i[0]] = 0
+    for i in architecture['N']:
+        a[i[1], i[0]] = 0
+    cmap = plt.cm.jet
+    cmaplist = ["b", "yellowgreen", "gray", "lightsalmon", "salmon", "red", "brown"]
+    cmap = matplotlib.colors.ListedColormap(cmaplist)
+    norm = matplotlib.colors.BoundaryNorm(np.arange(-2.5, 5), cmap.N)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    cax = ax.matshow(a, origin='lower', cmap=cmap, norm=norm)
+    cb = fig.colorbar(cax, ticks=[-2, -1, 0, 1, 2, 3, 4])
+    cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA', '1-LUT', '2-LUT', '3-LUT', '4-LUT'])
+    plt.show()
+
+
 def heater_xdc(
-        locations, outputfile, Num_Blocks=64, Block_Size=36, architecture_path='ZYNQ7000.json'
+        locations, Num_Blocks=64, Block_Size=36,
+        outputfile='heater.XDC', architecture_path='ZYNQ7000.json'
 ):
     """
     Create constraints for the heater IP for TestChip design.
@@ -238,9 +299,11 @@ def heater_xdc(
     ------
     None
     """
+    locations[locations < 0] = 0
     assert (
-        sum(sum(locations)) == Block_Size * Num_Blocks
+        locations.sum() == Block_Size * Num_Blocks
     ), "Block_Size*Num_Blocks should match the number of inverters!"
+    locations = check_and_propose(locations, slice_type='ALL')
     a = Constraints(
         first_instance_names='',
         other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/LUT6_inst',
@@ -249,7 +312,7 @@ def heater_xdc(
         architecture_path='ZYNQ7000.json'
     )
     a._outputfile = outputfile
-    a.check_and_propose(locations, slice_type='ALL')
+    a.RO_location()
     a = Constraints(
         first_instance_names='',
         other_instance_names='design_1_i/heater/inst/SHE_block[@inst1].SHE[@inst2].SHE/feedback',
@@ -257,19 +320,20 @@ def heater_xdc(
         lut_type="ALL", shuffle="YES",
         architecture_path='ZYNQ7000.json'
     )
-    a.RO_location()
+    a._outputfile = outputfile
     a.loops()
+    return locations
 
 
-def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
+def RO_xdc(Num_Oscillators, Num_Stages, locations, outputfile='ROs.XDC', slice_type='L'):
     """
     Create constraints for the RO IP for TestChip design.
 
     parameters
     ----------
-    Num_Oscillators int: As per heater IP
+    Num_Oscillators int: As per RO IP
 
-    Num_Stages int: As per heater IP
+    Num_Stages int: As per RO IP (inverters + auxilary stages per RO)
 
     locations nparray:
 
@@ -279,14 +343,15 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
     ------
     None
     """
+    Num_Stages += 1
+    locations[locations < 0] = 0
     assert (
-        sum(sum(locations)) == Num_Oscillators * Num_Stages
+        locations.sum() == Num_Oscillators * Num_Stages
     ), "Block_Size*Num_Blocks should match the number of inverters!"
     number_of_instances = np.ceil(Num_Oscillators / 32).astype(int)
     RO_locations = dict()
     RO_num = 0
     for i in range(number_of_instances):
-        # TODO: Apply the name convention to the TestChip class as well
         instance_name = f'RO{i}'
         instance_num_oscillators = 32 if (
             number_of_instances-1-i > 0
@@ -302,16 +367,17 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
                     locations[x, y] = 0
                     RO_locations[RO_num] = (x, y)
                     RO_num += 1
+        locations = check_and_propose(loc_copy, slice_type)
         a = Constraints(
             first_instance_names=f'design_1_i/{instance_name}/'
             'inst/RO[@inst1].nolabel_line95/LUT6_2_inst',
             other_instance_names=f'design_1_i/{instance_name}/inst/RO'
             '[@inst1].notGate[@inst2].Inverter/LUT6_inst',
             max_loop1=Num_Stages, num_stages=instance_num_oscillators*Num_Stages,
-            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            shape=locations, lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
-        a.check_and_propose(locations, slice_type='ALL')
+        a._outputfile = outputfile
         a.RO_location()
         a = Constraints(
             first_instance_names='',
@@ -321,14 +387,15 @@ def RO_xdc(Num_Oscillators, Num_Stages, locations, slice_type='L'):
             shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
+        a._outputfile = outputfile
         a.loops()
     with open('RO_locations.json', 'w') as file:
         json.dump(RO_locations, file)
-
+    return locations
 # TODO: Fix the BTI sensor so that it fits my format here
 
 
-def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
+def BTI_xdc(Num_Oscillators, locations, outputfile='BTI.XDC', slice_type='L'):
     """
     Create constraints for the BTI IP for TestChip design.
 
@@ -340,8 +407,9 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
     ------
     None
     """
+    locations[locations < 0] = 0
     assert (
-        sum(sum(locations)) == Num_Oscillators * 3
+        locations.sum() == Num_Oscillators * 3
     ), "Block_Size*Num_Blocks should match the number of inverters!"
     number_of_instances = np.ceil(Num_Oscillators / 32).astype(int)
     BTI_locations = dict()
@@ -363,14 +431,15 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
                     locations[x, y] = 0
                     BTI_locations[BTI_num] = (x, y)
                     BTI_num += 1
+        locations = check_and_propose(loc_copy, slice_type)
         a = Constraints(
             first_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].NAND/LUT6_inst',
             other_instance_names=f'design_1_i/{instance_name}/inst/CRO[@inst1].Inverter@inst2',
             max_loop1=3, num_stages=instance_num_oscillators*3,
-            shape=loc_copy, lut_type="ALL", shuffle="NO",
+            shape=locations, lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
-        a.check_and_propose(locations, slice_type='ALL')
+        a._outputfile = outputfile
         a.RO_location()
         a = Constraints(
             first_instance_names='',
@@ -379,12 +448,14 @@ def BTI_xdc(Num_Oscillators, locations, slice_type='L'):
             shape=np.array([instance_num_oscillators]), lut_type="ALL", shuffle="NO",
             architecture_path='ZYNQ7000.json'
         )
+        a._outputfile = outputfile
         a.loops()
     with open('BTI_locations.json', 'w') as file:
         json.dump(BTI_locations, file)
+    return locations
 
 
-def chipresources():
+def chipresources(input_file='ZYNQ7000.json'):
     """
     Reads the architecture file and produces an ndarray with the dimentions of the input file.
 
@@ -396,24 +467,10 @@ def chipresources():
     ------
     chipreseources ndarray
     """
-    with open('ZYNQ7000.json') as f:
+    with open(input_file) as f:
         architecture = json.loads(f.read())
     chipreseources = np.zeros((architecture['MAX'][0]+1, architecture['MAX'][1]+1))
     for item in architecture['N']:
         chipreseources[item[0], item[1]] = -1
-    a = np.zeros((architecture['MAX'][1] + 1, architecture['MAX'][0] + 1))
-    for i in architecture['L']:
-        a[i[1], i[0]] = -1
-    for i in architecture['M']:
-        a[i[1], i[0]] = -2
-    cmap = plt.cm.jet
-    cmaplist = ["b", "yellowgreen", "gray"]
-    cmap = matplotlib.colors.ListedColormap(cmaplist)
-    norm = matplotlib.colors.BoundaryNorm(np.arange(-2.5, 1), cmap.N)
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    cax = ax.matshow(a, origin='lower', cmap=cmap, norm=norm)
-    cb = fig.colorbar(cax, ticks=[-2, -1, 0])
-    cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA'])
-    plt.show()
+    plot_layout(chipreseources)
     return chipreseources

@@ -199,7 +199,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -508,7 +508,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.FREQ_HZ">1e+08</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S00_AXI_CLK.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -590,11 +590,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 19 20:57:58 UTC 2021</spirit:value>
+            <spirit:value>Sun May 02 09:13:57 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4eb35ab0</spirit:value>
+            <spirit:value>9:418b4154</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -605,7 +605,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4eb35ab0</spirit:value>
+            <spirit:value>9:418b4154</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -621,11 +621,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 19 20:57:58 UTC 2021</spirit:value>
+            <spirit:value>Sun May 02 09:16:56 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4eb35ab0</spirit:value>
+            <spirit:value>9:418b4154</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -641,11 +641,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 19 20:57:58 UTC 2021</spirit:value>
+            <spirit:value>Sun May 02 09:13:57 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ae3ba181</spirit:value>
+            <spirit:value>9:0301ea3d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -661,11 +661,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Apr 19 20:57:58 UTC 2021</spirit:value>
+            <spirit:value>Sun May 02 09:16:56 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:ae3ba181</spirit:value>
+            <spirit:value>9:0301ea3d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1002,7 +1002,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>num_oscillators</spirit:name>
         <spirit:displayName>Num Oscillators</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.num_oscillators">31</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.num_oscillators">32</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -1026,7 +1026,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/hdl/AXI_counter_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/hdl/AXI_counter_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1034,11 +1034,15 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/src/frequency_counter.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/src/frequency_counter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/hdl/AXI_counter_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/hdl/one2two.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8bf3/hdl/AXI_counter_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1053,7 +1057,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/hdl/AXI_counter_v1_0_S00_AXI.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/hdl/AXI_counter_v1_0_S00_AXI.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -1061,11 +1065,15 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/src/frequency_counter.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/src/frequency_counter.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/a350/hdl/AXI_counter_v1_0.v</spirit:name>
+        <spirit:name>../../ipshared/8bf3/hdl/one2two.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/8bf3/hdl/AXI_counter_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1142,13 +1150,13 @@
     <spirit:parameter>
       <spirit:name>num_oscillators</spirit:name>
       <spirit:displayName>Num Oscillators</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.num_oscillators" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">31</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.num_oscillators" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">32</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>AXI_RO_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1ba829cb_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@321fc08_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
@@ -1302,6 +1310,103 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3b4768cd_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5ae9556e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@49bfcf7a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6032d8a2_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19ff0c0f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5555b700_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fed9319_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@516ffab6_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@89b5a1d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c99942_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ffe2fde_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f0f2f47_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10fa2b64_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a05b916_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a2b797e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@333aa763_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47ecd9be_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29fe4c7b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31bd3b39_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aafbe80_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26149489_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@432e7f60_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5357b3be_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6296da8c_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@58cb06af_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22a76774_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2978ebab_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40da53b5_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5373472e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56134706_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b733af5_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43d30820_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d791df4_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fe7b9ed_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3fc4e267_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ff5da7f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f39f68f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18faad82_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ce626e4_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65605658_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37e52de2_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67d12209_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@388d8716_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e7bd8e6_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f27be5_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29b2f206_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ab1a2d1_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1df6c417_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48bfbc1e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@727e96cc_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@98f027f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2af89b33_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46479f33_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@148daa9a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15a7bd23_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1310ea9a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e468322_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f6b7a6d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29b82b21_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@538dc27b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5651d31f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c4097cd_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@529b7776_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@209f89b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@106cc439_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55705db_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cc224e3_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6769c462_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cfd6586_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d134dd2_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@731371f5_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30a0a180_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ac35760_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@502889b8_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e76ea57_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52d2062e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69887d92_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3add1ec8_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e0b9a8d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39619728_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69c1972_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cf9d3c8_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b88ff18_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57adf87b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36ede1c3_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f3c0a12_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@573ec473_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77c22d3f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e7730fe_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61aae050_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bec916_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e185c6b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74af0c49_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65436e01_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@141a4d5_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@779e2b04_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b2f96f9_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77efea40_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@414f061f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77e79dbc_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -1351,7 +1456,7 @@
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0312d308"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c2a5b85c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ae1fea11"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="140e0387"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="911178cf"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="218ad4aa"/>

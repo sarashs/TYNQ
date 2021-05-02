@@ -1,0 +1,6 @@
+numpy
+matplotlib
+itertools
+random
+json
+tqdm

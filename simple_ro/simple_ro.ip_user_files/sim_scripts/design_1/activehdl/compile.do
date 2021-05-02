@@ -115,10 +115,11 @@ vcom -work xil_defaultlib -93 \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../simple_ro.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../simple_ro.srcs/sources_1/bd/design_1/ipshared/6b56/hdl" "+incdir+C:/Xilinx/Vivado/2020.1/data/xilinx_vip/include" \
 "../../../bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1.v" \
-"../../../bd/design_1/ipshared/a350/hdl/AXI_counter_v1_0_S00_AXI.v" \
+"../../../bd/design_1/ipshared/8bf3/hdl/AXI_counter_v1_0_S00_AXI.v" \
 "../../../../simple_ro.srcs/sources_1/bd/AppData/Roaming/Xilinx/Vivado/-force/LUT6_NOT.v" \
-"../../../bd/design_1/ipshared/a350/src/frequency_counter.v" \
-"../../../bd/design_1/ipshared/a350/hdl/AXI_counter_v1_0.v" \
+"../../../bd/design_1/ipshared/8bf3/src/frequency_counter.v" \
+"../../../bd/design_1/ipshared/8bf3/hdl/one2two.v" \
+"../../../bd/design_1/ipshared/8bf3/hdl/AXI_counter_v1_0.v" \
 "../../../bd/design_1/ip/design_1_AXI_RO_0_0/sim/design_1_AXI_RO_0_0.v" \
 "../../../bd/design_1/ipshared/0124/hdl/AXI_CRO_v1_0_S00_AXI.v" \
 "../../../bd/design_1/ipshared/LUT6_NAND.v" \

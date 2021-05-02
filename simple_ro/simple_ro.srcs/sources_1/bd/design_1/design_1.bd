@@ -6,7 +6,8 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "None",
-      "tool_version": "2020.1"
+      "tool_version": "2020.1",
+      "validated": "true"
     },
     "design_tree": {
       "Arm_Core": "",
@@ -23,17 +24,73 @@
       },
       "Temp_sensor": "",
       "heater": "",
-      "RO0": "",
-      "BTI0": ""
+      "BTI0": "",
+      "RO0": ""
     },
     "interface_ports": {
       "DDR": {
         "mode": "Master",
-        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0"
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          }
+        }
       },
       "FIXED_IO": {
         "mode": "Master",
-        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0"
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -1879,16 +1936,16 @@
               }
             },
             "interface_nets": {
-              "s00_couplers_to_auto_pc": {
-                "interface_ports": [
-                  "S_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
+                ]
+              },
+              "s00_couplers_to_auto_pc": {
+                "interface_ports": [
+                  "S_AXI",
+                  "auto_pc/S_AXI"
                 ]
               }
             },
@@ -2125,16 +2182,40 @@
           }
         },
         "interface_nets": {
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
+            ]
+          },
+          "m00_couplers_to_Arm_Core_axi_periph": {
+            "interface_ports": [
+              "M00_AXI",
+              "m00_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
+            ]
+          },
           "m01_couplers_to_Arm_Core_axi_periph": {
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
             ]
           },
-          "xbar_to_m03_couplers": {
+          "xbar_to_m01_couplers": {
             "interface_ports": [
-              "xbar/M03_AXI",
-              "m03_couplers/S_AXI"
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           },
           "m02_couplers_to_Arm_Core_axi_periph": {
@@ -2155,34 +2236,10 @@
               "s00_couplers/S_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
-            "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
-            ]
-          },
-          "m00_couplers_to_Arm_Core_axi_periph": {
-            "interface_ports": [
-              "M00_AXI",
-              "m00_couplers/M_AXI"
-            ]
-          },
           "s00_couplers_to_xbar": {
             "interface_ports": [
               "s00_couplers/M_AXI",
               "xbar/S00_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
-            ]
-          },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
             ]
           }
         },
@@ -2275,18 +2332,6 @@
           }
         }
       },
-      "RO0": {
-        "vlnv": "xilinx.com:user:AXI_RO:1.0",
-        "xci_name": "design_1_AXI_RO_0_0",
-        "parameters": {
-          "num_oscillators": {
-            "value": "31"
-          },
-          "num_stages": {
-            "value": "3"
-          }
-        }
-      },
       "BTI0": {
         "vlnv": "xilinx.com:user:AXI_3stage_BTI:1.0",
         "xci_name": "design_1_AXI_3stage_CRO_0_0",
@@ -2295,21 +2340,21 @@
             "value": "31"
           }
         }
+      },
+      "RO0": {
+        "vlnv": "xilinx.com:user:AXI_RO:1.0",
+        "xci_name": "design_1_AXI_RO_0_0",
+        "parameters": {
+          "num_oscillators": {
+            "value": "32"
+          },
+          "num_stages": {
+            "value": "3"
+          }
+        }
       }
     },
     "interface_nets": {
-      "Arm_Core_axi_periph_M02_AXI": {
-        "interface_ports": [
-          "Arm_Core_axi_periph/M02_AXI",
-          "Temp_sensor/s_axi_lite"
-        ]
-      },
-      "processing_system7_0_DDR": {
-        "interface_ports": [
-          "DDR",
-          "Arm_Core/DDR"
-        ]
-      },
       "Arm_Core_M_AXI_GP0": {
         "interface_ports": [
           "Arm_Core/M_AXI_GP0",
@@ -2322,16 +2367,28 @@
           "BTI0/S00_AXI"
         ]
       },
-      "processing_system7_0_FIXED_IO": {
+      "processing_system7_0_DDR": {
         "interface_ports": [
-          "FIXED_IO",
-          "Arm_Core/FIXED_IO"
+          "DDR",
+          "Arm_Core/DDR"
+        ]
+      },
+      "Arm_Core_axi_periph_M02_AXI": {
+        "interface_ports": [
+          "Arm_Core_axi_periph/M02_AXI",
+          "Temp_sensor/s_axi_lite"
         ]
       },
       "Arm_Core_axi_periph_M01_AXI": {
         "interface_ports": [
           "Arm_Core_axi_periph/M01_AXI",
           "heater/S00_AXI"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "Arm_Core/FIXED_IO"
         ]
       },
       "Arm_Core_axi_periph_M00_AXI": {
@@ -2355,8 +2412,8 @@
           "Temp_sensor/s_axi_aclk",
           "heater/s00_axi_aclk",
           "Arm_Core_axi_periph/M03_ACLK",
-          "RO0/s00_axi_aclk",
-          "BTI0/s00_axi_aclk"
+          "BTI0/s00_axi_aclk",
+          "RO0/s00_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2376,8 +2433,8 @@
           "Temp_sensor/s_axi_aresetn",
           "heater/s00_axi_aresetn",
           "Arm_Core_axi_periph/M03_ARESETN",
-          "RO0/s00_axi_aresetn",
-          "BTI0/s00_axi_aresetn"
+          "BTI0/s00_axi_aresetn",
+          "RO0/s00_axi_aresetn"
         ]
       }
     },
