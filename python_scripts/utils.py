@@ -14,7 +14,7 @@ from tqdm import tqdm
 import yaml
 from pathlib import Path
 from dataclasses import dataclass
-from dataclasses import replace as rpc
+from copy import deepcopy
 from collections import defaultdict
 
 
@@ -137,6 +137,9 @@ class IpLoc():
         cb.ax.set_yticklabels(['SliceM', 'SliceL', 'NA', '1-LUT', '2-LUT', '3-LUT', '4-LUT'])
         plt.show()
 
+    def copy(self) -> object:
+        return deepcopy(self)
+
     @classmethod
     def add_resource_usage(cls, first_instance, other_instance):
         result = first_instance.remaining_resources + other_instance.remaining_resources
@@ -154,77 +157,78 @@ class IpLoc():
         first_instance.remaining_resources[other_instance.remaining_resources > 0] = -1
         return first_instance
 
-    def check_and_propose(self, slice_type='L'):
-        """
-        checks whether a proposed placement satisfies the slice type condition
-        and if it doesn't propose a new placement. To forbid the plancement on
-        a certain location set it to a negative number (-1).
 
-        parameters
-        ----------
-        lut_placement IpLoc: desired placement
+def check_and_propose(IpLoc_data, slice_type='L'):
+    """
+    checks whether a proposed placement satisfies the slice type condition
+    and if it doesn't propose a new placement. To forbid the plancement on
+    a certain location set it to a negative number (-1).
 
-        slice_type str: desired slice type 'L', 'M', 'ALL'
+    parameters
+    ----------
+    lut_placement IpLoc: desired placement
 
-        return
-        ------
-        IpLoc: proposed placement that satisfies the slice condition
-        """
+    slice_type str: desired slice type 'L', 'M', 'ALL'
 
-        output = rpc(self)
-        if slice_type == 'ALL':
-            type_values = self.slice_l + self.slice_m
-        elif slice_type == 'L':
-            type_values = self.slice_l
-        elif slice_type == 'M':
-            type_values = self.slice_m
-        max_x = self.max_x
-        max_y = self.max_y
-        for i in tqdm(range(max_x)):
-            for j in range(max_y):
-                if self.remaining_resources[i, j] > 0:
+    return
+    ------
+    IpLoc: proposed placement that satisfies the slice condition
+    """
+
+    output = IpLoc_data.copy()
+    if slice_type == 'ALL':
+        type_values = IpLoc_data.slice_l + IpLoc_data.slice_m
+    elif slice_type == 'L':
+        type_values = IpLoc_data.slice_l
+    elif slice_type == 'M':
+        type_values = IpLoc_data.slice_m
+    max_x = IpLoc_data.max_x
+    max_y = IpLoc_data.max_y
+    for i in tqdm(range(max_x)):
+        for j in range(max_y):
+            if IpLoc_data.remaining_resources[i, j] > 0:
+                pair = zip([
+                    IpLoc_data._lut_a,
+                    IpLoc_data._lut_b,
+                    IpLoc_data._lut_c,
+                    IpLoc_data._lut_d], [
+                    output._lut_a,
+                    output._lut_b,
+                    output._lut_c,
+                    output._lut_d])
+                for input_field, output_field in pair:
                     delta = 1
                     x = i
                     y = j
                     while [x, y] not in type_values:
-                        pair = zip([self.remaining_resources,
-                                    self._lut_a,
-                                    self._lut_b,
-                                    self._lut_c,
-                                    self._lut_d], [
-                                   output.remaining_resources,
-                                   output._lut_a,
-                                   output._lut_b,
-                                   output._lut_c,
-                                   output._lut_d])
                         delta_x_list = list(range(-delta, delta))
                         delta_y_list = delta_x_list
-                        random.shuffle(delta_x_list)
-                        random.shuffle(delta_y_list)
-                        for input_filed, output_field in pair:
-                            output_field[i, j] = 0 if output_field[i, j] > 0 else output_field[i, j]
-                            for delta_x, delta_y in prd(delta_x_list, delta_y_list):
-                                if (
+                        for delta_x, delta_y in prd(delta_x_list, delta_y_list):
+                            if (
                                     (i + delta_x <= max_x) and
                                     (j + delta_y <= max_y) and
                                     (0 <= i + delta_x) and
-                                    (0 <= j + delta_y)
-                                ):
-                                    x = i + delta_x
-                                    y = j + delta_y
-                                    if (
-                                        ([x, y] in type_values) and
-                                        (output_field[x, y] == -1) and
-                                        (self.remaining_resources == 0)
-                                    ):
-                                        output_field[x, y] = input_filed[i, j]
-                                        break
-                                    else:
-                                        x = i
-                                        y = j
-                            delta += 1
-        # output[output < 0] = 0
-        return output
+                                    (0 <= j + delta_y)):
+                                x = i + delta_x
+                                y = j + delta_y
+                            if (
+                                    (input_field[i, j] > -1) and
+                                    ([x, y] in type_values) and
+                                    (output_field[x, y] == -1) and
+                                    (IpLoc_data.remaining_resources[x, y] > -1) and
+                                    (output.remaining_resources[i, j] > 0)):
+                                output_field[i, j] = -1
+                                output_field[x, y] = input_field[i, j]
+                                output.remaining_resources[i, j] -= 1
+                                output.remaining_resources[x, y] += 1
+                                break
+                            elif output.remaining_resources[i, j] == 0:
+                                break
+                            else:
+                                x = i
+                                y = j
+                        delta += 1
+    return output
 
 
 @dataclass
@@ -237,7 +241,9 @@ class TestCircuit():
         with open(self.yaml_path, 'r') as file:
             self.circuit = yaml.full_load(file)
         print(f'There are a total of {len(self.circuit.keys())} IPs in this design.')
+        self.locations = dict()
         for item in self.circuit.keys():
+            self.locations[item] = None
             if self.circuit[item]['IP'] == 'RO':
                 self.circuit[item]['IP_specs']['first_instance_name'] = (
                     self.circuit[item]['IP_specs']['first_instance_name'].replace('#', '@inst1')
@@ -247,7 +253,7 @@ class TestCircuit():
                         '#', '@inst1', 1).replace('#', '@inst2', 1)
                 )
                 self.circuit[item]['IP_specs']['feedback_signal'] = (
-                    self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst2')
+                    self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst1')
                 )
             if self.circuit[item]['IP'] == 'BTI':
                 self.circuit[item]['IP_specs']['first_instance_name'] = (
@@ -258,7 +264,7 @@ class TestCircuit():
                         '#', '@inst1', 1).replace('#', '@inst2', 1)
                 )
                 self.circuit[item]['IP_specs']['feedback_signal'] = (
-                    self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst2')
+                    self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst1')
                 )
             if self.circuit[item]['IP'] == 'heater':
                 self.circuit[item]['IP_specs']['SHE_instance_name'] = (
@@ -352,16 +358,23 @@ class Constraints(object):
         """
         This function generates contraints to supress combinational loop errors.
         """
-
+        old_inst1 = -1
+        old_inst2 = -1
         with open(self._outputfile, "a") as file:
             file.write("\n")
             for ROs in range(self.num_oscillators * self.num_stages):
-                file.write(
-                    "set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {" +
-                    self.feedback_signal.replace(
-                        '@inst1', str(ROs // self.num_stages)
-                    ).replace('@inst2', str(ROs % self.num_stages)) + '}' + ']' + "\n"
-                )
+                inst1 = ROs // self.num_stages
+                inst2 = ROs % self.num_stages
+                if ((old_inst1 != inst1 and '@inst1' in self.feedback_signal) or
+                        (old_inst2 != inst2 and '@inst2' in self.feedback_signal)):
+                    file.write(
+                        "set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {" +
+                        self.feedback_signal.replace(
+                            '@inst1', str(inst1)
+                        ).replace('@inst2', str(inst2)) + '}' + ']' + "\n"
+                    )
+                    old_inst1 = inst1
+                    old_inst2 = inst2
 
 
 def heaer_fill(test_circuit, init_coord=(0, 0), dim=(24, 24)):
@@ -394,7 +407,7 @@ def heaer_fill(test_circuit, init_coord=(0, 0), dim=(24, 24)):
             ), 'dimensions do not math the number of SHEs per IP config file'
             SHE_list = list(range(num_block * num_slices))
             random.shuffle(SHE_list)
-            lut_placement = rpc(test_circuit.locations)
+            lut_placement = deepcopy(test_circuit.locations[item])
             y_dim = dim[1]
             y = init_coord[1]
             lst_indx = 0
@@ -403,15 +416,18 @@ def heaer_fill(test_circuit, init_coord=(0, 0), dim=(24, 24)):
                 x = init_coord[0]
                 while x_dim > 0:
                     if lut_placement.remaining_resources[x, y] == 0:
-                        lut_placement.remaining_resources[x, y] = 4
-                        # shuffling the SHE locations
-                        lut_placement._lut_a[x, y] = SHE_list[lst_indx] // num_slices
-                        lut_placement._lut_b[x, y] = SHE_list[lst_indx] // num_slices
-                        lut_placement._lut_c[x, y] = SHE_list[lst_indx] // num_slices
-                        lut_placement._lut_d[x, y] = SHE_list[lst_indx] // num_slices
-                        # End shuffling the SHE locations
-                        lst_indx += 1
-                        x_dim -= 1
+                        try:
+                            lut_placement.remaining_resources[x, y] = 4
+                            # shuffling the SHE locations
+                            lut_placement._lut_a[x, y] = SHE_list[lst_indx] // num_slices
+                            lut_placement._lut_b[x, y] = SHE_list[lst_indx] // num_slices
+                            lut_placement._lut_c[x, y] = SHE_list[lst_indx] // num_slices
+                            lut_placement._lut_d[x, y] = SHE_list[lst_indx] // num_slices
+                            # End shuffling the SHE locations
+                            lst_indx += 1
+                            x_dim -= 1
+                        except IndexError:
+                            print('Index is going out of bonds. Change your init_coord.')
                     x += 1
                 y_dim -= 1
                 y += 1
@@ -455,6 +471,7 @@ def heater_xdc(
             constraints_object._outputfile = outputfile
             constraints_object.RO_location()
             constraints_object.loops()
+    return heater_placements
 
 
 def RO_xdc(
@@ -490,7 +507,7 @@ def RO_xdc(
             Num_Oscillators = circuit[item]['IP_specs']['Num_Oscillators']
             Num_Stages = circuit[item]['IP_specs']['Num_Stages'] + 1
             lut_placement = circuit_data.locations[item]
-            lut_placement = lut_placement.check_and_propose(slice_type)
+            lut_placement = check_and_propose(lut_placement, slice_type)
             constraints_object = Constraints(
                 first_instance_name, other_instance_names, feedback_signal,
                 lut_placement, Num_Oscillators, Num_Stages
@@ -537,7 +554,7 @@ def BTI_xdc(
             Num_Oscillators = circuit[item]['IP_specs']['Num_Oscillators']
             Num_Stages = 3
             lut_placement = circuit_data.locations[item]
-            lut_placement = lut_placement.check_and_propose(slice_type)
+            lut_placement = check_and_propose(lut_placement, slice_type)
             constraints_object = Constraints(
                 first_instance_name, other_instance_names, feedback_signal,
                 lut_placement, Num_Oscillators, Num_Stages
@@ -565,3 +582,4 @@ def create_constraints(yaml_path):
     ----------
     yaml_path Path: input file path
     """
+    pass
