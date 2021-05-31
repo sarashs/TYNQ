@@ -269,7 +269,7 @@ class TestCircuit():
             if self.circuit[item]['IP'] == 'heater':
                 self.circuit[item]['IP_specs']['SHE_instance_name'] = (
                     self.circuit[item]['IP_specs']['SHE_instance_name'].replace(
-                        '#', '@inst1').replace('#', '@inst2', 1)
+                        '#', '@inst1', 1).replace('#', '@inst2', 1)
                 )
                 self.circuit[item]['IP_specs']['feedback_signal'] = (
                     self.circuit[item]['IP_specs']['feedback_signal'].replace(
@@ -336,7 +336,7 @@ class Constraints(object):
                                     str3 = self.first_instance_names.replace(
                                         '@inst1', str(ro_idx)
                                     ).replace(
-                                        '@inst2', str(ROs[ro_idx] - 1)
+                                        '@inst2', str(ROs[ro_idx])
                                     ) + ']'
                                 else:
                                     str3 = '{' + self.other_instance_names.replace(
@@ -348,7 +348,7 @@ class Constraints(object):
                                 str3 = '{' + self.other_instance_names.replace(
                                     '@inst1', str(ro_idx)
                                 ).replace(
-                                    '@inst2', str(ROs[ro_idx] - 1)
+                                    '@inst2', str(ROs[ro_idx])
                                 ) + '}' + ']'
                             str5 = f'X{x}Y{y} [get_cells '
                             file.write(str1 + lut_type + str2 + str3 + "\n")
