@@ -17,25 +17,17 @@ RO1:
 RO2:
      IP: RO
      IP_specs:
-         first_instance_name: 'design_1_i/RO1/inst/RO[#].nolabel_line95/LUT6_2_inst'
-         other_instance_names: 'design_1_i/RO1/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+         first_instance_name: 'design_1_i/RO2/inst/RO[#].nolabel_line95/LUT6_2_inst'
+         other_instance_names: 'design_1_i/RO2/inst/RO[#].notGate[#].Inverter/LUT6_inst'
          feedback_signal: 'design_1_i/RO2/inst/RO[#].notGate[0].Inverter/out_sig'
          Num_Oscillators: 32
          Num_Stages: 3
 RO3:
      IP: RO
      IP_specs:
-         first_instance_name: 'design_1_i/RO1/inst/RO[#].nolabel_line95/LUT6_2_inst'
-         other_instance_names: 'design_1_i/RO1/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+         first_instance_name: 'design_1_i/RO3/inst/RO[#].nolabel_line95/LUT6_2_inst'
+         other_instance_names: 'design_1_i/RO3/inst/RO[#].notGate[#].Inverter/LUT6_inst'
          feedback_signal: 'design_1_i/RO3/inst/RO[#].notGate[0].Inverter/out_sig'
-         Num_Oscillators: 32
-         Num_Stages: 3
-RO4:
-     IP: RO
-     IP_specs:
-         first_instance_name: 'design_1_i/RO1/inst/RO[#].nolabel_line95/LUT6_2_inst'
-         other_instance_names: 'design_1_i/RO1/inst/RO[#].notGate[#].Inverter/LUT6_inst'
-         feedback_signal: 'design_1_i/RO4/inst/RO[#].notGate[0].Inverter/out_sig'
          Num_Oscillators: 32
          Num_Stages: 3
 #BTI0:
