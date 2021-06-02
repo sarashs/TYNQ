@@ -6,7 +6,7 @@ class TestChip(Overlay):
     """TestChip class is the main driver
     class for interacting with our FPGA bitstream
     Coded by: Uncle Arash
-    Version: 0.0
+    Version: 1.0 : New XADC measurement functionalities added
     """
     def __init__(self, ol_path, **kwargs):
         super().__init__(ol_path)
@@ -15,6 +15,15 @@ class TestChip(Overlay):
         self.BTI_base_write_address = 0x00000000
         self.BTI_base_read_address = 0x00000004
         self.temp_sensor_address = 0x200
+        self.vccint_sensor_address = 0x204
+        self.vccaux_sensor_address = 0x208
+        self.Vp_Vn_sensor_address = 0x20C
+        self.vrefP_sensor_address = 0x210
+        self.vrefN_sensor_address = 0x214
+        self.vbram_sensor_address = 0x218
+        self.pssvccint_sensor_address = 0x234
+        self.pssvccaux_sensor_address = 0x238
+        self.pssvccmem_sensor_address = 0x23C
         self.counter_address_increament = 0x04
         self.num_oscillators = 31
         self.num_BTI = 31
@@ -43,6 +52,21 @@ class TestChip(Overlay):
     def XADC_temp(self):
         return ((self.Temp_sensor.read(self.temp_sensor_address
                                        ) >> 4) * 503.975/4096 - 273.15)
+  
+    def XADC_voltage(self, voltage_name='vccint'):
+        if voltage_name == 'vccaux':
+            measurement_out = self.Temp_sensor.read(self.vccaux_sensor_address)
+        elif voltage_name == 'vbram':
+            measurement_out = self.Temp_sensor.read(self.vbram_sensor_address)
+        elif voltage_name == 'pssvccint':
+            measurement_out = self.Temp_sensor.read(self.pssvccint_sensor_address)
+        elif voltage_name == 'pssvccaux':
+            measurement_out = self.Temp_sensor.read(self.pssvccaux_sensor_address)
+        elif voltage_name == 'pssvccmem':
+            measurement_out = self.Temp_sensor.read(self.pssvccmem_sensor_address)
+        else:
+            measurement_out = self.Temp_sensor.read(self.vccint_sensor_address)
+        return (measurement_out >> 4) * 3/4096
 
     def freq2temp(self, Δf):
         """The values of a and b are for 5 stage ROs in ZYNQ 7000"""
