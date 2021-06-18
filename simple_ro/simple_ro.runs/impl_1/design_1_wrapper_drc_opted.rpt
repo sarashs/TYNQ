@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun May  2 02:20:18 2021
+| Tool Version : Vivado v.2020.1.1_AR75516 (win64) Build 2960000 Wed Aug  5 22:57:20 MDT 2020
+| Date         : Thu Jun 17 23:59:45 2021
 | Host         : DESKTOP-AI964DL running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_opted.rpt -pb design_1_wrapper_drc_opted.pb -rpx design_1_wrapper_drc_opted.rpx
 | Design       : design_1_wrapper
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2494
+             Violations found: 2432
 +-------------+----------+-------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                 | Violations |
 +-------------+----------+-------------------------------------------------------------+------------+
-| LUTLP-2     | Warning  | Combinatorial Loop Allowed                                  | 2367       |
+| LUTLP-2     | Warning  | Combinatorial Loop Allowed                                  | 2336       |
 | PDRC-153    | Warning  | Gated clock check                                           | 32         |
-| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 95         |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 64         |
 +-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -11557,260 +11557,13 @@ Related violations: <none>
 
 LUTLP-2#2305 Warning
 Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[0].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[0].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[0].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__29.
-Related violations: <none>
-
-LUTLP-2#2306 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[10].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[10].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[10].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__19.
-Related violations: <none>
-
-LUTLP-2#2307 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[11].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[11].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[11].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__18.
-Related violations: <none>
-
-LUTLP-2#2308 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[12].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[12].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[12].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__17.
-Related violations: <none>
-
-LUTLP-2#2309 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[13].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[13].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[13].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__16.
-Related violations: <none>
-
-LUTLP-2#2310 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[14].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[14].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[14].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__15.
-Related violations: <none>
-
-LUTLP-2#2311 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[15].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[15].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[15].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__14.
-Related violations: <none>
-
-LUTLP-2#2312 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[16].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[16].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[16].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__13.
-Related violations: <none>
-
-LUTLP-2#2313 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[17].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[17].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[17].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__12.
-Related violations: <none>
-
-LUTLP-2#2314 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[18].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[18].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[18].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__11.
-Related violations: <none>
-
-LUTLP-2#2315 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[19].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[19].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[19].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__10.
-Related violations: <none>
-
-LUTLP-2#2316 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[1].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[1].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[1].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__28.
-Related violations: <none>
-
-LUTLP-2#2317 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[20].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[20].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[20].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__9.
-Related violations: <none>
-
-LUTLP-2#2318 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[21].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[21].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[21].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__8.
-Related violations: <none>
-
-LUTLP-2#2319 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[22].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[22].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[22].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__7.
-Related violations: <none>
-
-LUTLP-2#2320 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[23].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[23].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[23].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__6.
-Related violations: <none>
-
-LUTLP-2#2321 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[24].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[24].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[24].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__5.
-Related violations: <none>
-
-LUTLP-2#2322 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[25].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[25].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[25].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__4.
-Related violations: <none>
-
-LUTLP-2#2323 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[26].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[26].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[26].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__3.
-Related violations: <none>
-
-LUTLP-2#2324 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[27].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[27].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[27].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__2.
-Related violations: <none>
-
-LUTLP-2#2325 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[28].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[28].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[28].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__1.
-Related violations: <none>
-
-LUTLP-2#2326 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[29].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[29].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[29].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__0.
-Related violations: <none>
-
-LUTLP-2#2327 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[2].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[2].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[2].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__27.
-Related violations: <none>
-
-LUTLP-2#2328 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[30].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[30].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[30].NAND/LUT6_inst, design_1_i/BTI0/inst/w_inst.
-Related violations: <none>
-
-LUTLP-2#2329 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[3].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[3].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[3].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__26.
-Related violations: <none>
-
-LUTLP-2#2330 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[4].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[4].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[4].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__25.
-Related violations: <none>
-
-LUTLP-2#2331 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[5].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[5].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[5].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__24.
-Related violations: <none>
-
-LUTLP-2#2332 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[6].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[6].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[6].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__23.
-Related violations: <none>
-
-LUTLP-2#2333 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[7].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[7].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[7].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__22.
-Related violations: <none>
-
-LUTLP-2#2334 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[8].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[8].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[8].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__21.
-Related violations: <none>
-
-LUTLP-2#2335 Warning
-Combinatorial Loop Allowed  
-4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/BTI0/inst/CRO[9].Inverter0/LUT6_inst,
-design_1_i/BTI0/inst/CRO[9].Inverter1/LUT6_inst,
-design_1_i/BTI0/inst/CRO[9].NAND/LUT6_inst,
-design_1_i/BTI0/inst/w_inst__20.
-Related violations: <none>
-
-LUTLP-2#2336 Warning
-Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[0].notGate[0].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[0].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[0].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2337 Warning
+LUTLP-2#2306 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[10].notGate[0].Inverter/LUT6_inst,
@@ -11818,7 +11571,7 @@ design_1_i/RO0/inst/RO[10].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[10].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2338 Warning
+LUTLP-2#2307 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[11].notGate[0].Inverter/LUT6_inst,
@@ -11826,7 +11579,7 @@ design_1_i/RO0/inst/RO[11].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[11].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2339 Warning
+LUTLP-2#2308 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[12].notGate[0].Inverter/LUT6_inst,
@@ -11834,7 +11587,7 @@ design_1_i/RO0/inst/RO[12].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[12].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2340 Warning
+LUTLP-2#2309 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[13].notGate[0].Inverter/LUT6_inst,
@@ -11842,7 +11595,7 @@ design_1_i/RO0/inst/RO[13].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[13].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2341 Warning
+LUTLP-2#2310 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[14].notGate[0].Inverter/LUT6_inst,
@@ -11850,7 +11603,7 @@ design_1_i/RO0/inst/RO[14].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[14].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2342 Warning
+LUTLP-2#2311 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[15].notGate[0].Inverter/LUT6_inst,
@@ -11858,7 +11611,7 @@ design_1_i/RO0/inst/RO[15].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[15].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2343 Warning
+LUTLP-2#2312 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[16].notGate[0].Inverter/LUT6_inst,
@@ -11866,7 +11619,7 @@ design_1_i/RO0/inst/RO[16].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[16].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2344 Warning
+LUTLP-2#2313 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[17].notGate[0].Inverter/LUT6_inst,
@@ -11874,7 +11627,7 @@ design_1_i/RO0/inst/RO[17].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[17].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2345 Warning
+LUTLP-2#2314 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[18].notGate[0].Inverter/LUT6_inst,
@@ -11882,7 +11635,7 @@ design_1_i/RO0/inst/RO[18].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[18].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2346 Warning
+LUTLP-2#2315 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[19].notGate[0].Inverter/LUT6_inst,
@@ -11890,7 +11643,7 @@ design_1_i/RO0/inst/RO[19].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[19].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2347 Warning
+LUTLP-2#2316 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[1].notGate[0].Inverter/LUT6_inst,
@@ -11898,7 +11651,7 @@ design_1_i/RO0/inst/RO[1].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[1].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2348 Warning
+LUTLP-2#2317 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[20].notGate[0].Inverter/LUT6_inst,
@@ -11906,7 +11659,7 @@ design_1_i/RO0/inst/RO[20].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[20].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2349 Warning
+LUTLP-2#2318 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[21].notGate[0].Inverter/LUT6_inst,
@@ -11914,7 +11667,7 @@ design_1_i/RO0/inst/RO[21].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[21].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2350 Warning
+LUTLP-2#2319 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[22].notGate[0].Inverter/LUT6_inst,
@@ -11922,7 +11675,7 @@ design_1_i/RO0/inst/RO[22].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[22].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2351 Warning
+LUTLP-2#2320 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[23].notGate[0].Inverter/LUT6_inst,
@@ -11930,7 +11683,7 @@ design_1_i/RO0/inst/RO[23].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[23].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2352 Warning
+LUTLP-2#2321 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[24].notGate[0].Inverter/LUT6_inst,
@@ -11938,7 +11691,7 @@ design_1_i/RO0/inst/RO[24].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[24].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2353 Warning
+LUTLP-2#2322 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[25].notGate[0].Inverter/LUT6_inst,
@@ -11946,7 +11699,7 @@ design_1_i/RO0/inst/RO[25].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[25].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2354 Warning
+LUTLP-2#2323 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[26].notGate[0].Inverter/LUT6_inst,
@@ -11954,7 +11707,7 @@ design_1_i/RO0/inst/RO[26].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[26].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2355 Warning
+LUTLP-2#2324 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[27].notGate[0].Inverter/LUT6_inst,
@@ -11962,7 +11715,7 @@ design_1_i/RO0/inst/RO[27].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[27].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2356 Warning
+LUTLP-2#2325 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[28].notGate[0].Inverter/LUT6_inst,
@@ -11970,7 +11723,7 @@ design_1_i/RO0/inst/RO[28].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[28].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2357 Warning
+LUTLP-2#2326 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[29].notGate[0].Inverter/LUT6_inst,
@@ -11978,7 +11731,7 @@ design_1_i/RO0/inst/RO[29].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[29].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2358 Warning
+LUTLP-2#2327 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[2].notGate[0].Inverter/LUT6_inst,
@@ -11986,7 +11739,7 @@ design_1_i/RO0/inst/RO[2].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[2].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2359 Warning
+LUTLP-2#2328 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[30].notGate[0].Inverter/LUT6_inst,
@@ -11994,7 +11747,7 @@ design_1_i/RO0/inst/RO[30].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[30].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2360 Warning
+LUTLP-2#2329 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[31].notGate[0].Inverter/LUT6_inst,
@@ -12002,7 +11755,7 @@ design_1_i/RO0/inst/RO[31].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[31].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2361 Warning
+LUTLP-2#2330 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[3].notGate[0].Inverter/LUT6_inst,
@@ -12010,7 +11763,7 @@ design_1_i/RO0/inst/RO[3].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[3].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2362 Warning
+LUTLP-2#2331 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[4].notGate[0].Inverter/LUT6_inst,
@@ -12018,7 +11771,7 @@ design_1_i/RO0/inst/RO[4].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[4].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2363 Warning
+LUTLP-2#2332 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[5].notGate[0].Inverter/LUT6_inst,
@@ -12026,7 +11779,7 @@ design_1_i/RO0/inst/RO[5].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[5].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2364 Warning
+LUTLP-2#2333 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[6].notGate[0].Inverter/LUT6_inst,
@@ -12034,7 +11787,7 @@ design_1_i/RO0/inst/RO[6].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[6].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2365 Warning
+LUTLP-2#2334 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[7].notGate[0].Inverter/LUT6_inst,
@@ -12042,7 +11795,7 @@ design_1_i/RO0/inst/RO[7].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[7].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2366 Warning
+LUTLP-2#2335 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[8].notGate[0].Inverter/LUT6_inst,
@@ -12050,7 +11803,7 @@ design_1_i/RO0/inst/RO[8].notGate[1].Inverter/LUT6_inst,
 design_1_i/RO0/inst/RO[8].notGate[2].Inverter/LUT6_inst.
 Related violations: <none>
 
-LUTLP-2#2367 Warning
+LUTLP-2#2336 Warning
 Combinatorial Loop Allowed  
 4 LUT cells form a combinatorial loop. This can create a race condition. Timing analysis may not be accurate. The preferred resolution is to modify the design to remove combinatorial logic loops. This loop has been identified in the constraints as being known and understood by use of the ALLOW_COMBINATORIAL_LOOPS property on a net in the loop. The cells in the loop are: design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst macro),
 design_1_i/RO0/inst/RO[9].notGate[0].Inverter/LUT6_inst,
@@ -12220,626 +11973,6 @@ Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[960],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[961],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[962],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[963],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[964],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[965],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[966],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[967],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[968],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[969],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[970],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[971],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[972],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[973],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[974] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#2 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__0 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[929],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[930],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[931],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[932],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[933],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[934],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[935],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[936],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[937],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[938],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[939],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[940],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[942] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#3 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__1 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[896],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[897],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[898],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[899],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[900],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[901],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[902],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[903],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[904],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[905],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[906],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[907],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[908],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[910] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#4 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__10 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[609],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[610],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[611],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[612],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[613],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[614],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[615],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[616],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[617],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[618],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[619],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[620],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[621],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[622] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#5 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__11 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[577],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[578],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[579],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[580],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[581],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[582],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[583],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[584],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[585],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[586],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[587],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[588],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[589],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[590] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#6 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__12 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[545],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[546],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[547],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[548],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[549],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[550],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[551],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[552],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[553],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[554],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[555],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[556],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[557],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[558] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#7 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__13 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[513],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[514],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[515],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[516],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[517],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[518],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[519],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[520],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[521],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[522],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[523],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[524],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[525],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[526] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#8 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__14 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[481],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[482],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[483],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[484],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[485],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[486],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[487],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[488],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[489],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[490],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[491],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[492],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[493],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[494] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#9 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__15 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[449],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[450],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[451],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[452],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[453],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[454],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[455],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[456],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[457],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[458],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[459],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[460],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[461],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[462] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#10 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__16 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[417],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[418],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[419],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[420],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[421],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[422],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[423],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[424],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[425],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[426],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[427],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[428],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[429],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[430] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#11 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__17 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[385],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[386],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[387],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[388],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[389],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[390],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[391],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[392],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[393],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[394],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[395],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[396],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[398] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#12 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__18 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[353],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[354],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[355],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[356],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[357],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[358],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[359],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[360],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[361],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[362],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[363],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[364],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[365],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[366] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#13 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__19 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[321],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[322],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[323],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[324],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[325],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[326],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[327],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[328],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[329],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[330],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[331],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[332],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[333],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[334] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#14 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__2 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[864],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[865],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[866],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[867],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[868],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[869],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[870],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[871],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[872],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[873],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[874],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[875],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[876],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[877],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[878] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#15 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__20 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[289],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[290],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[291],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[292],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[293],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[294],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[295],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[296],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[297],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[298],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[299],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[300],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[301],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[302] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#16 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__21 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[256],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[257],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[258],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[259],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[260],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[261],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[262],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[263],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[264],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[265],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[266],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[267],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[268],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[269],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[270] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#17 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__22 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[224],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[225],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[226],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[227],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[228],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[229],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[230],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[231],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[232],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[233],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[234],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[235],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[236],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#18 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__23 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[193],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[194],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[195],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[196],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[197],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[198],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[199],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[200],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[201],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[202],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[203],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[204],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[205],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[206] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#19 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__24 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[160],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[161],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[162],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[163],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[164],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[165],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[166],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[167],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[168],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[169],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[170],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[171],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[172],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[173],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[174] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#20 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__25 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[129],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[130],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[131],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[132],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[133],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[134],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[135],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[136],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[137],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[138],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[139],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[140],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[142] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#21 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__26 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[100],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[101],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[102],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[103],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[104],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[105],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[106],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[107],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[108],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[109],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[110],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[111],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[112],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[113],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#22 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__27 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[65],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[66],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[67],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[68],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[69],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[70],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[71],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[72],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[73],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[74],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[75],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[76],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[77],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#23 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__28 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[33],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[34],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[35],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[36],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[37],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[38],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[39],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[40],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[41],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[42],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[43],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[44],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[45],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[46] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#24 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__29 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[10],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[11],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[12],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[13],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[14],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[15],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[16],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[17],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[18],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[19],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[1],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[20],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[21],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[22] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#25 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__3 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[833],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[834],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[835],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[836],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[837],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[838],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[839],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[840],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[841],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[842],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[843],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[844],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[846] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#26 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__4 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[801],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[802],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[803],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[804],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[805],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[806],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[807],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[808],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[809],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[810],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[811],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[812],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[813],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[814] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#27 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__5 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[769],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[770],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[771],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[772],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[773],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[774],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[775],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[776],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[777],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[778],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[779],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[780],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#28 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__6 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[736],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[737],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[738],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[739],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[740],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[741],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[742],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[743],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[744],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[745],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[746],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[747],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[748],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[749],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#29 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__7 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[705],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[706],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[707],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[708],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[709],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[710],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[711],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[712],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[713],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[714],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[715],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[716],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[717],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#30 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__8 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[673],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[674],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[675],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[676],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[677],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[678],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[679],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[680],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[681],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[682],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[683],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[684],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[685],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[686] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#31 Warning
-Non-Optimal connections which could lead to hold violations  
-A LUT design_1_i/BTI0/inst/w_inst__9 is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[640],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[641],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[642],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[643],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[644],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[645],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[646],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[647],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[648],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[649],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[650],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[651],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[652],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[653],
-design_1_i/BTI0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[654] (the first 15 of 32 listed)
-Related violations: <none>
-
-PLHOLDVIO-2#32 Warning
-Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[10],
@@ -12858,7 +11991,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[21],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[22] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#33 Warning
+PLHOLDVIO-2#2 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[0].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[0],
@@ -12878,7 +12011,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[21],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[0].freq_count_reg[22] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#34 Warning
+PLHOLDVIO-2#3 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320],
@@ -12898,7 +12031,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[333],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[334] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#35 Warning
+PLHOLDVIO-2#4 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[10].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[320],
@@ -12918,7 +12051,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[333],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[10].freq_count_reg[334] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#36 Warning
+PLHOLDVIO-2#5 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352],
@@ -12938,7 +12071,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[365],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[366] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#37 Warning
+PLHOLDVIO-2#6 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[11].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[352],
@@ -12958,7 +12091,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[365],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[11].freq_count_reg[366] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#38 Warning
+PLHOLDVIO-2#7 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384],
@@ -12978,7 +12111,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[398] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#39 Warning
+PLHOLDVIO-2#8 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[12].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[384],
@@ -12998,7 +12131,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[397],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[12].freq_count_reg[398] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#40 Warning
+PLHOLDVIO-2#9 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416],
@@ -13018,7 +12151,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[429],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[430] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#41 Warning
+PLHOLDVIO-2#10 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[13].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[416],
@@ -13038,7 +12171,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[429],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[13].freq_count_reg[430] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#42 Warning
+PLHOLDVIO-2#11 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448],
@@ -13058,7 +12191,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[461],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[462] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#43 Warning
+PLHOLDVIO-2#12 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[14].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[448],
@@ -13078,7 +12211,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[461],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[14].freq_count_reg[462] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#44 Warning
+PLHOLDVIO-2#13 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480],
@@ -13098,7 +12231,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[493],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[494] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#45 Warning
+PLHOLDVIO-2#14 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[15].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[480],
@@ -13118,7 +12251,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[493],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[15].freq_count_reg[494] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#46 Warning
+PLHOLDVIO-2#15 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512],
@@ -13138,7 +12271,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[525],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[526] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#47 Warning
+PLHOLDVIO-2#16 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[16].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[512],
@@ -13158,7 +12291,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[525],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[16].freq_count_reg[526] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#48 Warning
+PLHOLDVIO-2#17 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544],
@@ -13178,7 +12311,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[557],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[558] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#49 Warning
+PLHOLDVIO-2#18 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[17].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[544],
@@ -13198,7 +12331,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[557],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[17].freq_count_reg[558] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#50 Warning
+PLHOLDVIO-2#19 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576],
@@ -13218,7 +12351,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[589],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[590] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#51 Warning
+PLHOLDVIO-2#20 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[18].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[576],
@@ -13238,7 +12371,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[589],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[18].freq_count_reg[590] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#52 Warning
+PLHOLDVIO-2#21 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608],
@@ -13258,7 +12391,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[621],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[622] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#53 Warning
+PLHOLDVIO-2#22 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[19].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[608],
@@ -13278,7 +12411,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[621],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[19].freq_count_reg[622] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#54 Warning
+PLHOLDVIO-2#23 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32],
@@ -13298,7 +12431,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[45],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[46] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#55 Warning
+PLHOLDVIO-2#24 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[1].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[32],
@@ -13318,7 +12451,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[45],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[1].freq_count_reg[46] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#56 Warning
+PLHOLDVIO-2#25 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[640],
@@ -13338,7 +12471,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[653],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[654] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#57 Warning
+PLHOLDVIO-2#26 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[20].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[640],
@@ -13358,7 +12491,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[653],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[20].freq_count_reg[654] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#58 Warning
+PLHOLDVIO-2#27 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672],
@@ -13378,7 +12511,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[685],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[686] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#59 Warning
+PLHOLDVIO-2#28 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[21].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[672],
@@ -13398,7 +12531,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[685],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[21].freq_count_reg[686] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#60 Warning
+PLHOLDVIO-2#29 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704],
@@ -13418,7 +12551,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[717],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#61 Warning
+PLHOLDVIO-2#30 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[22].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[704],
@@ -13438,7 +12571,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[717],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[22].freq_count_reg[718] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#62 Warning
+PLHOLDVIO-2#31 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[736],
@@ -13458,7 +12591,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[749],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#63 Warning
+PLHOLDVIO-2#32 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[23].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[736],
@@ -13478,7 +12611,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[749],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[23].freq_count_reg[750] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#64 Warning
+PLHOLDVIO-2#33 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768],
@@ -13498,7 +12631,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#65 Warning
+PLHOLDVIO-2#34 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[24].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[768],
@@ -13518,7 +12651,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[781],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[24].freq_count_reg[782] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#66 Warning
+PLHOLDVIO-2#35 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800],
@@ -13538,7 +12671,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[813],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[814] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#67 Warning
+PLHOLDVIO-2#36 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[25].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[800],
@@ -13558,7 +12691,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[813],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[25].freq_count_reg[814] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#68 Warning
+PLHOLDVIO-2#37 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832],
@@ -13578,7 +12711,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[846] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#69 Warning
+PLHOLDVIO-2#38 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[26].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[832],
@@ -13598,7 +12731,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[845],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[26].freq_count_reg[846] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#70 Warning
+PLHOLDVIO-2#39 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[864],
@@ -13618,7 +12751,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[877],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[878] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#71 Warning
+PLHOLDVIO-2#40 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[27].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[864],
@@ -13638,7 +12771,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[877],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[27].freq_count_reg[878] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#72 Warning
+PLHOLDVIO-2#41 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[896],
@@ -13658,7 +12791,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[910] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#73 Warning
+PLHOLDVIO-2#42 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[28].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[896],
@@ -13678,7 +12811,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[909],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[28].freq_count_reg[910] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#74 Warning
+PLHOLDVIO-2#43 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928],
@@ -13698,7 +12831,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[942] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#75 Warning
+PLHOLDVIO-2#44 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[29].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[928],
@@ -13718,7 +12851,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[941],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[29].freq_count_reg[942] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#76 Warning
+PLHOLDVIO-2#45 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64],
@@ -13738,7 +12871,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[77],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#77 Warning
+PLHOLDVIO-2#46 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[2].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[64],
@@ -13758,7 +12891,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[77],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[2].freq_count_reg[78] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#78 Warning
+PLHOLDVIO-2#47 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[960],
@@ -13778,7 +12911,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[973],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[974] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#79 Warning
+PLHOLDVIO-2#48 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[30].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[960],
@@ -13798,7 +12931,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[973],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[30].freq_count_reg[974] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#80 Warning
+PLHOLDVIO-2#49 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1000],
@@ -13818,7 +12951,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1013],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1014] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#81 Warning
+PLHOLDVIO-2#50 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[31].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1000],
@@ -13838,7 +12971,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1013],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[31].freq_count_reg[1014] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#82 Warning
+PLHOLDVIO-2#51 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[100],
@@ -13858,7 +12991,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[113],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#83 Warning
+PLHOLDVIO-2#52 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[3].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[100],
@@ -13878,7 +13011,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[113],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[3].freq_count_reg[114] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#84 Warning
+PLHOLDVIO-2#53 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128],
@@ -13898,7 +13031,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[142] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#85 Warning
+PLHOLDVIO-2#54 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[4].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[128],
@@ -13918,7 +13051,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[141],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[4].freq_count_reg[142] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#86 Warning
+PLHOLDVIO-2#55 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[160],
@@ -13938,7 +13071,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[173],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[174] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#87 Warning
+PLHOLDVIO-2#56 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[5].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[160],
@@ -13958,7 +13091,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[173],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[5].freq_count_reg[174] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#88 Warning
+PLHOLDVIO-2#57 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192],
@@ -13978,7 +13111,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[205],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[206] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#89 Warning
+PLHOLDVIO-2#58 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[6].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[192],
@@ -13998,7 +13131,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[205],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[6].freq_count_reg[206] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#90 Warning
+PLHOLDVIO-2#59 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[224],
@@ -14018,7 +13151,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#91 Warning
+PLHOLDVIO-2#60 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[7].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[224],
@@ -14038,7 +13171,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[237],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[7].freq_count_reg[238] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#92 Warning
+PLHOLDVIO-2#61 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[256],
@@ -14058,7 +13191,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[269],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[270] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#93 Warning
+PLHOLDVIO-2#62 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[8].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[256],
@@ -14078,7 +13211,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[269],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[8].freq_count_reg[270] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#94 Warning
+PLHOLDVIO-2#63 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst/LUT5 (in design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288],
@@ -14098,7 +13231,7 @@ design_1_i/RO0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[301],
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[302] (the first 15 of 32 listed)
 Related violations: <none>
 
-PLHOLDVIO-2#95 Warning
+PLHOLDVIO-2#64 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst/LUT6 (in design_1_i/RO0/inst/RO[9].nolabel_line95/LUT6_2_inst macro) is driving clock pin of 32 cells. This could lead to large hold time violations. Involved cells are:
 design_1_i/RO0/inst/frequency_counter_instance/genblk1[9].freq_count_reg[288],

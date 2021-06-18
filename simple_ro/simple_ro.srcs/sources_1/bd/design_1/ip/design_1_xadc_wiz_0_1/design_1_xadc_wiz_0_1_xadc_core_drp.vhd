@@ -173,7 +173,6 @@ entity design_1_xadc_wiz_0_1_xadc_core_drp is
      channel_out            : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
      eoc_out                : out  STD_LOGIC;                        -- End of Conversion Signal
      eos_out                : out  STD_LOGIC;                        -- End of Sequence Signal
-     ot_out                 : out STD_LOGIC;
      alarm_out              : out STD_LOGIC_VECTOR (7 downto 0);
      vp_in                  : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
      vn_in                  : in  STD_LOGIC
@@ -655,8 +654,6 @@ begin
     end if;
 end process ALARM_REG_PROCESS;
 
--- OT out to top level port
-  ot_out <= ot_i;
 
 --------------------------
 -- OT_FALLING_EDGE_DETECT: this process is used to register the OT.
@@ -969,7 +966,7 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
  XADC_INST : XADC
      generic map(
         INIT_40 => X"0000", -- config reg 0
-        INIT_41 => X"31AC", -- config reg 1
+        INIT_41 => X"31AF", -- config reg 1
         INIT_42 => X"0400", -- config reg 2
         INIT_48 => X"0100", -- Sequencer channel selection
         INIT_49 => X"0000", -- Sequencer channel selection

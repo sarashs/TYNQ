@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1619947016"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1619947016"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1619947016"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1619947016"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1623999361"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1623999361"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1623999361"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1623999361"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_processing_system7_0_0\design_1_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="Arm_Core"/>
@@ -39,14 +39,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_1_AXI4_heater_0_0\design_1_AXI4_heater_0_0.xci" Type="IP">
-        <Instance HierarchyPath="heater"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\design_1_xadc_wiz_0_1\design_1_xadc_wiz_0_1.xci" Type="IP">
         <Instance HierarchyPath="Temp_sensor"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -55,7 +47,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_1_AXI_RO_0_0\design_1_AXI_RO_0_0.xci" Type="IP">
+      <File Name="ip\design_1_AXI_RO_0_1\design_1_AXI_RO_0_1.xci" Type="IP">
         <Instance HierarchyPath="RO0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -63,8 +55,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_1_AXI_3stage_CRO_0_0\design_1_AXI_3stage_CRO_0_0.xci" Type="IP">
-        <Instance HierarchyPath="BTI0"/>
+      <File Name="ip\design_1_AXI4_heater_0_1\design_1_AXI4_heater_0_1.xci" Type="IP">
+        <Instance HierarchyPath="heater"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -80,6 +72,14 @@
       <File Name="sim\design_1.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_s00_data_fifo_0\design_1_s00_data_fifo_0.xci" Type="IP">
+        <Instance HierarchyPath="Arm_Core_axi_periph/s00_couplers/s00_data_fifo"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\design_1_auto_pc_0\design_1_auto_pc_0.xci" Type="IP">

@@ -114,6 +114,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
@@ -135,12 +136,7 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/wt [current_project]
   set_property parent.project_path C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.xpr [current_project]
-  set_property ip_repo_paths {
-  C:/Users/User/ring_oscillator_zynq/AXI_CRO/AXI_CRO_1.0
-  C:/Users/User/ring_oscillator_zynq/AXI_stream_heater/AXI_Stream_heater_1.0
-  C:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
-  C:/Users/User/ring_oscillator_zynq/ip_repo
-} [current_project]
+  set_property ip_repo_paths c:/Users/User/ring_oscillator_zynq/ip_repo [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
@@ -313,4 +309,35 @@ if {$rc} {
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
+OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
+OPTRACE "write_bitstream setup" START { }
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
+set rc [catch {
+  create_msg_db write_bitstream.pb
+OPTRACE "read constraints: write_bitstream" START { }
+OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  catch { write_mem_info -force design_1_wrapper.mmi }
+OPTRACE "write_bitstream setup" END { }
+OPTRACE "write_bitstream" START { }
+  write_bitstream -force design_1_wrapper.bit 
+OPTRACE "write_bitstream" END { }
+OPTRACE "write_bitstream misc" START { }
+OPTRACE "read constraints: write_bitstream_post" START { }
+OPTRACE "read constraints: write_bitstream_post" END { }
+  catch {write_debug_probes -quiet -force design_1_wrapper}
+  catch {file copy -force design_1_wrapper.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
+} RESULT]
+if {$rc} {
+  step_failed write_bitstream
+  return -code error $RESULT
+} else {
+  end_step write_bitstream
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "write_bitstream misc" END { }
+OPTRACE "Phase: Write Bitstream" END { }
 OPTRACE "Implementation" END { }

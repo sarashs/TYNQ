@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param ced.repoPaths C:/Users/User/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/ced_store/Vivado_example_project
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -id {IP_Flow 19-3685}  -new_severity {ADVISORY} 
@@ -88,12 +89,7 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
-set_property ip_repo_paths {
-  c:/Users/User/ring_oscillator_zynq/AXI_CRO/AXI_CRO_1.0
-  c:/Users/User/ring_oscillator_zynq/AXI_stream_heater/AXI_Stream_heater_1.0
-  c:/Users/User/ring_oscillator_zynq/Self_heating/AXI4_heater_1.0
-  c:/Users/User/ring_oscillator_zynq/ip_repo
-} [current_project]
+set_property ip_repo_paths c:/Users/User/ring_oscillator_zynq/ip_repo [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
@@ -106,6 +102,9 @@ set_property used_in_implementation false [get_files -all c:/Users/User/ring_osc
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 

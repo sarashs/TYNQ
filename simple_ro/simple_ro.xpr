@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2020.1 (64-bit)              -->
+<!-- Product Version: Vivado v2020.1.1_AR75516 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
@@ -29,9 +29,6 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../AXI_CRO/AXI_CRO_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../AXI_stream_heater/AXI_Stream_heater_1.0"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../Self_heating/AXI4_heater_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PSRCDIR/sources_1"/>
@@ -50,13 +47,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="57"/>
-    <Option Name="WTModelSimExportSim" Val="57"/>
-    <Option Name="WTQuestaExportSim" Val="57"/>
-    <Option Name="WTIesExportSim" Val="57"/>
-    <Option Name="WTVcsExportSim" Val="57"/>
-    <Option Name="WTRivieraExportSim" Val="57"/>
-    <Option Name="WTActivehdlExportSim" Val="57"/>
+    <Option Name="WTXSimExportSim" Val="58"/>
+    <Option Name="WTModelSimExportSim" Val="58"/>
+    <Option Name="WTQuestaExportSim" Val="58"/>
+    <Option Name="WTIesExportSim" Val="58"/>
+    <Option Name="WTVcsExportSim" Val="58"/>
+    <Option Name="WTRivieraExportSim" Val="58"/>
+    <Option Name="WTActivehdlExportSim" Val="58"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>

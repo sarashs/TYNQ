@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Apr 27 08:45:55 2021
+# Process ID: 11760
+# Current directory: C:/Users/User/ring_oscillator_zynq/simple_ro
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8820 C:\Users\User\ring_oscillator_zynq\simple_ro\simple_ro.xpr
+# Log file: C:/Users/User/ring_oscillator_zynq/simple_ro/vivado.log
+# Journal file: C:/Users/User/ring_oscillator_zynq/simple_ro\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.srcs/sources_1/bd/design_1/design_1.bd}
