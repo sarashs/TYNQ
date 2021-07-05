@@ -9,26 +9,14 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1 || ORI
 # IP: bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_0 || ORIG_REF_NAME==design_1_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_100M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_100M_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_AXI_HCI_0_6/design_1_AXI_HCI_0_6.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_AXI_HCI_0_6 || ORIG_REF_NAME==design_1_AXI_HCI_0_6} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_Arm_Core_axi_periph_0/design_1_Arm_Core_axi_periph_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_Arm_Core_axi_periph_0 || ORIG_REF_NAME==design_1_Arm_Core_axi_periph_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_Arm_Core_axi_periph_4/design_1_Arm_Core_axi_periph_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_Arm_Core_axi_periph_4 || ORIG_REF_NAME==design_1_Arm_Core_axi_periph_4} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_0 || ORIG_REF_NAME==design_1_xbar_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xadc_wiz_0_1 || ORIG_REF_NAME==design_1_xadc_wiz_0_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_AXI_RO_0_1/design_1_AXI_RO_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_AXI_RO_0_1 || ORIG_REF_NAME==design_1_AXI_RO_0_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_AXI4_heater_0_1/design_1_AXI4_heater_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_AXI4_heater_0_1 || ORIG_REF_NAME==design_1_AXI4_heater_0_1} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_s00_data_fifo_0 || ORIG_REF_NAME==design_1_s00_data_fifo_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_rst_Arm_Core_100M_3/design_1_rst_Arm_Core_100M_3.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_rst_Arm_Core_100M_3 || ORIG_REF_NAME==design_1_rst_Arm_Core_100M_3} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
@@ -36,21 +24,13 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_p
 # XDC: bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_0 || ORIG_REF_NAME==design_1_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_100M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+# XDC: bd/design_1/ip/design_1_rst_Arm_Core_100M_3/design_1_rst_Arm_Core_100M_3_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_rst_Arm_Core_100M_3 || ORIG_REF_NAME==design_1_rst_Arm_Core_100M_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_rst_ps7_0_100M_0 || ORIG_REF_NAME==design_1_rst_ps7_0_100M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+# XDC: bd/design_1/ip/design_1_rst_Arm_Core_100M_3/design_1_rst_Arm_Core_100M_3.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_rst_Arm_Core_100M_3 || ORIG_REF_NAME==design_1_rst_Arm_Core_100M_3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
-# XDC: bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1_ooc.xdc
-
-# XDC: bd/design_1/ip/design_1_xadc_wiz_0_1/design_1_xadc_wiz_0_1.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_xadc_wiz_0_1 || ORIG_REF_NAME==design_1_xadc_wiz_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0_clocks.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_s00_data_fifo_0 || ORIG_REF_NAME==design_1_s00_data_fifo_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
-
-# XDC: bd/design_1/ip/design_1_s00_data_fifo_0/design_1_s00_data_fifo_0_ooc.xdc
+# XDC: bd/design_1/ip/design_1_rst_Arm_Core_100M_3/design_1_rst_Arm_Core_100M_3_ooc.xdc
 
 # XDC: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc
 

@@ -7,13 +7,18 @@ class TestChip(Overlay):
     class for interacting with our FPGA bitstream
     Coded by: Uncle Arash
     Version: 1.0 : New XADC measurement functionalities added
+    Version: 1.1 : New HCI sensor added
     """
     def __init__(self, ol_path, **kwargs):
         super().__init__(ol_path)
         self.heater_base_address = 0x00000000
         self.RO_base_address = 0x00000000
-        self.BTI_base_write_address = 0x00000000
-        self.BTI_base_read_address = 0x00000004
+        self.BTI_base_write_address = 0x00000000 #  select read sensor
+        self.BTI_base_read_address = 0x00000004 #  select read sensor
+        self.HCI_base_freq_address = 0x00000000
+        self.HCI_base_duty_address = 0x00000004
+        self.HCI_base_write_address = 0x00000008
+        self.HCI_base_read_address = 0x0000000C
         self.temp_sensor_address = 0x200
         self.vccint_sensor_address = 0x204
         self.vccaux_sensor_address = 0x208
@@ -25,6 +30,7 @@ class TestChip(Overlay):
         self.pssvccaux_sensor_address = 0x238
         self.pssvccmem_sensor_address = 0x23C
         self.counter_address_increament = 0x04
+        self.max_intensity = 64
         self.num_oscillators = 31
         self.num_BTI = 31
         self.intensity_dict = {i: int(sum(
@@ -105,6 +111,7 @@ class TestChip(Overlay):
         for item in BTI_dict.keys():
             BTI_list = BTI_dict[item]
             len_ro = len(BTI_list)
+            assert len_ro < 31
             freq_list = np.zeros((len_ro))
             BTI = getattr(self, item)
             for i in range(len_ro):
@@ -115,9 +122,50 @@ class TestChip(Overlay):
                     self.BTI_base_read_address +
                     BTI_list[i] * self.counter_address_increament
                 )/1000
-                print(f'freq: {freq_list[i]}, mem: {self.BTI_base_read_address + BTI_list[i] * self.counter_address_increament}, sensor: {BTI_list[i]}')
+                #print(f'freq: {freq_list[i]}, mem: {self.BTI_base_read_address + BTI_list[i] * self.counter_address_increament}, sensor: {BTI_list[i]}')
                 #   Putting the BTI sensors back into the aging mode
                 BTI.write(self.BTI_base_write_address, 0)
+            freq_dict[item] = freq_list
+        return freq_dict
+
+    def HCI_set_pwm(self, HCI_list, input_clock_frequency = 100000000, output_clock_frequency = 100, duty_cycle = 50):
+        """Sets the frequency and duty cycle of the HCI sensor
+        Parameters:
+        HCI_list : [HCI_ip_name]
+        
+        Returns: None
+        """
+        for item in HCI_list:
+            HCI = getattr(self, item)
+            HCI.write(self.HCI_base_freq_address, int(input_clock_frequency / output_clock_frequency))
+            sleep(0.01)
+            HCI.write(self.HCI_base_duty_address, int((duty_cycle / 100) * input_clock_frequency / output_clock_frequency))
+            sleep(0.01)
+
+    def read_HCI(self, HCI_dict):
+        """Reads the frequency of selected HCI sensort
+        Parameters:
+        HCI_dict: {keys=HCI_ip_name, values=[HCI list per IP]}
+
+        Returns: freq_dict {keys=HCI_ip_name, values=[frequencies (nparray)]}
+        """
+        freq_dict={}
+        for item in HCI_dict.keys():
+            HCI_list = HCI_dict[item]
+            len_ro = len(HCI_list)
+            assert len_ro < 29
+            freq_list = np.zeros((len_ro))
+            HCI = getattr(self, item)
+            for i in range(len_ro):
+                #   Putting the BTI sensors into the counting mode
+                HCI.write(self.HCI_base_write_address, self.sensor_dict[HCI_list[i]])
+                sleep(0.01)
+                freq_list[i] = HCI.read(
+                    self.HCI_base_read_address +
+                    HCI_list[i] * self.counter_address_increament
+                )/1000
+                #   Putting the BTI sensors back into the aging mode
+                HCI.write(self.HCI_base_write_address, 0)
             freq_dict[item] = freq_list
         return freq_dict
 
@@ -134,8 +182,8 @@ class TestChip(Overlay):
         Returns: None
         """
 
-        if intensity > 64:
-            intensity = 64
+        if intensity > self.max_intensity:
+            intensity = self.max_intensity
         elif intensity < 0:
             intensity = 0
 
@@ -173,8 +221,8 @@ class TestChip(Overlay):
                                  self.temp_ctrl_sensitivity):
             self.temp_ctrl_intensity += 1
             self.heat_on(self.temp_ctrl_intensity)
-        if self.temp_ctrl_intensity > 64:
-            self.temp_ctrl_intensity = 64
+        if self.temp_ctrl_intensity > self.max_intensity:
+            self.temp_ctrl_intensity = self.max_intensity
         elif self.temp_ctrl_intensity < 0:
             self.temp_ctrl_intensity = 0
 

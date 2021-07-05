@@ -7418,3 +7418,7 @@ set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/heater/inst/SH
 set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/heater/inst/SHE_block[63].SHE[33].SHE/feedback}]
 set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/heater/inst/SHE_block[63].SHE[34].SHE/feedback}]
 set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/heater/inst/SHE_block[63].SHE[35].SHE/feedback}]
+
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/HCI0/inst/RO[0].new_mux/LUT6_2_inst/O6}]
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/HCI0/inst/RO[1].new_mux/LUT6_2_inst/O6}]
+set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets {design_1_i/HCI0/inst/RO[2].new_mux/LUT6_2_inst/O6}]

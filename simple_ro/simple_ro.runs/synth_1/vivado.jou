@@ -2,8 +2,8 @@
 # Vivado v2020.1.1_AR75516 (64-bit)
 # SW Build 2960000 on Wed Aug  5 22:57:20 MDT 2020
 # IP Build 2956692 on Thu Aug  6 01:41:30 MDT 2020
-# Start of session at: Thu Jun 17 23:56:10 2021
-# Process ID: 16668
+# Start of session at: Sat Jul  3 14:31:24 2021
+# Process ID: 11500
 # Current directory: C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: C:/Users/User/ring_oscillator_zynq/simple_ro/simple_ro.runs/synth_1/design_1_wrapper.vds

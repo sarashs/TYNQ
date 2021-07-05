@@ -1,35 +1,31 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.523529",
-   "Default View_TopLeft":"-458,0",
+   "Default View_ScaleFactor":"0.670667",
+   "Default View_TopLeft":"-177,-130",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 4 -x 1010 -y 490 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 4 -x 1010 -y 520 -defaultsOSRD
-preplace inst Arm_Core -pg 1 -lvl 1 -x 220 -y 550 -defaultsOSRD
-preplace inst System_Reset -pg 1 -lvl 1 -x 220 -y 360 -defaultsOSRD
-preplace inst Arm_Core_axi_periph -pg 1 -lvl 2 -x 570 -y 230 -defaultsOSRD
-preplace inst Temp_sensor -pg 1 -lvl 3 -x 860 -y 110 -defaultsOSRD
-preplace inst RO0 -pg 1 -lvl 3 -x 860 -y 280 -defaultsOSRD
-preplace inst heater -pg 1 -lvl 3 -x 860 -y 420 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 660 420 410 730
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 670 410
-preplace netloc System_Reset_peripheral_aresetn 1 1 2 430 420 720
-preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 520 NJ 520 NJ
-preplace netloc processing_system7_0_DDR 1 1 3 NJ 500 NJ 500 990J
-preplace netloc Arm_Core_M_AXI_GP0 1 1 1 410 110n
-preplace netloc Arm_Core_axi_periph_M00_AXI 1 2 1 710 80n
-preplace netloc Arm_Core_axi_periph_M02_AXI 1 2 1 710 240n
-preplace netloc Arm_Core_axi_periph_M03_AXI 1 2 1 N 260
-levelinfo -pg 1 0 220 570 860 1010
-pagesize -pg 1 -db -bbox -sgen 0 0 1120 680
+preplace port DDR -pg 1 -lvl 6 -x 1520 -y 490 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1520 -y 520 -defaultsOSRD
+preplace inst Arm_Core -pg 1 -lvl 3 -x 610 -y 550 -defaultsOSRD
+preplace inst Arm_Core_axi_periph -pg 1 -lvl 5 -x 1350 -y 360 -defaultsOSRD
+preplace inst rst_Arm_Core_100M -pg 1 -lvl 4 -x 1010 -y 400 -defaultsOSRD
+preplace inst HCI0 -pg 1 -lvl 2 -x 310 -y -10 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 130 -100 410 290 810 290 1190
+preplace netloc Arm_Core_FCLK_RESET0_N 1 3 1 840 380n
+preplace netloc rst_Arm_Core_100M_peripheral_aresetn 1 1 4 130 80 NJ 80 NJ 80 1180
+preplace netloc Arm_Core_M_AXI_GP0 1 3 2 820J 300 NJ
+preplace netloc Arm_Core_axi_periph_M00_AXI 1 1 5 120 440 NJ 440 830J 510 NJ 510 1500
+preplace netloc processing_system7_0_DDR 1 3 3 NJ 500 1190 490 N
+preplace netloc processing_system7_0_FIXED_IO 1 3 3 NJ 520 N 520 N
+levelinfo -pg 1 -20 100 310 610 1010 1350 1520
+pagesize -pg 1 -db -bbox -sgen -20 -220 1640 770
 "
 }
 {
-   "da_axi4_cnt":"22",
+   "da_axi4_cnt":"27",
    "da_axi4_s2mm_cnt":"1",
    "da_board_cnt":"5",
-   "da_clkrst_cnt":"3",
+   "da_clkrst_cnt":"4",
    "da_ps7_cnt":"1"
 }
