@@ -152,8 +152,10 @@ class IpLoc():
     def block_resource(cls, first_instance, other_instance):
         """Sets slices that were used in other instance as prohibitted regions
         in the first instacne"""
-        assert first_instance.remaining_resources[other_instance.remaining_resources > 0].sum(
-        ) == 0, "Resources you want to block are in use."
+        num_resources = first_instance.remaining_resources[
+            other_instance.remaining_resources > 0].sum(
+        )
+        assert num_resources == 0, f'{num_resources} of the resources you want to block are in use.'
         first_instance.remaining_resources[other_instance.remaining_resources > 0] = -1
         return first_instance
 
@@ -200,34 +202,31 @@ def check_and_propose(IpLoc_data, slice_type='L'):
                     delta = 1
                     x = i
                     y = j
-                    while [x, y] not in type_values:
-                        delta_x_list = list(range(-delta, delta))
-                        delta_y_list = delta_x_list
-                        for delta_x, delta_y in prd(delta_x_list, delta_y_list):
-                            if (
-                                    (i + delta_x <= max_x) and
-                                    (j + delta_y <= max_y) and
-                                    (0 <= i + delta_x) and
-                                    (0 <= j + delta_y)):
-                                x = i + delta_x
-                                y = j + delta_y
-                            if (
-                                    (input_field[i, j] > -1) and
-                                    ([x, y] in type_values) and
-                                    (output_field[x, y] == -1) and
-                                    (IpLoc_data.remaining_resources[x, y] > -1) and
-                                    (output.remaining_resources[i, j] > 0)):
-                                output_field[i, j] = -1
-                                output_field[x, y] = input_field[i, j]
-                                output.remaining_resources[i, j] -= 1
-                                output.remaining_resources[x, y] += 1
-                                break
-                            elif output.remaining_resources[i, j] == 0:
-                                break
-                            else:
+                    if input_field[i, j] > -1:
+                        while [x, y] not in type_values:
+                            delta_x_list = list(range(-delta, delta))
+                            delta_y_list = delta_x_list
+                            for delta_x, delta_y in prd(delta_x_list, delta_y_list):
+                                if (
+                                        (i + delta_x <= max_x) and
+                                        (j + delta_y <= max_y) and
+                                        (0 <= i + delta_x) and
+                                        (0 <= j + delta_y)):
+                                    x = i + delta_x
+                                    y = j + delta_y
+                                if (
+                                        ([x, y] in type_values) and
+                                        (output_field[x, y] == -1) and
+                                        (IpLoc_data.remaining_resources[x, y] > -1) and
+                                        (output.remaining_resources[i, j] > 0)):
+                                    output_field[i, j] = -1
+                                    output_field[x, y] = input_field[i, j]
+                                    output.remaining_resources[i, j] -= 1
+                                    output.remaining_resources[x, y] += 1
+                                    break
                                 x = i
                                 y = j
-                        delta += 1
+                            delta += 1
     return output
 
 
@@ -244,18 +243,7 @@ class TestCircuit():
         self.locations = dict()
         for item in self.circuit.keys():
             self.locations[item] = None
-            if self.circuit[item]['IP'] == 'RO':
-                self.circuit[item]['IP_specs']['first_instance_name'] = (
-                    self.circuit[item]['IP_specs']['first_instance_name'].replace('#', '@inst1')
-                )
-                self.circuit[item]['IP_specs']['other_instance_names'] = (
-                    self.circuit[item]['IP_specs']['other_instance_names'].replace(
-                        '#', '@inst1', 1).replace('#', '@inst2', 1)
-                )
-                self.circuit[item]['IP_specs']['feedback_signal'] = (
-                    self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst1')
-                )
-            if self.circuit[item]['IP'] == 'BTI':
+            if self.circuit[item]['IP'] in ['RO', 'BTI', 'HCI']:
                 self.circuit[item]['IP_specs']['first_instance_name'] = (
                     self.circuit[item]['IP_specs']['first_instance_name'].replace('#', '@inst1')
                 )
@@ -476,7 +464,7 @@ def heater_xdc(
 
 def RO_xdc(
         circuit_data, slice_type='L', outputfile='ROs.XDC',
-        json_output='RO_locations.json'
+        json_output='RO_locations.json', IP_type='RO'
 ):
     """
     Create constraints for the RO IP for TestChip design.
@@ -500,7 +488,7 @@ def RO_xdc(
     circuit = circuit_data.circuit
     RO_locations = defaultdict(lambda: [])
     for item in circuit.keys():
-        if circuit[item]['IP'] == 'RO':
+        if circuit[item]['IP'] == IP_type:
             first_instance_name = circuit[item]['IP_specs']['first_instance_name']
             other_instance_names = circuit[item]['IP_specs']['other_instance_names']
             feedback_signal = circuit[item]['IP_specs']['feedback_signal']
@@ -574,6 +562,29 @@ def BTI_xdc(
             RO_locations[item] = per_IP_locations
     with open(json_output, 'w') as file:
         json.dump(RO_locations, file)
+
+
+def HCI_xdc(circuit_data, slice_type='L', outputfile='HCI.XDC',
+            json_output='HCI_locations.json'):
+    """
+    Create constraints for the HCI IP for TestChip design.
+
+    parameters
+    ----------
+
+    circuit_data TestCircuit:
+
+    slice_type str:
+
+    outputfile str:
+
+    json_output str:
+
+    return
+    ------
+    None
+    """
+    RO_xdc(circuit_data, slice_type, outputfile, json_output, 'HCI')
 
 
 def create_constraints(yaml_path):
