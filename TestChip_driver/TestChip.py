@@ -2,19 +2,24 @@ from pynq import Overlay
 import numpy as np
 from time import sleep
 
+
 class TestChip(Overlay):
     """TestChip class is the main driver
     class for interacting with our FPGA bitstream
     Coded by: Uncle Arash
     Version: 1.0 : New XADC measurement functionalities added
     Version: 1.1 : New HCI sensor added
+    Version: 1.2 : New Temperature sensor (TMP) added
     """
+
     def __init__(self, ol_path, **kwargs):
         super().__init__(ol_path)
         self.heater_base_address = 0x00000000
         self.RO_base_address = 0x00000000
-        self.BTI_base_write_address = 0x00000000 #  select read sensor
-        self.BTI_base_read_address = 0x00000004 #  select read sensor
+        self.BTI_base_write_address = 0x00000000  # select read sensor
+        self.BTI_base_read_address = 0x00000004  # select read sensor
+        self.TMP_base_write_address = 0x00000000  # select read sensor
+        self.TMP_base_read_address = 0x00000004  # select read sensor
         self.HCI_base_freq_address = 0x00000000
         self.HCI_base_duty_address = 0x00000004
         self.HCI_base_write_address = 0x00000008
@@ -34,9 +39,9 @@ class TestChip(Overlay):
         self.num_oscillators = 31
         self.num_BTI = 31
         self.intensity_dict = {i: int(sum(
-                                          [2**j for j in range(i)])
-                                      ) for i in range(1, 33)
-                               }
+            [2**j for j in range(i)])
+        ) for i in range(1, 33)
+        }
         self.intensity_dict[0] = 0
         self.sensor_dict = {i: 2**i for i in range(32)}
         for key, value in kwargs.items():
@@ -52,13 +57,13 @@ class TestChip(Overlay):
                 self.temp_sensor_address = value
         self._a = 4.07548611   # 5
         self._b = 0.50103761   # 50
-        self.temp_ctrl_sensitivity = 2
+        self.temp_ctrl_sensitivity = 1
         self.temp_ctrl_intensity = 0
 
     def XADC_temp(self):
         return ((self.Temp_sensor.read(self.temp_sensor_address
                                        ) >> 4) * 503.975/4096 - 273.15)
-  
+
     def XADC_voltage(self, voltage_name='vccint'):
         if voltage_name == 'vccaux':
             measurement_out = self.Temp_sensor.read(self.vccaux_sensor_address)
@@ -85,7 +90,7 @@ class TestChip(Overlay):
 
         Returns: freq_dict {keys=RO_ip_name, values=[frequencies (nparray)]}
         """
-        freq_dict={}
+        freq_dict = {}
         for item in RO_dict.keys():
             RO_list = RO_dict[item]
             len_ro = len(RO_list)
@@ -99,7 +104,7 @@ class TestChip(Overlay):
                 )/1000
             freq_dict[item] = freq_list
         return freq_dict
-    
+
     def read_BTI(self, BTI_dict):
         """Reads the frequency of selected BTI sensort
         Parameters:
@@ -107,11 +112,11 @@ class TestChip(Overlay):
 
         Returns: freq_dict {keys=BTI_ip_name, values=[frequencies (nparray)]}
         """
-        freq_dict={}
+        freq_dict = {}
         for item in BTI_dict.keys():
             BTI_list = BTI_dict[item]
             len_ro = len(BTI_list)
-            assert len_ro < 31
+            assert len_ro < 32
             freq_list = np.zeros((len_ro))
             BTI = getattr(self, item)
             for i in range(len_ro):
@@ -128,18 +133,47 @@ class TestChip(Overlay):
             freq_dict[item] = freq_list
         return freq_dict
 
-    def HCI_set_pwm(self, HCI_list, input_clock_frequency = 100000000, output_clock_frequency = 100, duty_cycle = 50):
+    def read_TMP(self, TMP_dict):
+        """Reads the frequency of selected TMP sensort
+        Parameters:
+        TMP_dict: {keys=TMP_ip_name, values=[TMP list per IP]}
+
+        Returns: freq_dict {keys=TMP_ip_name, values=[frequencies (nparray)]}
+        """
+        freq_dict = {}
+        for item in TMP_dict.keys():
+            TMP_list = TMP_dict[item]
+            len_ro = len(TMP_list)
+            assert len_ro < 32
+            freq_list = np.zeros((len_ro))
+            TMP = getattr(self, item)
+            for i in range(len_ro):
+                #   Putting the TMP sensors into the counting mode
+                TMP.write(self.TMP_base_write_address, self.sensor_dict[TMP_list[i]])
+                sleep(0.01)
+                freq_list[i] = TMP.read(
+                    self.TMP_base_read_address +
+                    TMP_list[i] * self.counter_address_increament
+                )/1000
+                #   Putting the TMP sensors back into the aging mode
+                TMP.write(self.TMP_base_write_address, 0)
+            freq_dict[item] = freq_list
+        return freq_dict
+
+    def HCI_set_pwm(self, HCI_list, input_clock_frequency=100000000, output_clock_frequency=100, duty_cycle=50):
         """Sets the frequency and duty cycle of the HCI sensor
         Parameters:
         HCI_list : [HCI_ip_name]
-        
+
         Returns: None
         """
         for item in HCI_list:
             HCI = getattr(self, item)
-            HCI.write(self.HCI_base_freq_address, int(input_clock_frequency / output_clock_frequency))
+            HCI.write(self.HCI_base_freq_address, int(
+                input_clock_frequency / output_clock_frequency))
             sleep(0.01)
-            HCI.write(self.HCI_base_duty_address, int((duty_cycle / 100) * input_clock_frequency / output_clock_frequency))
+            HCI.write(self.HCI_base_duty_address, int((duty_cycle / 100)
+                      * input_clock_frequency / output_clock_frequency))
             sleep(0.01)
 
     def read_HCI(self, HCI_dict):
@@ -149,7 +183,7 @@ class TestChip(Overlay):
 
         Returns: freq_dict {keys=HCI_ip_name, values=[frequencies (nparray)]}
         """
-        freq_dict={}
+        freq_dict = {}
         for item in HCI_dict.keys():
             HCI_list = HCI_dict[item]
             len_ro = len(HCI_list)
@@ -225,6 +259,26 @@ class TestChip(Overlay):
             self.temp_ctrl_intensity = self.max_intensity
         elif self.temp_ctrl_intensity < 0:
             self.temp_ctrl_intensity = 0
+
+    def stabilize_temperature(self, temperature, increase_duration=int, stabilize_duration=int, step=2):
+        """simple control scheme to gradually increase or decrease the
+        temperature to a desired value
+
+        Returns: None
+        """
+        print(
+            f'Stabilizing the temperature at {temperature}' +
+            f' Current temperature is: {self.XADC_temp()}\n'
+        )
+        init_temp = self.XADC_temp()
+        delta = (temperature - init_temp) / (increase_duration//step)
+        for i in range(increase_duration//step + 1):
+            self.fix_temperature(init_temp + i * delta)
+            sleep(step)
+        for i in range(stabilize_duration):
+            self.fix_temperature(temperature)
+            sleep(step)
+        print(f'Stabilized temperature is: {self.XADC_temp()}\n')
 
     def __str__(self):
         return (f"Number of ROs: {self.num_oscillators}; "

@@ -808,11 +808,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>AXI_RO_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>12</xilinx:coreRevision>
+      <xilinx:coreRevision>13</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>xilinx.com:user:AXI_counter:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2021-06-12T02:32:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2021-08-06T09:17:40Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1ba829cb_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@321fc08_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
@@ -1078,6 +1078,17 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@5225fb8c_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4f5ed49e_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@6c4174ab_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1182c15a_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30db638f_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@550fa20d_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22a78467_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d85f62c_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35100839_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fc62ca1_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@130b734b_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@406306e2_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23b8f075_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6431c5db_ARCHIVE_LOCATION">c:/Users/User/ring_oscillator_zynq/ip_repo/AXI_counter_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

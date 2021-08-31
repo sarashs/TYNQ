@@ -243,7 +243,7 @@ class TestCircuit():
         self.locations = dict()
         for item in self.circuit.keys():
             self.locations[item] = None
-            if self.circuit[item]['IP'] in ['RO', 'BTI', 'HCI']:
+            if self.circuit[item]['IP'] in ['RO', 'BTI', 'HCI', 'TMP']:
                 self.circuit[item]['IP_specs']['first_instance_name'] = (
                     self.circuit[item]['IP_specs']['first_instance_name'].replace('#', '@inst1')
                 )
@@ -254,6 +254,8 @@ class TestCircuit():
                 self.circuit[item]['IP_specs']['feedback_signal'] = (
                     self.circuit[item]['IP_specs']['feedback_signal'].replace('#', '@inst1')
                 )
+                if self.circuit[item]['IP'] == 'TMP':
+                    self.circuit[item]['IP_specs']['Num_Stages'] = 1
             if self.circuit[item]['IP'] == 'heater':
                 self.circuit[item]['IP_specs']['SHE_instance_name'] = (
                     self.circuit[item]['IP_specs']['SHE_instance_name'].replace(
@@ -305,6 +307,7 @@ class Constraints(object):
         Parameters
         ----------
         """
+        print('Creating location constraints.')
         per_lut_data = [self.IpLoc_data._lut_a, self.IpLoc_data._lut_b,
                         self.IpLoc_data._lut_c, self.IpLoc_data._lut_d]
         lut_types = ['A', 'B', 'C', 'D']
@@ -348,6 +351,7 @@ class Constraints(object):
         """
         old_inst1 = -1
         old_inst2 = -1
+        print('Creating location constraints.')
         with open(self._outputfile, "a") as file:
             file.write("\n")
             for ROs in range(self.num_oscillators * self.num_stages):
@@ -585,6 +589,29 @@ def HCI_xdc(circuit_data, slice_type='L', outputfile='HCI.XDC',
     None
     """
     RO_xdc(circuit_data, slice_type, outputfile, json_output, 'HCI')
+
+
+def TMP_xdc(circuit_data, slice_type='L', outputfile='TMP.XDC',
+            json_output='TMP_locations.json'):
+    """
+    Create constraints for the TMP IP for TestChip design.
+
+    parameters
+    ----------
+
+    circuit_data TestCircuit:
+
+    slice_type str:
+
+    outputfile str:
+
+    json_output str:
+
+    return
+    ------
+    None
+    """
+    RO_xdc(circuit_data, slice_type, outputfile, json_output, 'TMP')
 
 
 def create_constraints(yaml_path):
