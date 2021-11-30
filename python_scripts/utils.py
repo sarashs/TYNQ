@@ -265,6 +265,11 @@ class TestCircuit():
                     self.circuit[item]['IP_specs']['feedback_signal'].replace(
                         '#', '@inst1', 1).replace('#', '@inst2', 1)
                 )
+            if self.circuit[item]['IP'] == 'RND':
+                self.circuit[item]['IP_specs']['Instance_name'] = (
+                    self.circuit[item]['IP_specs']['Instance_name'].replace(
+                        '#', '@inst1', 1)
+                )
 
 
 class Constraints(object):
@@ -394,36 +399,55 @@ def heaer_fill(test_circuit, init_coord=(0, 0), dim=(24, 24)):
             num_block = test_circuit.circuit[item]['IP_specs']['num_block']
             block_size = test_circuit.circuit[item]['IP_specs']['block_size']
             num_slices = block_size // 4
-            assert dim[0] * dim[1] == (
-                num_block * num_slices
-            ), 'dimensions do not math the number of SHEs per IP config file'
             SHE_list = list(range(num_block * num_slices))
             random.shuffle(SHE_list)
             lut_placement = deepcopy(test_circuit.locations[item])
-            y_dim = dim[1]
-            y = init_coord[1]
-            lst_indx = 0
-            while y_dim > 0:
-                x_dim = dim[0]
-                x = init_coord[0]
-                while x_dim > 0:
-                    if lut_placement.remaining_resources[x, y] == 0:
-                        try:
-                            lut_placement.remaining_resources[x, y] = 4
-                            # shuffling the SHE locations
-                            lut_placement._lut_a[x, y] = SHE_list[lst_indx] // num_slices
-                            lut_placement._lut_b[x, y] = SHE_list[lst_indx] // num_slices
-                            lut_placement._lut_c[x, y] = SHE_list[lst_indx] // num_slices
-                            lut_placement._lut_d[x, y] = SHE_list[lst_indx] // num_slices
-                            # End shuffling the SHE locations
-                            lst_indx += 1
-                            x_dim -= 1
-                        except IndexError:
-                            print('Index is going out of bonds. Change your init_coord.')
-                    x += 1
-                y_dim -= 1
-                y += 1
-            heater_placements.append(lut_placement)
+            if dim[0] * dim[1] > num_block * num_slices:
+                for lst_indx in SHE_list:
+                    x = np.random.randint(dim[0])
+                    y = np.random.randint(dim[1])
+                    while lut_placement.remaining_resources[x, y] != 0:
+                        x = np.random.randint(dim[0])
+                        y = np.random.randint(dim[1])
+                    try:
+                        lut_placement.remaining_resources[x, y] = 4
+                        # shuffling the SHE locations
+                        lut_placement._lut_a[x, y] = SHE_list[lst_indx] // num_slices
+                        lut_placement._lut_b[x, y] = SHE_list[lst_indx] // num_slices
+                        lut_placement._lut_c[x, y] = SHE_list[lst_indx] // num_slices
+                        lut_placement._lut_d[x, y] = SHE_list[lst_indx] // num_slices
+                        # End shuffling the SHE locations
+                    except IndexError:
+                        print('Index is going out of bonds. Change your init_coord.')
+                heater_placements.append(lut_placement)
+            else:
+                assert dim[0] * dim[1] == (
+                    num_block * num_slices
+                ), 'dimensions do not math the number of SHEs per IP config file'
+                y_dim = dim[1]
+                y = init_coord[1]
+                lst_indx = 0
+                while y_dim > 0:
+                    x_dim = dim[0]
+                    x = init_coord[0]
+                    while x_dim > 0:
+                        if lut_placement.remaining_resources[x, y] == 0:
+                            try:
+                                lut_placement.remaining_resources[x, y] = 4
+                                # shuffling the SHE locations
+                                lut_placement._lut_a[x, y] = SHE_list[lst_indx] // num_slices
+                                lut_placement._lut_b[x, y] = SHE_list[lst_indx] // num_slices
+                                lut_placement._lut_c[x, y] = SHE_list[lst_indx] // num_slices
+                                lut_placement._lut_d[x, y] = SHE_list[lst_indx] // num_slices
+                                # End shuffling the SHE locations
+                                lst_indx += 1
+                                x_dim -= 1
+                            except IndexError:
+                                print('Index is going out of bonds. Change your init_coord.')
+                        x += 1
+                    y_dim -= 1
+                    y += 1
+                heater_placements.append(lut_placement)
     if len(heater_placements) == 1:
         return lut_placement
     return heater_placements
@@ -506,7 +530,8 @@ def RO_xdc(
             )
             constraints_object._outputfile = str(outputfile)
             constraints_object.RO_location()
-            constraints_object.loops()
+            if feedback_signal is not None:
+                constraints_object.loops()
             per_IP_locations = dict()
             zipped = zip(['lut_a', 'lut_b', 'lut_c', 'lut_d'], [lut_placement._lut_a,
                          lut_placement._lut_b, lut_placement._lut_c, lut_placement._lut_d])
@@ -612,6 +637,44 @@ def TMP_xdc(circuit_data, slice_type='L', outputfile='TMP.XDC',
     None
     """
     RO_xdc(circuit_data, slice_type, outputfile, json_output, 'TMP')
+
+
+def RND_xdc(circuit_data, slice_type='L', outputfile='RND.XDC',
+            json_output='RND_locations.json'):
+    """
+    Create constraints for the RND IP for TestChip design.
+
+    parameters
+    ----------
+
+    circuit_data TestCircuit:
+
+    slice_type str:
+
+    outputfile str:
+
+    json_output str:
+
+    return
+    ------
+    None
+    """
+    for item in circuit_data.circuit.keys():
+        if circuit_data.circuit[item]['IP'] == 'RND':
+            circuit_data.circuit[item]['IP_specs'][
+                'first_instance_name'
+            ] = ''
+            circuit_data.circuit[item]['IP_specs'][
+                'other_instance_names'
+            ] = circuit_data.circuit[item][
+                'IP_specs'
+            ]['Instance_name']
+            circuit_data.circuit[item]['IP_specs']['feedback_signal'] = None
+            circuit_data.circuit[item]['IP_specs']['Num_Oscillators'] = circuit_data.circuit[item][
+                'IP_specs'
+            ]['Num_Luts']
+            circuit_data.circuit[item]['IP_specs']['Num_Stages'] = 1
+    RO_xdc(circuit_data, slice_type, outputfile, json_output, 'RND')
 
 
 def create_constraints(yaml_path):

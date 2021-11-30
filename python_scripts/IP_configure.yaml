@@ -37,14 +37,54 @@
 #         other_instance_names: 'design_1_i/BTI0/inst/CRO[#].Inverter#'
 #         feedback_signal: 'design_1_i/BTI0/inst/RO[#].notGate[0].Inverter/out_sig'
 #         Num_Oscillators: 31
-HCI0:
-     IP: HCI
-     IP_specs:
-         first_instance_name: 'design_1_i/HCI0/inst/RO[#].new_mux/LUT6_2_inst'
-         other_instance_names: 'design_1_i/HCI0/inst/RO[#].notGate[#].Inverter/LUT6_inst'
-         feedback_signal: 'design_1_i/HCI0/inst/RO[#].new_mux/LUT6_2_inst/O6'
-         Num_Oscillators: 29
-         Num_Stages: 3
+#HCI0:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI0/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI0/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI0/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
+#HCI1:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI1/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI1/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI1/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
+#HCI2:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI2/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI2/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI2/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
+#HCI3:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI3/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI3/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI3/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
+#HCI4:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI4/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI4/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI4/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
+#HCI5:
+#     IP: HCI
+#     IP_specs:
+#         first_instance_name: 'design_1_i/HCI5/inst/RO[#].new_mux/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/HCI5/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/HCI5/inst/RO[#].new_mux/LUT6_2_inst/O6'
+#         Num_Oscillators: 29
+#         Num_Stages: 3
 #HEAT:
 #     IP: heater
 #     IP_specs:
@@ -52,3 +92,8 @@ HCI0:
 #         feedback_signal: 'design_1_i/heater/inst/SHE_block[#].SHE[#].SHE/feedback'
 #         num_block: 64
 #         block_size: 36
+RND0:
+     IP: RND
+     IP_specs:
+         Instance_name: 'design_1_i/block_#/inst/circ_#/LUT6_2_inst'
+         Num_Luts: 29

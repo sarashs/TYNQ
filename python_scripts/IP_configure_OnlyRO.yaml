@@ -1,8 +1,22 @@
-RO0:
-     IP: RO
+#RO0:
+#     IP: RO
+#     IP_specs:
+#         first_instance_name: 'design_1_i/RO0/inst/RO[#].nolabel_line95/LUT6_2_inst'
+#         other_instance_names: 'design_1_i/RO0/inst/RO[#].notGate[#].Inverter/LUT6_inst'
+#         feedback_signal: 'design_1_i/RO0/inst/RO[#].notGate[0].Inverter/out_sig'
+#         Num_Oscillators: 32
+#         Num_Stages: 3
+TMP0:
+     IP: TMP
      IP_specs:
-         first_instance_name: 'design_1_i/RO0/inst/RO[#].nolabel_line95/LUT6_2_inst'
-         other_instance_names: 'design_1_i/RO0/inst/RO[#].notGate[#].Inverter/LUT6_inst'
-         feedback_signal: 'design_1_i/RO0/inst/RO[#].notGate[0].Inverter/out_sig'
-         Num_Oscillators: 32
-         Num_Stages: 3
+         first_instance_name: 'design_1_i/TMP0/inst/CRO[#].nolabel_line93/LUT6_2_inst'
+         other_instance_names: 'design_1_i/TMP0/inst/CRO[#].NAND/LUT6_inst' 
+         feedback_signal: 'design_1_i/TMP0/inst/CRO[#].NAND/in0[0]'
+         Num_Oscillators: 31
+HEAT:
+     IP: heater
+     IP_specs:
+         SHE_instance_name: 'design_1_i/heater/inst/SHE_block[#].SHE[#].SHE/LUT6_inst'
+         feedback_signal: 'design_1_i/heater/inst/SHE_block[#].SHE[#].SHE/feedback'
+         num_block: 50
+         block_size: 32
